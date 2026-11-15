@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Tracker – GTA 6 Completion Checklist</title>
+<meta name="description" content="Free, unofficial GTA 6 completion tracker. Tick off missions, collectibles, vehicles and properties – progress saves automatically.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0b14; --panel:#16131f; --panel2:#1d1929; --line:#2a2538;
+    --text:#f3eff8; --muted:#9a93ab; --pink:#ff3d8b; --orange:#ff9a3c; --teal:#2de0c8;
+    --grad:linear-gradient(120deg,#ff3d8b 0%,#ff9a3c 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;-webkit-font-smoothing:antialiased}
+  a{color:var(--teal)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px}
+
+  /* Hero */
+  header{background:radial-gradient(120% 90% at 85% 0%,rgba(255,61,139,.35),transparent 60%),radial-gradient(90% 80% at 0% 100%,rgba(45,224,200,.18),transparent 60%),var(--bg);border-bottom:1px solid var(--line);padding:28px 0 22px}
+  .top{display:flex;align-items:center;gap:18px;justify-content:space-between}
+  .brand small{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:6px}
+  h1{font-family:"Archivo Black",sans-serif;font-size:clamp(28px,7vw,44px);line-height:1;letter-spacing:-.01em}
+  h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tag{color:var(--muted);font-size:14px;margin-top:8px;max-width:440px}
+  .ring{position:relative;width:96px;height:96px;flex-shrink:0}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .pct b{font-size:22px;font-weight:700}
+  .ring .pct i{font-style:normal;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+
+  .notice{margin-top:18px;background:rgba(255,154,60,.1);border:1px solid rgba(255,154,60,.35);border-radius:10px;padding:10px 12px;font-size:13px;color:#ffd2a8}
+
+  /* Tabs */
+  .tabs{position:sticky;top:0;z-index:5;background:rgba(13,11,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .tabs .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+  .tabs .wrap::-webkit-scrollbar{display:none}
+  .tab{flex-shrink:0;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:8px 14px;font:600 13px Inter,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center}
+  .tab em{font-style:normal;color:var(--muted);font-weight:500;font-size:12px}
+  .tab.on{background:var(--grad);border-color:transparent;color:#1a0a12}
+  .tab.on em{color:#3b1424}
+
+  /* Controls */
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 12px}
+  .controls input[type=search],.controls select{flex:1 1 180px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;font:14px Inter,sans-serif}
+  .toggle{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);padding:0 4px;cursor:pointer;user-select:none}
+  .toggle input{accent-color:var(--pink);width:16px;height:16px}
+
+  .cathead{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 8px}
+  .cathead h2{font-size:18px}
+  .cathead span{color:var(--muted);font-size:13px}
+  .bar{height:6px;background:var(--panel2);border-radius:99px;overflow:hidden;margin-bottom:14px}
+  .bar div{height:100%;background:var(--grad);width:0;transition:width .3s}
+
+  /* Items */
+  .list{display:flex;flex-direction:column;gap:6px}
+  .item{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;transition:border-color .15s,opacity .15s}
+  .item:hover{border-color:#3d3552}
+  .item.done{opacity:.55}
+  .item.done .name{text-decoration:line-through;text-decoration-color:var(--pink)}
+  .check{width:22px;height:22px;border-radius:7px;border:2px solid #4a4260;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .15s}
+  .item.done .check{background:var(--teal);border-color:var(--teal)}
+  .check svg{opacity:0}
+  .item.done .check svg{opacity:1}
+  .name{font-weight:600;font-size:15px}
+  .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;align-items:center}
+  .region{font-size:11px;font-weight:600;color:var(--teal);background:rgba(45,224,200,.1);border-radius:6px;padding:2px 7px}
+  .note{font-size:13px;color:var(--muted)}
+  .empty{text-align:center;color:var(--muted);padding:30px 0;font-size:14px}
+
+  /* Ad slot + panels */
+  .ad{margin:22px 0;border:1px dashed #3a3350;border-radius:12px;min-height:100px;display:flex;align-items:center;justify-content:center;color:#5d5672;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:22px 0}
+  .panel h3{font-size:16px;margin-bottom:4px}
+  .panel p{color:var(--muted);font-size:13px;margin-bottom:12px}
+  .gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+  .gear a{display:block;text-decoration:none;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .gear a b{display:block;font-size:14px}
+  .gear a span{font-size:12px;color:var(--muted)}
+  .btns{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:9px 14px;font:600 13px Inter,sans-serif;cursor:pointer}
+  .btn.primary{background:var(--grad);color:#1a0a12;border-color:transparent}
+  .btn.danger{color:#ff7a9f}
+  textarea{width:100%;margin-top:10px;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px;font:12px ui-monospace,monospace;min-height:70px;display:none}
+  .msg{font-size:12px;color:var(--teal);margin-top:8px;min-height:16px}
+
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 40px;color:var(--muted);font-size:12px}
+  footer p+p{margin-top:8px}
+
+  /* Dialog */
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:20;padding:20px}
+  .modal.show{display:flex}
+  .modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;max-width:340px;width:100%}
+  .modal h4{font-size:16px;margin-bottom:6px}
+  .modal p{font-size:13px;color:var(--muted);margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <small>Unofficial fan tool</small>
+        <h1>LEONIDA<br><span>TRACKER</span></h1>
+        <p class="tag">Your GTA 6 100% checklist. Tick things off as you go – progress saves on this device automatically.</p>
+      </div>
+      <div class="ring">
+        <svg width="96" height="96" viewBox="0 0 96 96">
+          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ff3d8b"/><stop offset="1" stop-color="#ff9a3c"/></linearGradient></defs>
+          <circle cx="48" cy="48" r="40" fill="none" stroke="#231f30" stroke-width="9"/>
+          <circle id="ringArc" cx="48" cy="48" r="40" fill="none" stroke="url(#g)" stroke-width="9" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3" style="transition:stroke-dashoffset .4s"/>
+        </svg>
+        <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
+      </div>
+    </div>
+    <div class="notice" id="notice">🚧 Launch template: entries below are placeholders. Real locations get added from 19 November when the game is out.</div>
+  </div>
+</header>
+
+<nav class="tabs"><div class="wrap" id="tabs"></div></nav>
+
+<main class="wrap">
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search…" aria-label="Search items">
+    <select id="region" aria-label="Filter by region"></select>
+    <label class="toggle"><input type="checkbox" id="hideDone"> Hide completed</label>
+  </div>
+
+  <div class="cathead"><h2 id="catTitle"></h2><span id="catCount"></span></div>
+  <div class="bar"><div id="catBar"></div></div>
+  <div class="list" id="list"></div>
+
+  <div class="ad">Ad space</div>
+
+  <section class="panel">
+    <h3>🎮 Gear up for Leonida</h3>
+    <p>Kit we'd recommend for a long session. (Affiliate links – they help keep this site free.)</p>
+    <div class="gear">
+      <a href="#" rel="sponsored nofollow"><b>PS5 DualSense</b><span>Spare controller</span></a>
+      <a href="#" rel="sponsored nofollow"><b>Gaming headset</b><span>Hear every siren</span></a>
+      <a href="#" rel="sponsored nofollow"><b>2TB NVMe SSD</b><span>Room for a 100GB+ install</span></a>
+      <a href="#" rel="sponsored nofollow"><b>Charging dock</b><span>Never die mid-heist</span></a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h3>💾 Your progress</h3>
+    <p>Playing on another device? Copy your save code and paste it there to carry your progress across.</p>
+    <div class="btns">
+      <button class="btn" id="copyBtn">Copy save code</button>
+      <button class="btn" id="pasteBtn">Restore from code</button>
+      <button class="btn danger" id="resetBtn">Reset all</button>
+    </div>
+    <textarea id="codeBox" placeholder="Paste your save code here, then tap Restore again"></textarea>
+    <div class="msg" id="msg"></div>
+  </section>
+
+  <section class="panel">
+    <h3>☕ Enjoying the tracker?</h3>
+    <p>It's free and ad-light. If it saved you some hunting, a coffee keeps the updates coming.</p>
+    <a class="btn primary" href="#" style="display:inline-block;text-decoration:none">Buy me a coffee</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Leonida Tracker is an unofficial fan site.</b> It isn't affiliated with, endorsed by or connected to Rockstar Games or Take-Two Interactive. Game titles and trademarks belong to their owners.</p>
+    <p>Progress is stored only in your browser. This site uses cookies for ads and analytics.</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <h4>Reset all progress?</h4>
+    <p>This clears every tick on this device. It can't be undone unless you've copied your save code.</p>
+    <div class="btns">
+      <button class="btn" id="cancelReset">Cancel</button>
+      <button class="btn primary" id="confirmReset">Reset</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   DATA – edit this section at launch.
+   Each item: { id: unique string, name, region, note }
+   Swap the placeholder generators for real arrays, e.g.
+   collectibles: [
+     { id:"col-01", name:"Signal Jammer #1", region:"Vice City", note:"Rooftop behind the motel" },
+   ]
+   Keep ids stable once live, or players lose their ticks.
+   ============================================================ */
+const REGIONS = ["Vice City","Leonida Keys","Grassrivers","Port Gellhorn","Ambrosia","Mount Kalaga"];
+
+function placeholders(prefix, label, count, note){
+  return Array.from({length:count}, (_, i) => ({
+    id: `${prefix}-${String(i+1).padStart(2,"0")}`,
+    name: `${label} ${String(i+1).padStart(2,"0")}`,
+    region: REGIONS[i % REGIONS.length],
+    note: note
+  }));
+}
+
+const CATEGORIES = [
+  { key:"missions",     title:"Story Missions",        items: placeholders("mis","Mission",20,"Mission name added at launch") },
+  { key:"collectibles", title:"Collectibles",          items: placeholders("col","Collectible",30,"Location added at launch") },
+  { key:"vehicles",     title:"Vehicles",              items: placeholders("veh","Vehicle",18,"Where to find it – added at launch") },
+  { key:"properties",   title:"Properties & Businesses", items: placeholders("pro","Property",12,"Price and income added at launch") },
+  { key:"activities",   title:"Side Activities",       items: placeholders("act","Activity",14,"Details added at launch") },
+  { key:"trophies",     title:"Trophies",              items: placeholders("tro","Trophy",16,"Unlock condition added at launch") }
+];
+
+/* ============================================================
+   APP
+   ============================================================ */
+const STORE_KEY = "leonida-tracker-v1";
+let done = {};
+let memoryOnly = false;
+try { done = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
+catch(e){ memoryOnly = true; }
+
+function save(){
+  if (memoryOnly) return;
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(done)); } catch(e){ memoryOnly = true; }
+}
+
+const $ = id => document.getElementById(id);
+let current = CATEGORIES[0].key;
+
+$("region").innerHTML = `<option value="">All regions</option>` + REGIONS.map(r => `<option>${r}</option>`).join("");
+
+function countDone(items){ return items.filter(i => done[i.id]).length; }
+
+function renderTabs(){
+  $("tabs").innerHTML = CATEGORIES.map(c =>
+    `<button class="tab ${c.key===current?"on":""}" data-k="${c.key}">${c.title}<em>${countDone(c.items)}/${c.items.length}</em></button>`
+  ).join("");
+}
+
+function renderTotal(){
+  const all = CATEGORIES.flatMap(c => c.items);
+  const pct = all.length ? Math.round(countDone(all) / all.length * 100) : 0;
+  $("totalPct").textContent = pct + "%";
+  $("ringArc").style.strokeDashoffset = 251.3 * (1 - pct/100);
+}
+
+const tick = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d0b14" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function renderList(){
+  const cat = CATEGORIES.find(c => c.key === current);
+  const q = $("search").value.trim().toLowerCase();
+  const region = $("region").value;
+  const hide = $("hideDone").checked;
+
+  const shown = cat.items.filter(i =>
+    (!q || (i.name + " " + i.note).toLowerCase().includes(q)) &&
+    (!region || i.region === region) &&
+    (!hide || !done[i.id])
+  );
+
+  const n = countDone(cat.items);
+  $("catTitle").textContent = cat.title;
+  $("catCount").textContent = `${n} of ${cat.items.length}`;
+  $("catBar").style.width = (cat.items.length ? n / cat.items.length * 100 : 0) + "%";
+
+  $("list").innerHTML = shown.length ? shown.map(i => `
+    <div class="item ${done[i.id]?"done":""}" data-id="${esc(i.id)}" role="checkbox" aria-checked="${!!done[i.id]}" tabindex="0">
+      <div class="check">${tick}</div>
+      <div>
+        <div class="name">${esc(i.name)}</div>
+        <div class="meta"><span class="region">${esc(i.region)}</span><span class="note">${esc(i.note)}</span></div>
+      </div>
+    </div>`).join("") : `<div class="empty">Nothing matches – try clearing the filters.</div>`;
+}
+
+function renderAll(){ renderTabs(); renderTotal(); renderList(); }
+
+function toggle(id){
+  if (done[id]) delete done[id]; else done[id] = 1;
+  save(); renderAll();
+}
+
+$("list").addEventListener("click", e => { const el = e.target.closest(".item"); if (el) toggle(el.dataset.id); });
+$("list").addEventListener("keydown", e => {
+  if ((e.key === " " || e.key === "Enter") && e.target.classList.contains("item")) { e.preventDefault(); toggle(e.target.dataset.id); }
+});
+$("tabs").addEventListener("click", e => {
+  const t = e.target.closest(".tab"); if (!t) return;
+  current = t.dataset.k; location.hash = current; renderAll();
+});
+["search","region","hideDone"].forEach(id => $(id).addEventListener("input", renderList));
+
+window.addEventListener("hashchange", () => {
+  const k = location.hash.slice(1);
+  if (CATEGORIES.some(c => c.key === k)) { current = k; renderAll(); }
+});
+const startKey = location.hash.slice(1);
+if (CATEGORIES.some(c => c.key === startKey)) current = startKey;
+
+/* Save code: copy / restore */
+const flash = t => { $("msg").textContent = t; setTimeout(() => $("msg").textContent = "", 3500); };
+
+$("copyBtn").addEventListener("click", async () => {
+  const code = btoa(JSON.stringify(Object.keys(done)));
+  const box = $("codeBox");
+  try { await navigator.clipboard.writeText(code); flash("Save code copied ✓"); }
+  catch(e){ box.style.display = "block"; box.value = code; box.select(); flash("Copy the code shown below."); }
+});
+
+$("pasteBtn").addEventListener("click", () => {
+  const box = $("codeBox");
+  if (box.style.display !== "block" || !box.value.trim()) { box.style.display = "block"; box.value = ""; box.focus(); flash("Paste your code, then tap Restore again."); return; }
+  try {
+    const ids = JSON.parse(atob(box.value.trim()));
+    if (!Array.isArray(ids)) throw 0;
+    done = {}; ids.forEach(id => done[id] = 1);
+    save(); renderAll(); box.style.display = "none"; flash(`Restored ${ids.length} ticks ✓`);
+  } catch(e){ flash("That code didn't work – check it was copied in full."); }
+});
+
+$("resetBtn").addEventListener("click", () => $("modal").classList.add("show"));
+$("cancelReset").addEventListener("click", () => $("modal").classList.remove("show"));
+$("confirmReset").addEventListener("click", () => { done = {}; save(); renderAll(); $("modal").classList.remove("show"); flash("Progress reset."); });
+
+if (memoryOnly) $("notice").insertAdjacentHTML("beforeend", "<br>⚠️ Your browser is blocking storage, so progress won't save after you close this page.");
+
+renderAll();
+</script>
+</body>
+</html>
