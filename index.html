@@ -166,7 +166,7 @@
         <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
       </div>
     </div>
-    <div class="notice" id="notice">🚧 Launch template: entries below are placeholders. Real locations get added from 19 November when the game is out.</div>
+    <div class="notice" id="notice">🚧 Updated 18 November 2026: the story mission list is now in. The tracker is being updated as players discover more – other tabs still show placeholders for now.</div>
   </div>
 </header>
 
@@ -245,7 +245,7 @@
    ]
    Keep ids stable once live, or players lose their ticks.
    ============================================================ */
-const REGIONS = ["Vice City","Leonida Keys","Grassrivers","Port Gellhorn","Ambrosia","Mount Kalaga"];
+const REGIONS = ["Vice City","Leonida Keys","Grassrivers","Port Gellhorn","Ambrosia","Mount Kalaga","Leonida"];
 
 function placeholders(prefix, label, count, note){
   return Array.from({length:count}, (_, i) => ({
@@ -257,7 +257,93 @@ function placeholders(prefix, label, count, note){
 }
 
 const CATEGORIES = [
-  { key:"missions",     title:"Story Missions",        items: placeholders("mis","Mission",20,"Mission name added at launch") },
+  { key:"missions",     title:"Story Missions",        items: [
+    { id:"mis-01", name:"Prologue", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-02", name:"Gone Fishing", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-03", name:"Gear Up", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-04", name:"Lab Fees", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-05", name:"Just a Scratch", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-06", name:"Unwanted Attention", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-07", name:"Pipework", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-08", name:"Hey Arnold!", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-09", name:"Island Dreams", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-10", name:"Feng Shui", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-11", name:"Coming Home", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-12", name:"Clean Up After Donnie", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-13", name:"Buck Me", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-14", name:"Down to Earth", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-15", name:"Day Release", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-16", name:"Clear Skies", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-17", name:"Swamped", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-18", name:"Recalibration", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-19", name:"Tourist Trap", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-20", name:"Home Sweet Home", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-21", name:"Discharge Time", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-22", name:"What's in the Bag?", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-23", name:"Just Moved In", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-24", name:"Girls' Trip", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-25", name:"Moses", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-26", name:"Ambulance Chaser", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-27", name:"Slam Dunk", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-28", name:"Daily Driver", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-29", name:"Breakfast Run", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-30", name:"Coffee Break", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-31", name:"Afternoon Delight", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-32", name:"Checking Out", region:"Leonida", note:"Chapter 2 (Paradise Lost) \u2013 map region to be confirmed" },
+    { id:"mis-33", name:"Welcome to Vice City", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-34", name:"Dealer's Choice", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-35", name:"Dubious Provenance", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-36", name:"Mami Knows Best", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-37", name:"Here, Kitty Kitty", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-38", name:"Boobie Time", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-39", name:"Meet the Heders", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-40", name:"Car Service", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-41", name:"Top Billing", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-42", name:"First Impressions", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-43", name:"Crosstown Traffic", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-44", name:"Credit Check", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-45", name:"Ride or Die", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-46", name:"Sinfrontera National Bank", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-47", name:"Security Expert", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-48", name:"Caught Slipping", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-49", name:"Company Property", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-50", name:"Safe Word", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-51", name:"The Missing Link", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-52", name:"Cooties", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-53", name:"Hidden Charges", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-54", name:"Bricked Up", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-55", name:"South Leonida Real Estate", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-56", name:"The Cartel Heist", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-57", name:"Ocean Beach", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-58", name:"Another Life", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-59", name:"Company Cars", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-60", name:"Lawyer Up", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-61", name:"Party Hard", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-62", name:"Photo/Shoot", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-63", name:"Making Gainz", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-64", name:"Too Much Baggage", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-65", name:"Watch It", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-66", name:"Amateur Hour", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-67", name:"Cash Injections", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-68", name:"Dirty Work", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-69", name:"Adventures in Babysitting", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-70", name:"Fresh Evidence", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-71", name:"Child's Play", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-72", name:"Power Play", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-73", name:"Close Surveillance", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-74", name:"Delivery Method", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-75", name:"Team Building", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-76", name:"Fully Catered", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-77", name:"Headliners", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-78", name:"VCIA Takedown", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-79", name:"Sunset", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-80", name:"Bird in the Hand", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
+    { id:"mis-81", name:"Taking Liberties", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
+    { id:"mis-82", name:"Doggie Bag", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
+    { id:"mis-83", name:"VC Baby", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
+    { id:"mis-84", name:"Operation Savage Glory", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
+    { id:"mis-85", name:"Protective Custody", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" }
+  ] },
   { key:"collectibles", title:"Collectibles",          items: placeholders("col","Collectible",30,"Location added at launch") },
   { key:"vehicles",     title:"Vehicles",              items: placeholders("veh","Vehicle",18,"Where to find it – added at launch") },
   { key:"properties",   title:"Properties & Businesses", items: placeholders("pro","Property",12,"Price and income added at launch") },
