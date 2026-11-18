@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leonida-tracker.com/sitemap.xml
