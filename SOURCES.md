@@ -91,3 +91,24 @@ All 16 names appear on both the PowerPyx trophy guide and Promptowy (Polish; spe
 - Shirley strand ("Get Shirley's Rum", "Steal the Scooter"): now on GTABase as well as PowerPyx's menu, but GTABase's page is written with pre-release framing and PowerPyx was only seen in a navigation menu – still left out.
 - Garage prices for pro-07/pro-08, unique race names, drone and meditation locations: no second source found.
 - Not readable: games.gg cars guide, nettoge.com Randy list.
+
+## 2026-11-19 run (later)
+
+### act-32 (Strangers & Freaks: Shirley)
+Both pages name Shirley's two missions (Get Shirley's Rum, Steal the Scooter), say they are Chapter 1 only and disappear once Tourist Trap starts. PowerPyx says they don't count towards trophies/100%. (Last run's doubt about GTABase framing is resolved by HowToVideoGame as a second source.)
+- https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions
+- https://www.powerpyx.com/gta-6-get-shirleys-rum-walkthrough/ (start: Key Lento, same site so not counted as independent)
+- https://howtovideogame.com/gta-6-shirley-missions/
+
+### act-33 to act-42 (meditation spots, one tick per spot)
+PowerPyx and Beebom list the same 10 spots in the same order with the same meditation counts (18 total; 15 needed for 100%). Push Square (WIP, 6 of 18) matches for Jason's House, Smooth Sand, Swamp, Water Wheel, Seaside, Waterfall. Region set to "Mount Kalaga" for Jutting Cliff and Ascent (both sources place them in/at Mount Kalaga); others left "Leonida" with county in the note, since REGIONS doesn't use county names. Red Rocks: PowerPyx says Manifest Canyon, Kelly County; Beebom says Manifest County – note just says "Manifest area".
+- https://www.powerpyx.com/gta-6-all-meditation-spot-locations/
+- https://beebom.com/gta-6-meditation-spots-locations/
+- https://www.pushsquare.com/guides/gta-6-meditation-locations
+
+### Not added this run
+- Mamba GT / 22-car wish list and per-car locations: still Push Square only (PowerPyx still says 16).
+- Garage prices pro-07/pro-08: Push Square only.
+- Drone race locations: PowerPyx and Push Square both now say 14 locations (42 time trials) but neither lists them; act-02 note left as is (not wrong). Shooting ranges: Push Square names Rodgers Ranch (Port Gellhorn) and Griffin (Balsero); PowerPyx says 14 ranges – conflict, skipped.
+- "Kenton" questline: mentioned by PowerPyx but no strand listed.
+- Not readable: alcasthq, theclick.gg (Randy, meditation, drones), sportskeeda.
