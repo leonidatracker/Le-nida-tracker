@@ -75,3 +75,19 @@ Kirk, Kyle, Moses, Billy, Yago, Andy, Yasmani, Randy, Tyrone, Dunk, Eddie Acosta
 - Unique races (40 in 6 groups) – both checklists agree, but act-03 already covers races; consider adding next run if wanted.
 - Card locations, meditation spot locations, drone locations: still not compared across two sources.
 - GameSpot, Sportskeeda, Mobalytics, AlcastHQ, Metaforge, GTABase properties page, gta6bible could not be read.
+
+## 2026-11-19 run (12:13 UTC)
+
+### veh-01 to veh-16 (Randy's Wish List cars) – replaces vehicle placeholders
+All 16 names appear on both the PowerPyx trophy guide and Promptowy (Polish; spells it "Ocelot Jugular" – used the PowerPyx spelling "Jagular"). Order follows PowerPyx. Nine of them (Vitello, Infernus, Toros, Tempesta, Paragon, Growler, Gauntlet Hellfire, Furia, Banshee) are also on Push Square's WIP page. Zorrusso being handed over in "Clonin' Keys, Makin' GS" is stated by PowerPyx and Promptowy. Region "Leonida" and no spawn locations: per-car locations come only from Push Square (need4games.ro gives the same 10 cars in the same order with the same times, so it looks like a translation, not an independent source).
+- https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/
+- https://promptowy.com/gta-6-randy-wish-list/
+- https://www.pushsquare.com/guides/gta-6-randys-wish-list-vehicle-locations
+- (locations only, not used) https://need4games.ro/gta-6-locatii-masini-randy-wishlist
+
+### Not added this run
+- List size conflict: PowerPyx and Promptowy say 16 cars, Push Square and need4games say 22. Mamba GT (added by the "¡Dale Mamba!" mission) is on Push Square/need4games only. If more wish-list cars are confirmed, append from veh-17.
+- Randy car locations (Sweetbay Inn in Capri, Crosstown Police Station garage, etc.): Push Square only.
+- Shirley strand ("Get Shirley's Rum", "Steal the Scooter"): now on GTABase as well as PowerPyx's menu, but GTABase's page is written with pre-release framing and PowerPyx was only seen in a navigation menu – still left out.
+- Garage prices for pro-07/pro-08, unique race names, drone and meditation locations: no second source found.
+- Not readable: games.gg cars guide, nettoge.com Randy list.
