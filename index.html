@@ -166,7 +166,7 @@
         <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
       </div>
     </div>
-    <div class="notice" id="notice">🚧 Updated 18 November 2026: the story mission list is now in. The tracker is being updated as players discover more – other tabs still show placeholders for now.</div>
+    <div class="notice" id="notice">🚧 Updated 19 November 2026: story missions, trophies, collectible card sets and the first side activities are in. The tracker is being updated as players discover more – vehicles and properties still show placeholders for now.</div>
   </div>
 </header>
 
@@ -344,11 +344,95 @@ const CATEGORIES = [
     { id:"mis-84", name:"Operation Savage Glory", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
     { id:"mis-85", name:"Protective Custody", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" }
   ] },
-  { key:"collectibles", title:"Collectibles",          items: placeholders("col","Collectible",30,"Location added at launch") },
+  { key:"collectibles", title:"Collectibles",          items: [
+    { id:"col-01", name:"Vice City Flamingos card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-02", name:"Vice City Narcos card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-03", name:"Vice City Manatees card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-04", name:"Vice City Club de Futbol card set", region:"Leonida", note:"30 cards \u2013 card locations to follow" },
+    { id:"col-05", name:"Liberty City Swingers card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-06", name:"Liberty City Penetrators card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-07", name:"Liberty City Wrath card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-08", name:"Los Santos Corkers card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-09", name:"Los Santos Panic card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-10", name:"Los Santos Pounders card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-11", name:"Backyard Wrestling card set", region:"Leonida", note:"12 cards \u2013 card locations to follow" },
+    { id:"col-12", name:"America's Next Top Hooker card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
+    { id:"col-13", name:"Delights Dancers card set", region:"Leonida", note:"18 cards \u2013 card locations to follow" },
+    { id:"col-14", name:"Jack of Hearts Dancers card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
+    { id:"col-15", name:"Nine1Nine Dancers card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
+    { id:"col-16", name:"The Legends of Ratface card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
+    { id:"col-17", name:"Right Wing: America's Hero card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
+    { id:"col-18", name:"Ed Comics Universe card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" }
+  ] },
   { key:"vehicles",     title:"Vehicles",              items: placeholders("veh","Vehicle",18,"Where to find it – added at launch") },
   { key:"properties",   title:"Properties & Businesses", items: placeholders("pro","Property",12,"Price and income added at launch") },
-  { key:"activities",   title:"Side Activities",       items: placeholders("act","Activity",14,"Details added at launch") },
-  { key:"trophies",     title:"Trophies",              items: placeholders("tro","Trophy",16,"Unlock condition added at launch") }
+  { key:"activities",   title:"Side Activities",       items: [
+    { id:"act-01", name:"Shooting Range challenges", region:"Leonida", note:"Aim for gold in every challenge (The Shootist trophy)" },
+    { id:"act-02", name:"Top Fun drone races", region:"Leonida", note:"Drone races at several locations (Top Fun trophy)" },
+    { id:"act-03", name:"Races", region:"Leonida", note:"Win 20 different races (Earn Cash, Not Kudos trophy)" },
+    { id:"act-04", name:"Fishing", region:"Leonida", note:"Includes a fishing challenge against Cal" },
+    { id:"act-05", name:"Arcade games", region:"Leonida", note:"Playable arcade cabinets (Stick Fiddler trophy)" },
+    { id:"act-06", name:"Meditation spots", region:"Leonida", note:"Spots scattered across Leonida (Positive Mental Attitude trophy)" },
+    { id:"act-07", name:"Hunting for Bret", region:"Leonida", note:"Track down unique animals for Bret" },
+    { id:"act-08", name:"Bowling", region:"Leonida", note:"Kolt & Associates bowling alley" }
+  ] },
+  { key:"trophies",     title:"Trophies",              items: [
+    { id:"tro-01", name:"Vice Got a Price!", region:"Leonida", note:"Platinum \u2013 unlock every other trophy" },
+    { id:"tro-02", name:"Just Like Paradise", region:"Leonida", note:"Bronze \u2013 finish the Gone Fishing mission" },
+    { id:"tro-03", name:"Paradise Lost", region:"Leonida", note:"Bronze \u2013 finish Chapter 1" },
+    { id:"tro-04", name:"Tits Ass Drug Money", region:"Leonida", note:"Bronze \u2013 finish Chapter 2" },
+    { id:"tro-05", name:"Vice City, Baby!", region:"Leonida", note:"Bronze \u2013 finish Chapter 3" },
+    { id:"tro-06", name:"Top of the World, Ma", region:"Leonida", note:"Bronze \u2013 finish Chapter 4" },
+    { id:"tro-07", name:"You Gotta Know When to Get Off", region:"Leonida", note:"Gold \u2013 finish the last story mission" },
+    { id:"tro-08", name:"Trust", region:"Leonida", note:"Bronze \u2013 finish the Breakfast Run mission" },
+    { id:"tro-09", name:"Break the Bank", region:"Leonida", note:"Bronze \u2013 finish The Cartel Heist" },
+    { id:"tro-10", name:"Family Matters", region:"Leonida", note:"Bronze \u2013 finish the Child's Play mission" },
+    { id:"tro-11", name:"DWNFALL", region:"Leonida", note:"Bronze \u2013 finish the Headliners mission" },
+    { id:"tro-12", name:"Hi-Jacked", region:"Leonida", note:"Bronze \u2013 finish the VCIA Takedown mission" },
+    { id:"tro-13", name:"Snow Storm", region:"Leonida", note:"Bronze \u2013 finish Operation Savage Glory" },
+    { id:"tro-14", name:"A Long Road", region:"Leonida", note:"Gold \u2013 reach 100% game completion" },
+    { id:"tro-15", name:"Cunning Stunts", region:"Leonida", note:"Silver \u2013 pull off 250 stunts" },
+    { id:"tro-16", name:"Master of None", region:"Leonida", note:"Bronze \u2013 have a go at every activity type" },
+    { id:"tro-17", name:"The Shootist", region:"Leonida", note:"Silver \u2013 gold medal on every Shooting Range challenge" },
+    { id:"tro-18", name:"Top Fun", region:"Leonida", note:"Bronze \u2013 win a Top Fun drone race at each location" },
+    { id:"tro-19", name:"Earn Cash, Not Kudos", region:"Leonida", note:"Bronze \u2013 win 20 different races" },
+    { id:"tro-20", name:"Baited My Tackle", region:"Leonida", note:"Bronze \u2013 out-fish Cal in a fishing challenge" },
+    { id:"tro-21", name:"Stick Fiddler", region:"Leonida", note:"Bronze \u2013 beat an arcade game" },
+    { id:"tro-22", name:"Road to Rehabilitation", region:"Leonida", note:"Bronze \u2013 finish Andy's last mission" },
+    { id:"tro-23", name:"This Was No Boat Accident", region:"Leonida", note:"Bronze \u2013 finish Kenton's last mission" },
+    { id:"tro-24", name:"The Lone Rider", region:"Leonida", note:"Bronze \u2013 finish Billy's last mission" },
+    { id:"tro-25", name:"Strangers & Freaks", region:"Leonida", note:"Silver \u2013 finish 8 stranger mission strands around Leonida" },
+    { id:"tro-26", name:"Supply & Demand", region:"Leonida", note:"Bronze \u2013 finish Randy's last mission" },
+    { id:"tro-27", name:"Spin On This!", region:"Leonida", note:"Bronze \u2013 finish Tyrone's last mission" },
+    { id:"tro-28", name:"Positive Mental Attitude", region:"Leonida", note:"Bronze \u2013 meditate at every meditation spot" },
+    { id:"tro-29", name:"Fair Game", region:"Leonida", note:"Bronze \u2013 hunt one of Bret's unique animals" },
+    { id:"tro-30", name:"Don't Touch My Deck", region:"Leonida", note:"Silver \u2013 complete any 3 collectible card sets" },
+    { id:"tro-31", name:"You WAiNKer!", region:"Leonida", note:"Silver \u2013 WAiNK at 100 different spots" },
+    { id:"tro-32", name:"One Last Thing", region:"Leonida", note:"Bronze \u2013 complete 50 challenges" },
+    { id:"tro-33", name:"Hot Together", region:"Leonida", note:"Bronze \u2013 escape a 4-star wanted level with your partner" },
+    { id:"tro-34", name:"Retail Therapy", region:"Leonida", note:"Bronze \u2013 hold up 3 shops in a row with your partner while staying wanted" },
+    { id:"tro-35", name:"Whip It Good", region:"Leonida", note:"Bronze \u2013 discover 100 vehicles" },
+    { id:"tro-36", name:"Gunslinger", region:"Leonida", note:"Bronze \u2013 drop 5 enemies in one Combat Focus" },
+    { id:"tro-37", name:"Catch Me If You Can", region:"Leonida", note:"Bronze \u2013 leave VCIA without a ticket" },
+    { id:"tro-38", name:"Challenging Tank", region:"Leonida", note:"Bronze \u2013 Rhino tank challenge (exact condition unclear)" },
+    { id:"tro-39", name:"Sneakthief", region:"Leonida", note:"Bronze \u2013 rob a jewellery store without being spotted" },
+    { id:"tro-40", name:"Maximum Withdrawal", region:"Leonida", note:"Silver \u2013 rob 5 bank vaults and get away" },
+    { id:"tro-41", name:"A Classic Blitz Play", region:"Leonida", note:"Bronze \u2013 rob an armoured truck and get away" },
+    { id:"tro-42", name:"The Goodtime State", region:"Leonida", note:"Bronze \u2013 explore the whole of Leonida" },
+    { id:"tro-43", name:"Pest Control", region:"Leonida", note:"Bronze \u2013 rob an illegal operation from every gang" },
+    { id:"tro-44", name:"In the Beginning...", region:"Leonida", note:"Bronze \u2013 have a cocktail overlooking Ocean Beach" },
+    { id:"tro-45", name:"Capital Offense", region:"Leonida", note:"Bronze \u2013 crash out through a car showroom window" },
+    { id:"tro-46", name:"Let's Go Bowling", region:"Leonida", note:"Bronze \u2013 at the Kolt & Associates bowling alley" },
+    { id:"tro-47", name:"Personal Best", region:"Leonida", note:"Bronze \u2013 hidden; condition not yet clear" },
+    { id:"tro-48", name:"Actions Speak Louder", region:"Leonida", note:"Bronze \u2013 make story choices" },
+    { id:"tro-49", name:"Bad Luck, I Guess", region:"Leonida", note:"Bronze \u2013 hidden; condition not yet clear" },
+    { id:"tro-50", name:"The Truth Is Out There", region:"Leonida", note:"Bronze \u2013 hidden; condition not yet clear" },
+    { id:"tro-51", name:"Ten Pin", region:"Leonida", note:"Bronze \u2013 knock someone over with a melee drive-by" },
+    { id:"tro-52", name:"Dime on the Dollar", region:"Leonida", note:"Bronze \u2013 launder $250,000 of Marked Bills via contacts" },
+    { id:"tro-53", name:"Treat Yo Self", region:"Leonida", note:"Bronze \u2013 spend $100,000 in shops" },
+    { id:"tro-54", name:"Little Boxes", region:"Leonida", note:"Bronze \u2013 buy every garage property" },
+    { id:"tro-55", name:"On the Spot", region:"Leonida", note:"Bronze \u2013 register 10 vehicles on the Scooter Bros app" }
+  ] }
 ];
 
 /* Category icons (keyed by category key) */
