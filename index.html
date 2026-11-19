@@ -117,6 +117,15 @@
   textarea{width:100%;margin-top:10px;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px;font:12px ui-monospace,monospace;min-height:70px;display:none}
   .msg{font-size:12px;color:var(--teal);margin-top:8px;min-height:16px}
 
+  .share-btn{margin-top:14px;display:inline-flex;align-items:center;gap:8px}
+  .glinks{display:flex;flex-wrap:wrap;gap:8px}
+  .glinks a{text-decoration:none;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13px;font-weight:600}
+  .glinks a em{font-style:normal;color:var(--muted);font-weight:500;margin-left:4px}
+  .glinks a:hover{border-color:#3d3552}
+  .modal .box.wide{max-width:420px}
+  #shareImg{width:100%;aspect-ratio:1;border-radius:12px;background:var(--panel2);display:block;margin-bottom:14px;border:1px solid var(--line)}
+  .modal .btns .btn{text-decoration:none;display:inline-flex;align-items:center}
+  .xclose{float:right;background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;margin:-4px -4px 0 0}
   footer{margin-top:30px;padding:0 0 40px;color:var(--muted);font-size:12px}
   footer p+p{margin-top:8px}
   .footart{display:block;width:100%;height:70px;margin-bottom:20px}
@@ -157,6 +166,7 @@
         <small>Unofficial fan tool</small>
         <h1>LEONIDA<br><span>TRACKER</span></h1>
         <p class="tag">Your GTA 6 100% checklist. Tick things off as you go – progress saves on this device automatically.</p>
+        <button class="btn primary share-btn" id="shareBtn" type="button">📸 Share my progress</button>
       </div>
       <div class="ring">
         <svg width="96" height="96" viewBox="0 0 96 96">
@@ -184,6 +194,12 @@
   <div class="bar"><div id="catBar"></div></div>
   <div class="list" id="list"></div>
 
+  <section class="panel">
+    <h3>📋 Full lists</h3>
+    <p>Every list on its own page – handy for browsing or sharing.</p>
+    <div class="glinks"><!--GUIDES--></div>
+  </section>
+
   <div class="ad">Ad space</div>
 
   <section class="panel">
@@ -201,6 +217,7 @@
     <h3>💾 Your progress</h3>
     <p>Playing on another device? Copy your save code and paste it there to carry your progress across.</p>
     <div class="btns">
+      <button class="btn primary" id="shareBtn2" type="button">📸 Share progress</button>
       <button class="btn" id="copyBtn">Copy save code</button>
       <button class="btn" id="pasteBtn">Restore from code</button>
       <button class="btn danger" id="resetBtn">Reset all</button>
@@ -236,6 +253,22 @@
   </div>
 </div>
 
+<div class="modal" id="shareModal">
+  <div class="box wide">
+    <button class="xclose" id="shareClose" aria-label="Close">×</button>
+    <h4>Share your progress</h4>
+    <p>Post it, send it to your mates, or save the image.</p>
+    <img id="shareImg" alt="Your GTA 6 progress image">
+    <div class="btns">
+      <button class="btn primary" id="nativeShare" type="button">Share…</button>
+      <a class="btn" id="dlBtn" download="leonida-tracker-progress.png" href="#">Download image</a>
+      <a class="btn" id="xBtn" target="_blank" rel="noopener" href="#">Post on X</a>
+      <button class="btn" id="copyLink" type="button">Copy link</button>
+    </div>
+    <div class="msg" id="shareMsg"></div>
+  </div>
+</div>
+
 <script>
 /* ============================================================
    DATA – edit this section at launch.
@@ -253,7 +286,8 @@ function placeholders(prefix, label, count, note){
     id: `${prefix}-${String(i+1).padStart(2,"0")}`,
     name: `${label} ${String(i+1).padStart(2,"0")}`,
     region: REGIONS[i % REGIONS.length],
-    note: note
+    note: note,
+    placeholder: true
   }));
 }
 
@@ -606,6 +640,106 @@ $("cancelReset").addEventListener("click", () => $("modal").classList.remove("sh
 $("confirmReset").addEventListener("click", () => { done = {}; save(); renderAll(); $("modal").classList.remove("show"); flash("Progress reset."); });
 
 if (memoryOnly) $("notice").insertAdjacentHTML("beforeend", "<br>⚠️ Your browser is blocking storage, so progress won't save after you close this page.");
+
+/* Share my progress: draws a square image on a canvas */
+const SITE_URL = "https://leonida-tracker.com";
+function overallPct(){
+  const all = CATEGORIES.flatMap(c => c.items);
+  return all.length ? Math.round(countDone(all) / all.length * 100) : 0;
+}
+async function makeShareImage(){
+  try { await document.fonts.ready; } catch(e){}
+  const W = 1080, H = 1080;
+  const c = document.createElement("canvas"); c.width = W; c.height = H;
+  const x = c.getContext("2d");
+  const bg = x.createLinearGradient(0,0,0,H);
+  bg.addColorStop(0,"#1b1030"); bg.addColorStop(.5,"#3d1543"); bg.addColorStop(.52,"#0d0b14"); bg.addColorStop(1,"#0d0b14");
+  x.fillStyle = bg; x.fillRect(0,0,W,H);
+  x.fillStyle = "rgba(255,255,255,.6)";
+  [[120,140],[260,90],[820,120],[950,200],[60,330],[1000,380],[700,60]].forEach(([a,b]) => { x.beginPath(); x.arc(a,b,2,0,7); x.fill(); });
+  // sun with stripes cut out
+  const s = document.createElement("canvas"); s.width = W; s.height = H;
+  const sx = s.getContext("2d");
+  const sg = sx.createLinearGradient(0,290,0,560);
+  sg.addColorStop(0,"#ffd27a"); sg.addColorStop(.55,"#ff7a4a"); sg.addColorStop(1,"#ff3d8b");
+  sx.fillStyle = sg; sx.beginPath(); sx.arc(W/2,560,270,Math.PI,0); sx.fill();
+  sx.globalCompositeOperation = "destination-out";
+  [[452,7],[485,11],[520,15]].forEach(([y,h]) => sx.fillRect(0,y,W,h));
+  x.drawImage(s,0,0);
+  x.fillStyle = "#2de0c8"; x.globalAlpha = .5;
+  [[400,580,280],[440,600,200],[490,618,100]].forEach(([a,b,w]) => x.fillRect(a,b,w,3));
+  x.globalAlpha = 1;
+  // brand
+  x.textAlign = "center"; x.textBaseline = "alphabetic";
+  x.font = '44px "Archivo Black", Inter, sans-serif';
+  const brand1 = "LEONIDA ", brand2 = "TRACKER";
+  const w1 = x.measureText(brand1).width, w2 = x.measureText(brand2).width, bx = W/2 - (w1+w2)/2;
+  x.textAlign = "left"; x.fillStyle = "#f3eff8"; x.fillText(brand1, bx, 100);
+  const tg = x.createLinearGradient(bx+w1,0,bx+w1+w2,0); tg.addColorStop(0,"#ff3d8b"); tg.addColorStop(1,"#ff9a3c");
+  x.fillStyle = tg; x.fillText(brand2, bx+w1, 100);
+  // percentage
+  x.textAlign = "center";
+  x.shadowColor = "rgba(13,11,20,.65)"; x.shadowBlur = 30;
+  x.fillStyle = "#ffffff"; x.font = '230px "Archivo Black", Inter, sans-serif';
+  x.fillText(overallPct() + "%", W/2, 400);
+  x.font = '600 42px Inter, sans-serif'; x.fillStyle = "#f3eff8";
+  x.fillText("of GTA 6 complete", W/2, 470);
+  x.shadowBlur = 0;
+  // category bars
+  let y = 690;
+  CATEGORIES.forEach(cat => {
+    const d = countDone(cat.items), t = cat.items.length, f = t ? d/t : 0;
+    x.textAlign = "left"; x.font = '600 30px Inter, sans-serif'; x.fillStyle = "#f3eff8";
+    x.fillText(cat.title, 110, y);
+    x.textAlign = "right"; x.font = '500 28px Inter, sans-serif'; x.fillStyle = "#9a93ab";
+    x.fillText(d + " / " + t, 970, y);
+    x.fillStyle = "#2a2538"; x.beginPath(); x.roundRect(110, y+14, 860, 12, 6); x.fill();
+    if (f > 0){
+      const bg2 = x.createLinearGradient(110,0,970,0); bg2.addColorStop(0,"#ff3d8b"); bg2.addColorStop(1,"#ff9a3c");
+      x.fillStyle = bg2; x.beginPath(); x.roundRect(110, y+14, Math.max(12, 860*f), 12, 6); x.fill();
+    }
+    y += 58;
+  });
+  x.textAlign = "center"; x.font = '700 34px Inter, sans-serif'; x.fillStyle = "#2de0c8";
+  x.fillText("leonida-tracker.com", W/2, H - 34);
+  return c;
+}
+let shareBlob = null, shareObjURL = null;
+const shareText = () => `I'm ${overallPct()}% through GTA 6 🌴 Tracking every mission, collectible and trophy with Leonida Tracker`;
+const sflash = t => { $("shareMsg").textContent = t; setTimeout(() => $("shareMsg").textContent = "", 3500); };
+
+async function openShare(){
+  $("shareModal").classList.add("show");
+  $("shareImg").removeAttribute("src");
+  $("nativeShare").style.display = navigator.share ? "" : "none";
+  $("xBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText()) + "&url=" + encodeURIComponent(SITE_URL);
+  try {
+    const canvas = await makeShareImage();
+    canvas.toBlob(b => {
+      if (!b) return;
+      shareBlob = b;
+      if (shareObjURL) URL.revokeObjectURL(shareObjURL);
+      shareObjURL = URL.createObjectURL(b);
+      $("shareImg").src = shareObjURL;
+      $("dlBtn").href = shareObjURL;
+    }, "image/png");
+  } catch(e){ sflash("Couldn't draw the image on this browser – you can still share the link."); }
+}
+$("shareBtn").addEventListener("click", openShare);
+$("shareBtn2").addEventListener("click", openShare);
+$("shareClose").addEventListener("click", () => $("shareModal").classList.remove("show"));
+$("shareModal").addEventListener("click", e => { if (e.target.id === "shareModal") $("shareModal").classList.remove("show"); });
+$("nativeShare").addEventListener("click", async () => {
+  try {
+    const file = shareBlob ? new File([shareBlob], "leonida-tracker-progress.png", { type: "image/png" }) : null;
+    if (file && navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file], text: shareText(), url: SITE_URL });
+    else await navigator.share({ text: shareText(), url: SITE_URL });
+  } catch(e){ /* cancelled */ }
+});
+$("copyLink").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(shareText() + " " + SITE_URL); sflash("Copied ✓"); }
+  catch(e){ sflash(SITE_URL); }
+});
 
 renderAll();
 </script>
