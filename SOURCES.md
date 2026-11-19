@@ -42,3 +42,36 @@ Only activities whose existence is confirmed by the agreed trophy list above (al
 - Properties: "garage properties" exist (Little Boxes trophy) but no named list from two sources.
 - Vehicles: nothing confirmed by two sources.
 - Stranger strands (Andy, Kenton, Billy, Randy, Tyrone): confirmed by name in trophies, but strand/mission names not yet listed by two sources.
+
+## 2026-11-19 run (evening)
+
+### pro-01 to pro-08 (garages) – replaces property placeholders
+All 8 purchasable garages named identically by both sources. Prices shown only where both agree (pro-01 to pro-06). Persistence Road (pro-07) and Vela Rota Drive (pro-08): Push Square gives $7,600 and $24,000, HowToVideoGame gives no price, so "to be confirmed". Areas (e.g. Mitchel Auto Center east of Port Gellhorn, Store n' Bolt / Wyatt Motors in Ambrosia, Atlantic Court in Ocean Beach) come from HowToVideoGame only, so regions left as "Leonida". "1 space" is stated by both.
+- https://www.pushsquare.com/guides/gta-6-trophy-guide-and-roadmap
+- https://howtovideogame.com/gta-6-garage-locations/
+
+### col-19 to col-27 (collectible types, one tick per type)
+Counts match on PowerPyx checklist + GTABase checklist (Magazines/books/comics 27, Book Swaps 7, Cocaine Flamingos 125, Unique Playlists 2, Underwater Discoveries 33, Styles 79). WAiNK Landmarks 31 / Curiosities 35 / Sculptures 23 match on PowerPyx database, allthings.how and Push Square.
+- https://www.powerpyx.com/gta-6-100-completion-checklist-guide/
+- https://www.gtabase.com/articles/gta-6/gta-6-100-completion-guide-interactive-checklist
+- https://www.powerpyx.com/gta-6-collectible-guide-progress-database
+- https://allthings.how/how-many-collectibles-are-in-gta-6-and-where-to-track-them/
+- https://www.pushsquare.com/guides/gta-6-trophy-guide-and-roadmap (WAiNK only)
+
+### act-09 to act-19 (activity types)
+Race Challenges 13, Pool 7, Mini golf 3, Basketball hoops 100, Challenges 80, Gang Operations 39, Bank jobs 22 (8 vaults), Payday loans 7, Smash 'n' Grabs 35, Stick-ups 91, Stunts 397 (130/202/40/25): same figures on both checklists (stunts also Push Square).
+- https://www.powerpyx.com/gta-6-100-completion-checklist-guide/
+- https://www.gtabase.com/articles/gta-6/gta-6-100-completion-guide-interactive-checklist
+
+### act-20 to act-31 (Strangers & Freaks strands)
+Kirk, Kyle, Moses, Billy, Yago, Andy, Yasmani, Randy, Tyrone, Dunk, Eddie Acosta, Pilot Pete: same characters, missions and starting chapters on both pages. Mission counts counted from the lists. Regions left "Leonida" (only GTABase gives start areas, for a few).
+- https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions
+- https://www.gtabase.com/side-missions/gta-6/strangers/
+
+### Not added this run
+- Shirley strand: PowerPyx only. Bret Vogel strand: confirmed by both but already covered by act-07 (Hunting for Bret).
+- Vehicles: Randy's Wish List locations (Push Square WIP, 10 of 22) have no second source; TechWiser list is self-described community/speculative. Vehicles stay as placeholders.
+- Shooting Range counts conflict (Griffin 18 / Rodgers 24 on GTABase vs inconsistent numbers on PowerPyx; 14 ranges in PowerPyx database) – left act-01 unchanged.
+- Unique races (40 in 6 groups) – both checklists agree, but act-03 already covers races; consider adding next run if wanted.
+- Card locations, meditation spot locations, drone locations: still not compared across two sources.
+- GameSpot, Sportskeeda, Mobalytics, AlcastHQ, Metaforge, GTABase properties page, gta6bible could not be read.

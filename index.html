@@ -166,7 +166,7 @@
         <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
       </div>
     </div>
-    <div class="notice" id="notice">🚧 Updated 19 November 2026: story missions, trophies, collectible card sets and the first side activities are in. The tracker is being updated as players discover more – vehicles and properties still show placeholders for now.</div>
+    <div class="notice" id="notice">🚧 Updated 19 November 2026: story missions, trophies, collectibles, side activities, Strangers &amp; Freaks and garages are in. The tracker is being updated as players discover more – vehicles still show placeholders for now.</div>
   </div>
 </header>
 
@@ -362,10 +362,28 @@ const CATEGORIES = [
     { id:"col-15", name:"Nine1Nine Dancers card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
     { id:"col-16", name:"The Legends of Ratface card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
     { id:"col-17", name:"Right Wing: America's Hero card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
-    { id:"col-18", name:"Ed Comics Universe card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" }
+    { id:"col-18", name:"Ed Comics Universe card set", region:"Leonida", note:"36 cards \u2013 card locations to follow" },
+    { id:"col-19", name:"Magazines, books & comics", region:"Leonida", note:"27 to find \u2013 locations to follow" },
+    { id:"col-20", name:"Book Swaps", region:"Leonida", note:"7 to find \u2013 locations to follow" },
+    { id:"col-21", name:"Cocaine Flamingos", region:"Leonida", note:"125 to find \u2013 locations to follow" },
+    { id:"col-22", name:"Unique radio playlists", region:"Leonida", note:"2 to unlock \u2013 details to follow" },
+    { id:"col-23", name:"Underwater Discoveries", region:"Leonida", note:"33 to find, linked to Kenton's treasure sets \u2013 locations to follow" },
+    { id:"col-24", name:"Styles (tattoos & luxury watches)", region:"Leonida", note:"79 to collect \u2013 locations to follow" },
+    { id:"col-25", name:"WAiNK Landmarks", region:"Leonida", note:"31 to scan \u2013 locations to follow" },
+    { id:"col-26", name:"WAiNK Curiosities", region:"Leonida", note:"35 to scan \u2013 locations to follow" },
+    { id:"col-27", name:"WAiNK Sculptures", region:"Leonida", note:"23 to scan \u2013 locations to follow" }
   ] },
   { key:"vehicles",     title:"Vehicles",              items: placeholders("veh","Vehicle",18,"Where to find it – added at launch") },
-  { key:"properties",   title:"Properties & Businesses", items: placeholders("pro","Property",12,"Price and income added at launch") },
+  { key:"properties",   title:"Properties & Businesses", items: [
+    { id:"pro-01", name:"Mitchel Auto Center", region:"Leonida", note:"Garage, 1 space \u2013 $4,000" },
+    { id:"pro-02", name:"7th Avenue Garage", region:"Leonida", note:"Garage, 1 space \u2013 $12,000" },
+    { id:"pro-03", name:"Store n' Bolt", region:"Leonida", note:"Garage, 1 space \u2013 $16,800" },
+    { id:"pro-04", name:"Wyatt Motors", region:"Leonida", note:"Garage, 1 space \u2013 $21,600" },
+    { id:"pro-05", name:"Bonita Court Garage", region:"Leonida", note:"Garage, 1 space \u2013 $34,000" },
+    { id:"pro-06", name:"Atlantic Court Garage", region:"Leonida", note:"Garage, 1 space \u2013 $40,000" },
+    { id:"pro-07", name:"Persistence Road Garage", region:"Leonida", note:"Garage, 1 space \u2013 price to be confirmed" },
+    { id:"pro-08", name:"Vela Rota Drive Garage", region:"Leonida", note:"Garage, 1 space \u2013 price to be confirmed" }
+  ] },
   { key:"activities",   title:"Side Activities",       items: [
     { id:"act-01", name:"Shooting Range challenges", region:"Leonida", note:"Aim for gold in every challenge (The Shootist trophy)" },
     { id:"act-02", name:"Top Fun drone races", region:"Leonida", note:"Drone races at several locations (Top Fun trophy)" },
@@ -374,7 +392,30 @@ const CATEGORIES = [
     { id:"act-05", name:"Arcade games", region:"Leonida", note:"Playable arcade cabinets (Stick Fiddler trophy)" },
     { id:"act-06", name:"Meditation spots", region:"Leonida", note:"Spots scattered across Leonida (Positive Mental Attitude trophy)" },
     { id:"act-07", name:"Hunting for Bret", region:"Leonida", note:"Track down unique animals for Bret" },
-    { id:"act-08", name:"Bowling", region:"Leonida", note:"Kolt & Associates bowling alley" }
+    { id:"act-08", name:"Bowling", region:"Leonida", note:"Kolt & Associates bowling alley" },
+    { id:"act-09", name:"Race Challenges", region:"Leonida", note:"13 challenges \u2013 aim for gold in each" },
+    { id:"act-10", name:"Pool", region:"Leonida", note:"7 opponents to beat" },
+    { id:"act-11", name:"Mini golf", region:"Leonida", note:"3 courses" },
+    { id:"act-12", name:"Basketball hoops", region:"Leonida", note:"100 hoops around Leonida" },
+    { id:"act-13", name:"Challenges", region:"Leonida", note:"80 in total (50 for One Last Thing)" },
+    { id:"act-14", name:"Gang Operations", region:"Leonida", note:"39 operations across the gangs" },
+    { id:"act-15", name:"Bank jobs", region:"Leonida", note:"22 banks, 8 of them with vaults" },
+    { id:"act-16", name:"Payday loan robberies", region:"Leonida", note:"7 to hit" },
+    { id:"act-17", name:"Smash 'n' Grabs", region:"Leonida", note:"35 in total" },
+    { id:"act-18", name:"Stick-ups", region:"Leonida", note:"91 stores tracked" },
+    { id:"act-19", name:"Stunts", region:"Leonida", note:"397: 130 jumps, 202 under-bridges, 40 knife flights, 25 base jumps" },
+    { id:"act-20", name:"Strangers & Freaks: Kirk", region:"Leonida", note:"3 missions, from Chapter 1 \u2013 Skunk Ape hunt" },
+    { id:"act-21", name:"Strangers & Freaks: Kyle", region:"Leonida", note:"3 missions, from Chapter 2" },
+    { id:"act-22", name:"Strangers & Freaks: Moses", region:"Leonida", note:"Vehicle thefts, from Chapter 2" },
+    { id:"act-23", name:"Strangers & Freaks: Billy", region:"Leonida", note:"5 missions, from Chapter 2" },
+    { id:"act-24", name:"Strangers & Freaks: Yago", region:"Leonida", note:"4 missions, from Chapter 3 \u2013 street racing" },
+    { id:"act-25", name:"Strangers & Freaks: Andy", region:"Leonida", note:"5 missions, from Chapter 3 \u2013 Cellerica" },
+    { id:"act-26", name:"Strangers & Freaks: Yasmani", region:"Leonida", note:"4 robbery jobs, from Chapter 3" },
+    { id:"act-27", name:"Strangers & Freaks: Randy", region:"Leonida", note:"Randy's Wish List cars, from Chapter 3" },
+    { id:"act-28", name:"Strangers & Freaks: Tyrone", region:"Leonida", note:"2 missions, from Chapter 3 \u2013 Kitty Litter labs" },
+    { id:"act-29", name:"Strangers & Freaks: Dunk", region:"Leonida", note:"Robbery tips, from Chapter 3" },
+    { id:"act-30", name:"Strangers & Freaks: Eddie Acosta", region:"Leonida", note:"1 mission, from Chapter 4" },
+    { id:"act-31", name:"Strangers & Freaks: Pilot Pete", region:"Leonida", note:"5 missions, from Chapter 4 \u2013 flying deliveries" }
   ] },
   { key:"trophies",     title:"Trophies",              items: [
     { id:"tro-01", name:"Vice Got a Price!", region:"Leonida", note:"Platinum \u2013 unlock every other trophy" },
