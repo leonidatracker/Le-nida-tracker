@@ -112,3 +112,17 @@ PowerPyx and Beebom list the same 10 spots in the same order with the same medit
 - Drone race locations: PowerPyx and Push Square both now say 14 locations (42 time trials) but neither lists them; act-02 note left as is (not wrong). Shooting ranges: Push Square names Rodgers Ranch (Port Gellhorn) and Griffin (Balsero); PowerPyx says 14 ranges – conflict, skipped.
 - "Kenton" questline: mentioned by PowerPyx but no strand listed.
 - Not readable: alcasthq, theclick.gg (Randy, meditation, drones), sportskeeda.
+
+## 2026-11-20 run
+
+### act-43 (Unique Races, one tick for the type)
+GTABase's checklist (read today) gives 40 unique races and says the per-group progress is under Progress > Activities > Racing. The 19 Nov evening run had already found the same 40 (in 6 groups) on the PowerPyx checklist, but PowerPyx could not be re-read today. So the second source comes from that earlier reading. Group names aren't listed because GTABase doesn't give them. Kept separate from act-03 (the trophy for winning 20 races) and act-09 (Race Challenges).
+- https://www.gtabase.com/articles/gta-6/gta-6-100-completion-guide-interactive-checklist
+- https://www.powerpyx.com/gta-6-100-completion-checklist-guide/ (checked 19 Nov)
+
+### Not added this run (GTABase only today, could not check against a second source)
+- Kenton treasure sets (7, linked to the 33 underwater discoveries), Bret's Target Decks (15), base model vehicles scanned (277), standard issue weapons (66), animals studied (255), video games played (4), vaults (8, already noted under act-15 Bank jobs).
+- Mini golf course names (King Gator Adventure Golf, Frontier Adventure Golf, Dino Golf Challenge).
+- Shooting ranges: GTABase still says 2 (Griffin 18 golds, Rodgers Ranch 24). Conflict with PowerPyx's "14" from 19 Nov is unresolved.
+- Drone race locations: GTABase still gives only "14 locations, 3 time trials each" with no names.
+- Could not read (fetch permission not granted in this unattended run): PowerPyx (checklist, trophy guide, strangers, collectible database), Push Square (Randy list, trophy roadmap), Promptowy, HowToVideoGame, allthings.how. So the Randy 16-vs-22 conflict, Mamba GT and pro-07/pro-08 prices were not rechecked.
