@@ -161,3 +161,19 @@ Push Square (WIP) and game-checklists.com give the same spot and time for these 
 - Video games played (4): probably the same as act-05 Arcade games, so not added separately.
 - Drone race locations: 14 locations, 3 trials each on every source, but none names them.
 - Not readable: theclick.gg, sportskeeda, howtovideogame.
+
+## 2026-11-20 run (12:15 UTC)
+
+### pro-01 to pro-08 (garage areas added to notes) and pro-09 (new)
+Playnews (French, full list with areas and prices) and HowToVideoGame agree on where each garage is: Mitchel Auto Center – central Kelly County, east of Port Gellhorn; 7th Avenue – Vice-Dale County, east of the airport; Store n' Bolt – north Ambrosia; Wyatt Motors – central Ambrosia; Bonita Court – Washington Island; Atlantic Court – Ocean Beach; Persistence Road – west Bellville, south Leonard County; Vela Rota Drive – Capri. Regions changed to "Ambrosia" for pro-03/pro-04; the rest stay "Leonida" (consistent with earlier runs, which keep Ocean Beach etc. as "Leonida"). Names and ids unchanged; prices for pro-01 to pro-06 also match on Playnews.
+pro-09 Port Gellhorn Station: both pages say it is a free garage that Moses gives you in the story.
+- https://www.playnews.gg/guides/garages-gta-6-ou-les-trouver-sur-la-carte-de-leonida-et-a-quel-prix
+- https://howtovideogame.com/gta-6-garage-locations/
+
+### Not added this run
+- Prices for pro-07/pro-08 now conflict: Playnews $9,500 / $30,000 vs Push Square $7,600 / $24,000 (Push Square figures read via summary only). Left "to be confirmed" – check the in-game real estate app.
+- Paradise garage (free, from Wyman): HowToVideoGame says Ultimate Edition only; Shore Court (Vintage Vice City Pack) on HowToVideoGame only. Edition-dependent, so skipped.
+- Remaining Randy car locations (Windsor Drop, Jagular, Jubilee, Itali RSX, Dubsta, Baller ST-D): still blank on game-checklists, absent from Push Square, op.gg pages give none.
+- Kenton strand: only metaforge describes it (as the 7 shipwreck sets, already col-28). Cal's fishing strand ("Catch a Bigger Fish") on PowerPyx; already covered by act-04.
+- Drone race locations: no source names them yet.
+- GTABase garage map: markers load by script, unreadable.
