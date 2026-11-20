@@ -177,3 +177,27 @@ pro-09 Port Gellhorn Station: both pages say it is a free garage that Moses give
 - Kenton strand: only metaforge describes it (as the 7 shipwreck sets, already col-28). Cal's fishing strand ("Catch a Bigger Fish") on PowerPyx; already covered by act-04.
 - Drone race locations: no source names them yet.
 - GTABase garage map: markers load by script, unreadable.
+
+## 2026-11-20 run (evening)
+
+### tro-38, tro-47, tro-48, tro-50 (trophy notes corrected; names and ids unchanged)
+- tro-38 Challenging Tank: steal a Rhino at Mile Zero Air Station (Goose Key, Mariana County) and fire from it. Output Lag (trophy list + military base guide), GTABase and PlayStationInfo agree; KeenGamer says steal one and use it in combat. Sites differ on whether entering alone pops it, so the note says "and fire from it".
+  - https://outputlag.com/guides/gta-6-trophy-list/
+  - https://outputlag.com/guides/gta-6-military-base-tank-jet/
+  - https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series
+  - https://www.playstationinfo.de/en/2026/11/19/stealing-a-gta-6-tank-rhino-location-military-base-and-trophy/
+- tro-47 Personal Best: max Strength for both Jason and Lucia. GTABase, KeenGamer and Output Lag (Output Lag hedges with "should"); PowerPyx says the same (read via summary only).
+  - https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series
+  - https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/
+  - https://outputlag.com/guides/gta-6-trophy-list/
+- tro-48 Actions Speak Louder: old note "make story choices" was wrong; it is 500 actions that change the Criminal Profile. GTABase, KeenGamer, Output Lag agree.
+  - same three URLs as tro-47
+- tro-50 The Truth Is Out There: UFO encounter on a back road near the Starlet Motel safehouse, east of Port Gellhorn (Kelly County), around 2am in-game. Beebom and VGTimes agree on place and time (PowerPyx too, via summary). Caveats: Beebom says Chapter 2+, VGTimes says after Chapter 1; Output Lag and KeenGamer still list this trophy as unconfirmed. Worth a glance.
+  - https://beebom.com/gta-6-ufo-location-trophy-guide/
+  - https://vgtimes.com/gaming-news/175102-gta-6-players-discover-ufo-encounter-that-unlocks-a-secret-trophy.html
+
+### Not added this run
+- Drone race locations: PowerPyx now names all 14 areas and 42 trials (https://www.powerpyx.com/gta-6-all-top-fun-drone-race-time-trial-locations/), but no second source names them yet (GTABase map is script-only; gmtreks drone guide and theclick.gg unreadable). Strong candidate for next run.
+- tro-49 Bad Luck, I Guess: still unknown on every source (PowerPyx guesses a Payday Loans store link).
+- Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16): still on no source.
+- pro-07/pro-08 prices: Playnews vs Push Square conflict unchanged.
