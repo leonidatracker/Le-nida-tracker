@@ -177,7 +177,7 @@
         <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
       </div>
     </div>
-    <div class="notice" id="notice">🚧 Updated 20 November 2026: story missions, trophies, collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars, meditation spots and unique races are in. The tracker is being updated as players discover more.</div>
+    <div class="notice" id="notice">🚧 Updated 20 November 2026: story missions, trophies, collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with most spawn spots), meditation spots, unique races, golf and shooting ranges are in. The tracker is being updated as players discover more.</div>
   </div>
 </header>
 
@@ -406,25 +406,30 @@ const CATEGORIES = [
     { id:"col-24", name:"Styles (tattoos & luxury watches)", region:"Leonida", note:"79 to collect \u2013 locations to follow" },
     { id:"col-25", name:"WAiNK Landmarks", region:"Leonida", note:"31 to scan \u2013 locations to follow" },
     { id:"col-26", name:"WAiNK Curiosities", region:"Leonida", note:"35 to scan \u2013 locations to follow" },
-    { id:"col-27", name:"WAiNK Sculptures", region:"Leonida", note:"23 to scan \u2013 locations to follow" }
+    { id:"col-27", name:"WAiNK Sculptures", region:"Leonida", note:"23 to scan \u2013 locations to follow" },
+    { id:"col-28", name:"Kenton's treasure sets", region:"Leonida", note:"7 shipwreck sets (5 count for 100%; all 7 needed for every Underwater Discovery)" },
+    { id:"col-29", name:"Bret's Target Decks", region:"Leonida", note:"15 to collect" },
+    { id:"col-30", name:"Standard issue weapons", region:"Leonida", note:"66 to collect (50 count for 100%)" },
+    { id:"col-31", name:"Animals studied", region:"Leonida", note:"255 species (100 count for 100%)" }
   ] },
   { key:"vehicles",     title:"Vehicles",              items: [
     { id:"veh-01", name:"Granforma Zorrusso", region:"Leonida", note:"Randy's Wish List \u2013 given to you during the Chapter 3 mission Clonin' Keys, Makin' GS" },
-    { id:"veh-02", name:"Pegassi Vitello", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-03", name:"Pegassi Infernus", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
+    { id:"veh-02", name:"Pegassi Vitello", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 villa garage on Flamingo Pkwy, Waning Sands (Leonard County)" },
+    { id:"veh-03", name:"Pegassi Infernus", region:"Vice City", note:"Randy's Wish List (from Chapter 3) \u2013 level 7 of the Crosstown Police Station car park, NW 9th St" },
     { id:"veh-04", name:"Buckingham Windsor Drop", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-05", name:"Pegassi Toros", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-06", name:"Pegassi Tempesta", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-07", name:"Ascot Paragon", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
+    { id:"veh-05", name:"Pegassi Toros", region:"Vice City", note:"Randy's Wish List (from Chapter 3) \u2013 outside Pegassi Residences, Bayside Dr, Tequesta Retreat, around 6:30pm" },
+    { id:"veh-06", name:"Pegassi Tempesta", region:"Vice City", note:"Randy's Wish List (from Chapter 3) \u2013 random event on NE 3rd St around 1pm (car on a tow truck)" },
+    { id:"veh-07", name:"Ascot Paragon", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 outside The Banana Hole bar, Shore Dr, Ocean Beach, around 6pm" },
     { id:"veh-08", name:"Ocelot Jagular", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
     { id:"veh-09", name:"Buckingham Jubilee", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
     { id:"veh-10", name:"Grotti Itali RSX", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-11", name:"Pfister Growler", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-12", name:"Bravado Gauntlet Hellfire", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-13", name:"Piccia Furia", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
+    { id:"veh-11", name:"Pfister Growler", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 multi-storey car park on Fig St, Ocean Beach, around 5pm" },
+    { id:"veh-12", name:"Bravado Gauntlet Hellfire", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 back of the M7 junkyard off Galerina St, Hamlet" },
+    { id:"veh-13", name:"Piccia Furia", region:"Vice City", note:"Randy's Wish List (from Chapter 3) \u2013 mansion garage on Palladia Ln, Peacock Estates" },
     { id:"veh-14", name:"Benefactor Dubsta", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-15", name:"Bravado Banshee", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
-    { id:"veh-16", name:"Gallivanter Baller ST-D", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" }
+    { id:"veh-15", name:"Bravado Banshee", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 outside Sweetbay Inn, East Buckley Dr, Capri, around 3am" },
+    { id:"veh-16", name:"Gallivanter Baller ST-D", region:"Leonida", note:"Randy's Wish List (from Chapter 3) \u2013 spawn location to be confirmed" },
+    { id:"veh-17", name:"Vehicle scans (base models)", region:"Leonida", note:"277 base models to scan (200 count for 100%); standout vehicles don't count" }
   ] },
   { key:"properties",   title:"Properties & Businesses", items: [
     { id:"pro-01", name:"Mitchel Auto Center", region:"Leonida", note:"Garage, 1 space \u2013 $4,000" },
@@ -479,7 +484,10 @@ const CATEGORIES = [
     { id:"act-40", name:"Meditation: Waterfall", region:"Leonida", note:"Northwest of Tallaloko, Lummox County \u2013 2 meditations" },
     { id:"act-41", name:"Meditation: Seaside", region:"Leonida", note:"Rocky stretch of beach by Waning Sands, Leonard County \u2013 2 meditations" },
     { id:"act-42", name:"Meditation: Ascent", region:"Mount Kalaga", note:"Summit of Mount Kalaga \u2013 1 meditation, appears after the other 17" },
-    { id:"act-43", name:"Unique Races", region:"Leonida", note:"40 unique races to win for 100% \u2013 progress shown under Activities > Racing in the pause menu" }
+    { id:"act-43", name:"Unique Races", region:"Leonida", note:"40 unique races; winning 30 counts for 100% \u2013 progress shown under Activities > Racing in the pause menu" },
+    { id:"act-44", name:"Golf", region:"Leonida", note:"2 full courses: Leaf Links (Vice Beach) and Mount Hailes Club (Waning Sands, Leonard County)" },
+    { id:"act-45", name:"Griffin Shooting Range", region:"Vice City", note:"North-west Vice City \u2013 6 challenges, 18 gold medals" },
+    { id:"act-46", name:"Rodgers Ranch & Shooting Range", region:"Leonida", note:"North-east of Port Gellhorn \u2013 6 challenges, 24 gold medals" }
   ] },
   { key:"trophies",     title:"Trophies",              items: [
     { id:"tro-01", name:"Vice Got a Price!", region:"Leonida", note:"Platinum \u2013 unlock every other trophy" },

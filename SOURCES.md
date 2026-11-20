@@ -126,3 +126,38 @@ GTABase's checklist (read today) gives 40 unique races and says the per-group pr
 - Shooting ranges: GTABase still says 2 (Griffin 18 golds, Rodgers Ranch 24). Conflict with PowerPyx's "14" from 19 Nov is unresolved.
 - Drone race locations: GTABase still gives only "14 locations, 3 time trials each" with no names.
 - Could not read (fetch permission not granted in this unattended run): PowerPyx (checklist, trophy guide, strangers, collectible database), Push Square (Randy list, trophy roadmap), Promptowy, HowToVideoGame, allthings.how. So the Randy 16-vs-22 conflict, Mamba GT and pro-07/pro-08 prices were not rechecked.
+
+## 2026-11-20 run (later)
+
+### col-28 to col-31, veh-17 (checklist counts, one tick per type)
+PowerPyx checklist and GTABase checklist (both read today) agree: Kenton's treasure sets 7 (5 for 100%, all 7 for the 33 Underwater Discoveries), Bret's Target Decks 15, standard issue weapons 66 (50 for 100%), animals studied 255 (100 for 100%), base model vehicle scans 277 (200 for 100%; standout vehicles don't count). PowerPyx's intro once says "557 vehicles" – treated as a typo since its own checklist says 277. Set names for Kenton's treasure not given by either.
+- https://www.powerpyx.com/gta-6-100-completion-checklist-guide/
+- https://www.gtabase.com/articles/gta-6/gta-6-100-completion-guide-interactive-checklist
+
+### act-43 (corrected note)
+Note said all 40 unique races are needed for 100%; both checklists say 30 of 40. Name and id unchanged.
+- Same two checklist URLs.
+
+### act-44 (Golf)
+Leaf Links Golf Challenge (Vice Beach) and Mount Hailes Golf Challenge (Mount Hailes Club, Waning Sands, Leonard County) on PowerPyx and ShowGamer; eGamers lists the same (read via summary only). Both also list the 3 mini golf courses (King Gator Adventure Golf – Buckskin Swamp; Frontier Adventure Golf – Waning Sands; Dino Golf Challenge – Frogswater, Kelly County). act-11 (Mini golf, "3 courses") left unchanged since it isn't wrong; course names could go in its note if you want.
+- https://www.powerpyx.com/gta-6-all-golf-course-locations/
+- https://showgamer.com/en/guides/7815-vse-polya-dlya-golfa-i-mini-golfa-v-gta-6-raspolozhenie-na-karte
+- https://egamers.io/gta-6-golf-and-pool-guide-every-course-table-and-opponent-location/
+
+### act-45, act-46 (shooting ranges)
+The 2-vs-14 conflict is resolved: PowerPyx's dedicated range page now says 2 ranges, matching GTABase, OutputLag and grandtheftauto6wiki. Griffin (north-west Vice City) 6 challenges / 18 golds; Rodgers Ranch (north-east of Port Gellhorn) 6 challenges / 24 golds; 42 total. Rodgers Ranch region left "Leonida" since it is outside Port Gellhorn. Challenge names differ slightly between sites (Loop/Ring, Compound/Courtyard), so not listed. act-01 kept as the overall trophy item.
+- https://www.powerpyx.com/gta-6-all-shooting-range-gold-medal-challenges/
+- https://outputlag.com/guides/gta-6-activities-minigames/
+- https://grandtheftauto6wiki.org/game-world/shooting-ranges
+- https://www.gtabase.com/articles/gta-6/gta-6-100-completion-guide-interactive-checklist
+
+### veh-02, 03, 05, 06, 07, 11, 12, 13, 15 (spawn locations filled in)
+Push Square (WIP) and game-checklists.com give the same spot and time for these 9 cars. Regions set to "Vice City" for Infernus, Toros, Tempesta and Furia (addresses are in Vice City proper); others left "Leonida". game-checklists tags the Banshee "Leonida Keys" though its text says Capri – left as "Leonida". Caveat: game-checklists' wording is close to Push Square's, so it may be derived from it – worth a glance. game-checklists also confirms the 16-car list (with PowerPyx), so the 16-vs-22 question looks settled at 16; Mamba GT is a mission/collection car, not a wish-list car.
+- https://www.pushsquare.com/guides/gta-6-randys-wish-list-vehicle-locations
+- https://game-checklists.com/gta6/vehicles-checklist/
+
+### Not added this run
+- Garage prices pro-07/pro-08 ($7,600 / $24,000): still Push Square only (HowToVideoGame unreadable).
+- Video games played (4): probably the same as act-05 Arcade games, so not added separately.
+- Drone race locations: 14 locations, 3 trials each on every source, but none names them.
+- Not readable: theclick.gg, sportskeeda, howtovideogame.
