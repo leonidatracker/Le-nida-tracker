@@ -201,3 +201,22 @@ pro-09 Port Gellhorn Station: both pages say it is a free garage that Moses give
 - tro-49 Bad Luck, I Guess: still unknown on every source (PowerPyx guesses a Payday Loans store link).
 - Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16): still on no source.
 - pro-07/pro-08 prices: Playnews vs Push Square conflict unchanged.
+
+## 2026-11-21 run
+
+### col-32 to col-38 (Book Swaps, one item per location; col-20 kept as the overall item)
+Book titles, areas and counties match on PowerPyx and TechWiser for all 7. Killer Prom's shelf (tortoise/turtle shape, Dolphin Dr, Key Lento) is on both Push Square (WIP, only this one listed) and TechWiser. Ambrosia (col-37) region set to "Ambrosia"; the rest stay "Leonida" as in earlier runs. Caveat: GTA Six Map gives Peacock Bay for the Southside swap (col-34) and Rialto Islands for the Vespucci Island swap (col-35) – probably neighbouring area names, but worth a glance. Street-level directions are on TechWiser only, so not used.
+- https://www.powerpyx.com/gta-6-all-book-swap-locations/
+- https://techwiser.com/gta-6-book-swap-locations/
+- https://www.pushsquare.com/guides/gta-6-book-swap-locations (col-33 only)
+- https://www.gtasixmap.com/guides/book-swaps (areas; two differ, see above)
+
+### act-47 to act-53 (Payday Loans stores, one item per store; act-16 kept as the overall item)
+Store names, county, payout ranges and the unlock (after Chapter 3 mission Credit Check) agree on both. Caveat: the eGamers store table was read via a page summary, not verbatim, and that summary says its neighbourhood labels may be inferred from the store names – worth a glance. Neither gives street addresses. Regions left "Leonida" (county-level only).
+- https://www.powerpyx.com/gta-6-all-payday-loans-jobs-locations
+- https://egamers.io/gta-6-payday-loan-stores-where-to-find-all-7-and-how-to-rob-them/
+
+### Not added this run
+- Drone race locations: eGamers (via summary) names 14 areas (Hamlet, Watson Bay, Capri, Buckskin Swamp, Balsero, Downtown, Dalton Island, Vice Beach, Waning Sands, Ambrosia, Port Gellhorn, Draper Island, Moreau Sawmill, Millport), but PowerPyx and theclick.gg could not be read this time, so no second source.
+- Remaining Randy car locations, tro-49, pro-07/pro-08 prices: nothing new found.
+- Not readable: theclick.gg (payday loans and drones), GTABase map (script-only).
