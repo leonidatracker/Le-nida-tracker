@@ -220,3 +220,24 @@ Store names, county, payout ranges and the unlock (after Chapter 3 mission Credi
 - Drone race locations: eGamers (via summary) names 14 areas (Hamlet, Watson Bay, Capri, Buckskin Swamp, Balsero, Downtown, Dalton Island, Vice Beach, Waning Sands, Ambrosia, Port Gellhorn, Draper Island, Moreau Sawmill, Millport), but PowerPyx and theclick.gg could not be read this time, so no second source.
 - Remaining Randy car locations, tro-49, pro-07/pro-08 prices: nothing new found.
 - Not readable: theclick.gg (payday loans and drones), GTABase map (script-only).
+
+## 2026-11-21 run (second)
+
+### act-54 to act-56 (mini golf courses, one item per course; act-11 kept as the overall item)
+Course names and areas match on PowerPyx, ShowGamer and eGamers (eGamers read via summary); Athlon also matches but cites PowerPyx. Counties for Frontier (Leonard) and Dino (Kelly) agree on PowerPyx, ShowGamer and Athlon. King Gator's county is left out: PowerPyx/ShowGamer say Vice-Dale County, PPE.pl says Kelly County, and act-35/act-62 put Buckskin Swamp in Kelly County – worth a glance.
+- https://www.powerpyx.com/gta-6-all-golf-course-locations/
+- https://showgamer.com/en/guides/7815-vse-polya-dlya-golfa-i-mini-golfa-v-gta-6-raspolozhenie-na-karte
+- https://egamers.io/gta-6-golf-and-pool-guide-every-course-table-and-opponent-location/
+- https://athlonsports.com/sports-video-games/gta-6-golf-course-locations
+
+### act-57 to act-62 (pool opponents, one item per venue; act-10 kept as the overall item)
+Venue names and areas match on PowerPyx and eGamers (eGamers read via summary, so worth a glance). Both say 7 opponents, with the 7th not yet found – not added. Kowaachobee Cafe & Bar's location (Buckskin Swamp, Kelly County) is on PowerPyx only, so the note leaves it unconfirmed. Zotico's region set to "Vice City" (PowerPyx: Vice City > Balsero); Delights Cabaret set to "Port Gellhorn". Counties for Hamlet and Milport left out (PowerPyx only).
+- https://www.powerpyx.com/gta-6-all-pool-opponent-locations/
+- https://egamers.io/gta-6-golf-and-pool-guide-every-course-table-and-opponent-location/
+
+### Not added this run
+- Drone race locations: PowerPyx drone page and eGamers home page refused automated fetch this time; still no second source.
+- Arcade/video games: PowerPyx lists 4 (Tenebrae Lux, Street Trash III, Time Jackers Rewind, Bang For Your Buck); no second source yet.
+- tro-49 Bad Luck, I Guess: GamerGuides, GTABoom, Beebom, Ofzen, Mobalytics all give only the in-game hint; condition still unknown.
+- Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16): GTABase walkthrough "coming soon"; meowdb, op.gg, gta.wiki give none; games.gg unreadable.
+- Not readable: GameSpot golf guide, Sportskeeda (robots), games.gg.
