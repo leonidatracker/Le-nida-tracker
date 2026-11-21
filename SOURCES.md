@@ -266,3 +266,16 @@ Tenebrae Lux, Street Trash 3, Time Jackers Rewind: on PowerPyx, Mobalytics and B
 - tro-49 Bad Luck, I Guess: GamerGuides, KeenGamer, Insider Gaming, AlcastHQ, Bloxodes, xboxplay.games – all hint-only ("Second time's the charm").
 - Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16): Timesaver gives no per-car spots; theclick.gg unreadable.
 - Not readable: theclick.gg, games.gg.
+
+## 2026-11-21 run (fourth)
+
+### act-93 to act-104 (shooting range challenges, one item per challenge; act-01/act-45/act-46 kept as the overall items)
+All 12 challenge names match on PowerPyx and Bloxodes (Bloxodes read in the previous run). Range split (6 at Griffin, 6 at Rodgers Ranch) and gold counts per challenge (3 each at Griffin, 4 each at Rodgers Ranch = 42) are from PowerPyx and agree with eGamers' totals (12 challenges, 42 golds, six courses per range) and with act-45/act-46. Note PowerPyx's intro gives different medal totals (54/72) from its body; the body figures were used. Weapons per tier are on PowerPyx only, so left out.
+- https://www.powerpyx.com/?p=370622
+- https://bloxodes.com/wiki/gta-6/hobbies-and-pastimes
+- https://egamers.io/gta-6-shooting-range-guide-how-to-earn-all-42-gold-medals/ (totals only; partly read via summary)
+
+### Not added this run
+- Drone race locations: Bloxodes lists 42 drone trials (named spots with par times); PowerPyx drone page (gta-6-all-top-fun-drone-race-time-trial-locations) couldn't be fetched, theclick.gg refused. Still no second source.
+- Stunt jumps: PowerPyx lists 24 of 130 (work in progress, single source).
+- tro-49 Bad Luck, I Guess and remaining Randy car spots: nothing new found.
