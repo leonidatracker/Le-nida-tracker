@@ -177,7 +177,7 @@
         <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
       </div>
     </div>
-    <div class="notice" id="notice">🚧 Updated 21 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with most spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, book swaps and payday loan stores are in. The tracker is being updated as players discover more.</div>
+    <div class="notice" id="notice">🚧 Updated 21 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with most spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps and payday loan stores are in. The tracker is being updated as players discover more.</div>
   </div>
 </header>
 
@@ -511,7 +511,37 @@ const CATEGORIES = [
     { id:"act-59", name:"Pool opponent: The Thirsty Wolf", region:"Leonida", note:"Bar in Belville, Leonard County" },
     { id:"act-60", name:"Pool opponent: Jacob's Tavern", region:"Leonida", note:"Tavern in Milport" },
     { id:"act-61", name:"Pool opponent: Delights Cabaret", region:"Port Gellhorn", note:"Cabaret club in Port Gellhorn" },
-    { id:"act-62", name:"Pool opponent: Kowaachobee Cafe & Bar", region:"Leonida", note:"Exact spot to be confirmed – the 7th opponent hasn't been found yet" }
+    { id:"act-62", name:"Pool opponent: Kowaachobee Cafe & Bar", region:"Leonida", note:"Exact spot to be confirmed – the 7th opponent hasn't been found yet" },
+    { id:"act-63", name:"Race Challenge: Ambrosia Raceway Trial", region:"Ambrosia", note:"Time trial at Ambrosia Raceway \u2013 aim for gold" },
+    { id:"act-64", name:"Race Challenge: Hamlet BMX Stunt Run", region:"Leonida", note:"Scored BMX stunt run in Hamlet \u2013 aim for gold" },
+    { id:"act-65", name:"Race Challenge: Boone Speedway Trial", region:"Leonida", note:"Time trial at Boone Speedway \u2013 aim for gold" },
+    { id:"act-66", name:"Race Challenge: Gellhorn Raceway Trial", region:"Leonida", note:"Lap time trial at Gellhorn Raceway \u2013 aim for gold" },
+    { id:"act-67", name:"Race Challenge: Gellhorn Dragway Trial", region:"Leonida", note:"Drag race at Gellhorn Raceway \u2013 aim for gold" },
+    { id:"act-68", name:"Race Challenge: Kalaga Cycling Trial", region:"Mount Kalaga", note:"Bike time trial on Mount Kalaga \u2013 aim for gold" },
+    { id:"act-69", name:"Race Challenge: Mud Club Air Time Stunt Run", region:"Leonida", note:"Scored stunt run at Thrillbilly Mud Club \u2013 aim for gold" },
+    { id:"act-70", name:"Race Challenge: Mud Club Drag Trial", region:"Leonida", note:"Drag race at Thrillbilly Mud Club \u2013 aim for gold" },
+    { id:"act-71", name:"Race Challenge: Mud Club Hill Climb Trial", region:"Leonida", note:"Hill climb at Thrillbilly Mud Club \u2013 aim for gold" },
+    { id:"act-72", name:"Race Challenge: Mud Club Dirt Track Trial", region:"Leonida", note:"Lap time trial at Thrillbilly Mud Club \u2013 aim for gold" },
+    { id:"act-73", name:"Race Challenge: Mud Club Oval Trial", region:"Leonida", note:"Oval lap trial at Thrillbilly Mud Club \u2013 aim for gold" },
+    { id:"act-74", name:"Race Challenge: Mud Club Swamp Run Trial", region:"Leonida", note:"Swamp run against the clock at Thrillbilly Mud Club \u2013 aim for gold" },
+    { id:"act-75", name:"Race Challenge: Waning Sands Motocross Stunt Run", region:"Leonida", note:"Scored motocross stunt run at Waning Sands, Leonard County \u2013 aim for gold" },
+    { id:"act-76", name:"Unique Races: Hit 'n' Run VC \u2013 Salton", region:"Leonida", note:"Street races with the Hit 'n' Run VC crew \u2013 3 races" },
+    { id:"act-77", name:"Unique Races: Hit 'n' Run VC \u2013 La Perle", region:"Leonida", note:"Street races with the Hit 'n' Run VC crew \u2013 2 races" },
+    { id:"act-78", name:"Unique Races: Hit 'n' Run VC \u2013 Ocean Beach", region:"Leonida", note:"Street races with the Hit 'n' Run VC crew \u2013 2 races" },
+    { id:"act-79", name:"Unique Races: Hit 'n' Run VC \u2013 Gloriana Key", region:"Leonida", note:"Street races with the Hit 'n' Run VC crew \u2013 2 races" },
+    { id:"act-80", name:"Unique Races: Animal Crackers \u2013 Grayson", region:"Leonida", note:"Off-road races with the Animal Crackers crew \u2013 2 races" },
+    { id:"act-81", name:"Unique Races: Animal Crackers \u2013 Redshaw's", region:"Leonida", note:"Off-road races with the Animal Crackers crew \u2013 2 races" },
+    { id:"act-82", name:"Unique Races: Animal Crackers \u2013 Ranchers", region:"Leonida", note:"Off-road races with the Animal Crackers crew \u2013 2 races" },
+    { id:"act-83", name:"Unique Races: Animal Crackers \u2013 Big Pine", region:"Leonida", note:"Off-road races with the Animal Crackers crew \u2013 2 races" },
+    { id:"act-84", name:"Unique Races: Gellhorn Raceway", region:"Leonida", note:"Track races \u2013 11 races" },
+    { id:"act-85", name:"Unique Races: Boone Speedway", region:"Leonida", note:"Dirt speedway races \u2013 2 races" },
+    { id:"act-86", name:"Unique Races: Ambrosia Raceway", region:"Ambrosia", note:"Track races \u2013 2 races" },
+    { id:"act-87", name:"Unique Races: Thrillbilly Mud Club \u2013 Dirt Track", region:"Leonida", note:"Dirt track races \u2013 6 races" },
+    { id:"act-88", name:"Unique Races: Thrillbilly Mud Club \u2013 Oval Track", region:"Leonida", note:"Dirt oval races \u2013 2 races" },
+    { id:"act-89", name:"Video game: Tenebrae Lux", region:"Leonida", note:"Played on the games console at home" },
+    { id:"act-90", name:"Video game: Street Trash 3: Dezombifier", region:"Leonida", note:"Played on the games console at home" },
+    { id:"act-91", name:"Video game: Time Jackers Rewind", region:"Leonida", note:"Played on the games console at home" },
+    { id:"act-92", name:"Video game: Bang For Your Buck", region:"Leonida", note:"Arcade cabinet game \u2013 cabinet spots to be confirmed" }
   ] },
   { key:"trophies",     title:"Trophies",              items: [
     { id:"tro-01", name:"Vice Got a Price!", region:"Leonida", note:"Platinum \u2013 unlock every other trophy" },

@@ -241,3 +241,28 @@ Venue names and areas match on PowerPyx and eGamers (eGamers read via summary, s
 - tro-49 Bad Luck, I Guess: GamerGuides, GTABoom, Beebom, Ofzen, Mobalytics all give only the in-game hint; condition still unknown.
 - Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16): GTABase walkthrough "coming soon"; meowdb, op.gg, gta.wiki give none; games.gg unreadable.
 - Not readable: GameSpot golf guide, Sportskeeda (robots), games.gg.
+
+## 2026-11-21 run (third)
+
+### act-63 to act-75 (Race Challenges, one item per challenge; act-09 kept as the overall item)
+All 13 challenge names match on PowerPyx and Bloxodes (Bloxodes is a wiki-style aggregator, so worth a glance). Challenge type (time trial / drag / stunt run etc.) is from Bloxodes. Ambrosia Raceway (act-63) set to "Ambrosia" and Kalaga Cycling Trial (act-68) to "Mount Kalaga"; the rest stay "Leonida". Waning Sands' county (Leonard) is from earlier act-55 sources.
+- https://www.powerpyx.com/gta-6-all-race-challenge-locations-gold-medals/
+- https://bloxodes.com/wiki/gta-6/hobbies-and-pastimes
+
+### act-76 to act-88 (Unique Races, one item per venue/crew; act-43 kept as the overall item)
+All 13 venues and their race counts (3+2+2+2+2+2+2+2+11+2+2+6+2 = 40) match on PowerPyx and Bloxodes. Bloxodes calls the Hit 'n' Run venues Vice City; PowerPyx gives counties only loosely (Gellhorn: Kelly County south of Port Gellhorn; Boone: Hamlet; Ambrosia Raceway: Kelly County north of Ambrosia), so those details were left out of the notes and regions kept "Leonida" (Ambrosia Raceway set to "Ambrosia"). Note Bloxodes calls Ambrosia Raceway a demolition race.
+- https://www.powerpyx.com/gta-6-all-unique-race-locations-racing-activities/
+- https://bloxodes.com/wiki/gta-6/hobbies-and-pastimes
+
+### act-89 to act-92 (video games; act-05 kept as the overall item)
+Tenebrae Lux, Street Trash 3, Time Jackers Rewind: on PowerPyx, Mobalytics and Bloxodes; PowerPyx and Mobalytics agree they're played on the home TV console. Spelling differs ("Street Trash III" PowerPyx, "Street Thrash 3: Dezombifier" Mobalytics, "Street Trash 3: Dezombifier" Bloxodes) – went with Bloxodes. Bang For Your Buck: on PowerPyx and Bloxodes; only PowerPyx says it's on arcade cabinets (e.g. outside Bargain World, Port Gellhorn), so the note leaves cabinet spots unconfirmed. PowerPyx also says the home console is unavailable during Chapter 2 (single source, not used).
+- https://www.powerpyx.com/gta-6-all-video-game-locations/
+- https://mobalytics.gg/gamebase/guides/grand-theft-auto-6-how-to-play-console-games
+- https://bloxodes.com/wiki/gta-6/hobbies-and-pastimes
+
+### Not added this run
+- Drone race locations: Bloxodes lists 42 individual drone trials with par times, but the PowerPyx drone page couldn't be read this time and earlier sources group them into 14 areas, so the two can't be matched yet.
+- Shooting range challenges: Bloxodes names 12 ranges (3-Point, Hook, Loop, Maze, Compound, Villa, Market, Zombie, Hunting, Saloon, Cops & Robbers, Alien); no second source yet.
+- tro-49 Bad Luck, I Guess: GamerGuides, KeenGamer, Insider Gaming, AlcastHQ, Bloxodes, xboxplay.games – all hint-only ("Second time's the charm").
+- Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16): Timesaver gives no per-car spots; theclick.gg unreadable.
+- Not readable: theclick.gg, games.gg.
