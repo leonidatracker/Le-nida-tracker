@@ -295,3 +295,23 @@ All 22 banks (14 small, 8 with vaults) have the same names and payout ranges on 
 - Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16) and Mamba GT: GTABase walkthrough still "coming soon"; Timesaver now says 16–18 cars (PowerPyx 18 vs FandomWire 16) with no per-car spots; op.gg entries are pre-launch catalog pages. Nothing added.
 - tro-49 Bad Luck, I Guess, pro-07/pro-08 prices: nothing new.
 - Not readable: theclick.gg, Mobalytics bank page, PowerPyx drone page, eGamers.
+
+## 2026-11-22 run (second)
+
+### act-127 to act-161 (Smash 'n' Grabs, one item per store; act-17 kept as the overall item)
+All 35 store names, shop type (20 jewelry, 15 pawn), county and take ranges match on PowerPyx and Bloxodes; order follows PowerPyx's numbering. Unlocks (pawn shops after Chapter 2 Coffee Break, jewelry stores after Chapter 3 Yasmani's Jewelry Jobs) agree on PowerPyx, Bloxodes, MetaForge and AlcastHQ; MetaForge also gives the 20/15 split. Neither list gives neighbourhoods, so regions stay "Leonida". Bloxodes alone puts Avery Pawn (act-160) in Port Gellhorn and says it unlocks via the optional Chapter 2 mission Hit Avery Pawn – not used. Timesaver/AlcastHQ quote $10k–$25k per jewelry store in general; the per-store ranges from the two lists were used. PowerPyx and AlcastHQ both say 34 of 35 count for 100% (act-17 note not changed).
+- https://www.powerpyx.com/gta-6-all-smash-n-grabs-locations/
+- https://bloxodes.com/wiki/gta-6/robberies
+- https://metaforge.app/gta-6/gta-6-robberies-heists-guide (counts and unlocks only)
+- https://alcasthq.com/gta-6-robberies/ (unlocks only)
+
+### act-162 to act-183 (gang operations, 22 of 39; act-14 kept as the overall item)
+Only operations named by at least two of PowerPyx, KeenGamer and Bloxodes (all 22 are named by all three). Gang per operation matches on all three. Spelling: "Sound4Sond Studio" (PowerPyx, KeenGamer) vs "Sound4Sound Studio" (Bloxodes) – went with the majority; may well be a typo, worth a glance. Bloxodes puts Kingpin Bowling in Port Gellhorn (Kelly County) and KeenGamer says all Kolt & Associates operations are in or just north of Port Gellhorn – not precise enough, region left "Leonida".
+- https://www.powerpyx.com/gta-6-all-illegal-gang-operations-locations/
+- https://www.keengamer.com/articles/guides/how-to-rob-illegal-operations-in-gta-6-all-9-gangs-and-the-pest-control-trophy/
+- https://bloxodes.com/wiki/gta-6/robberies
+
+### Not added this run
+- Remaining 17 gang operations (PowerPyx only): Stash House (Kolt), Weed Grow (M7), Watson Bay Safehouse (La Polilla Negra), Biker Hideout and Hog Stars Garage (Final Chapter), La Perle Trap House, Illegal Sneaker Trade, Parlor Apartments (San4San), Southside Trap House and Kamar Devon Community Center (PTT Youngin$), Saber Shipping Yard and Saber Shipping Facility (Guardia Brothers), Mill Station Radar Base, Industrial Weed Grow, Ocean Beach Lab, Vespucci Mansion, Walker Farm (Other Criminals). KeenGamer's per-gang counts match PowerPyx, so the next source that names them should confirm.
+- Drone race locations: Bloxodes 42 trial names (grouping into 14 areas only inferable); PowerPyx drone page blocked again, theclick.gg failed. Still one source.
+- Remaining Randy car spots, tro-49, pro-07/pro-08 prices: not re-checked this run.
