@@ -339,3 +339,15 @@ All 42 trial names match on PowerPyx (read verbatim, grouped into 14 areas) and 
 - Area notes for act-162 to act-183 (earlier gang operations) are now available on vicecity.codes / GTA Addict / GTA Six Map but weren't cross-checked this run – candidate for next run.
 - Not readable: theclick.gg, tracker.gg, games.gg.
 - Stunt jumps, stick-up store list, remaining Randy car spots, tro-49, pro-07/pro-08 prices: not re-checked this run.
+
+## 2026-11-22 run (fourth)
+
+### act-243 to act-266 (stunt jumps, 24 of 130; act-19 kept as the overall item)
+Bloxodes names 24 of the 130 jumps (work in progress, updated 19 Nov); every one also appears on PowerPyx (work in progress, 82 of 130). County per jump matches on both, and both give the same county totals (Mariana 17, Vice-Dale 55, Leonard 13, Kelly 29, Lummox 16). Caveat: the PowerPyx page was cut off when read, so the 14 Mariana and Vice-Dale jumps (act-243 to act-256) were matched against its verbatim text, but the 10 Leonard/Kelly/Lummox jumps (act-257 to act-266) were matched against a summary of the rest of the page – worth a glance. Regions "Leonida" (county only), as in earlier runs. Numbering differs between the sites, so ordering follows Bloxodes.
+- https://bloxodes.com/wiki/gta-6/stunt-jumps
+- https://www.powerpyx.com/gta-6-all-stunt-jump-locations/
+
+### Not added this run
+- About 58 more stunt jumps are named on PowerPyx only (e.g. Goliath Global Quarry jumps, VCIA Concourse, Ocean Beach car parks) – add once a second source lists them.
+- Area notes for act-162 to act-183 (gang operations): vicecity.codes, GTA Addict and GTA Six Map could not be read this run (fetch permission prompt unanswered in this unattended run), so not done.
+- Remaining Randy car spots, tro-49, pro-07/pro-08 prices: not re-checked this run.
