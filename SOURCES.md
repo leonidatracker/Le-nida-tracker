@@ -315,3 +315,27 @@ Only operations named by at least two of PowerPyx, KeenGamer and Bloxodes (all 2
 - Remaining 17 gang operations (PowerPyx only): Stash House (Kolt), Weed Grow (M7), Watson Bay Safehouse (La Polilla Negra), Biker Hideout and Hog Stars Garage (Final Chapter), La Perle Trap House, Illegal Sneaker Trade, Parlor Apartments (San4San), Southside Trap House and Kamar Devon Community Center (PTT Youngin$), Saber Shipping Yard and Saber Shipping Facility (Guardia Brothers), Mill Station Radar Base, Industrial Weed Grow, Ocean Beach Lab, Vespucci Mansion, Walker Farm (Other Criminals). KeenGamer's per-gang counts match PowerPyx, so the next source that names them should confirm.
 - Drone race locations: Bloxodes 42 trial names (grouping into 14 areas only inferable); PowerPyx drone page blocked again, theclick.gg failed. Still one source.
 - Remaining Randy car spots, tro-49, pro-07/pro-08 prices: not re-checked this run.
+
+## 2026-11-22 run (third)
+
+### act-184 to act-200 (remaining 17 gang operations; act-14 kept as the overall item)
+All 17 names and their gang match on PowerPyx, FinalBoss, vicecity.codes, GTA Six Map and GTA Addict (pages read as text). Areas were only put in a note where at least two of them agree: Stash House (Port Gellhorn – vicecity, GTA Six Map), Weed Grow (east of Lake Tallaloko, Lummox County – vicecity, GTA Addict; GTA Six Map says St. Joseph), Watson Bay Safehouse, Biker Hideout, Hog Stars Garage, Southside Trap House and Kamar Devon Community Center (Southside – vicecity, GTA Addict; GTA Six Map says Peacock Bay), La Perle Trap House / Illegal Sneaker Trade / Parlor Apartments (La Perle / south of La Perle – vicecity, GTA Addict; GTA Six Map says Bohemia / Little Cuba), Saber Shipping Yard (Little Cuba), Vespucci Mansion (Vespucci Island, Rialto Islands – vicecity, GTA Six Map), Mill Station Radar Base (by Watson Bay). Saber Shipping Facility: Balsero (vicecity, GTA Addict) vs Little Cuba (GTA Six Map) – left as "across the river from the yard". Industrial Weed Grow, Ocean Beach Lab, Walker Farm: no agreed area. Regions: San4San, PTT Youngin$ and Saber Shipping Yard set to "Vice City" (playday.one and GTABase place those gangs in Vice City); Stash House "Port Gellhorn", Hog Stars Garage "Ambrosia"; rest "Leonida". The Ultimate Edition-only Illegal Goods Store was not added (PowerPyx says it doesn't count for 100%).
+- https://www.powerpyx.com/gta-6-all-illegal-gang-operations-locations/
+- https://finalboss.io/gta-6-gang-operations
+- https://vicecity.codes/gangs/
+- https://www.gtasixmap.com/guides/gang-hideouts
+- https://gtaaddict.com/gta-6/gang-operations/
+- https://playday.one/2026/11/18/all-the-gangs-and-criminals-in-gta-6/ (gang areas only)
+- https://www.gtabase.com/gta-6/gangs/ (gang areas only)
+
+### act-201 to act-242 (Top Fun drone time trials, one item per trial; act-02 kept as the overall item)
+All 42 trial names match on PowerPyx (read verbatim, grouped into 14 areas) and Bloxodes (read verbatim, flat list in the same order). eGamers (read via summary) gives the same 14 areas and 42 names; bestgtavi.tips lists the same 14 areas. Area grouping is from PowerPyx/eGamers. Regions: Downtown trials "Vice City", Ambrosia "Ambrosia", Port Gellhorn "Port Gellhorn", the rest "Leonida". Par times left out.
+- https://www.powerpyx.com/gta-6-all-top-fun-drone-race-time-trial-locations/
+- https://bloxodes.com/wiki/gta-6/hobbies-and-pastimes
+- https://egamers.io/gta-6-drone-races-guide-all-42-top-fun-courses-par-times-and-the-four-playable-video-games/ (via summary)
+- https://www.bestgtavi.tips/en/guide/gta-6-drone-races-top-fun (area names only)
+
+### Not added this run
+- Area notes for act-162 to act-183 (earlier gang operations) are now available on vicecity.codes / GTA Addict / GTA Six Map but weren't cross-checked this run – candidate for next run.
+- Not readable: theclick.gg, tracker.gg, games.gg.
+- Stunt jumps, stick-up store list, remaining Randy car spots, tro-49, pro-07/pro-08 prices: not re-checked this run.
