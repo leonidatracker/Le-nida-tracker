@@ -279,3 +279,19 @@ All 12 challenge names match on PowerPyx and Bloxodes (Bloxodes read in the prev
 - Drone race locations: Bloxodes lists 42 drone trials (named spots with par times); PowerPyx drone page (gta-6-all-top-fun-drone-race-time-trial-locations) couldn't be fetched, theclick.gg refused. Still no second source.
 - Stunt jumps: PowerPyx lists 24 of 130 (work in progress, single source).
 - tro-49 Bad Luck, I Guess and remaining Randy car spots: nothing new found.
+
+## 2026-11-22 run
+
+### act-105 to act-126 (bank jobs, one item per bank; act-15 kept as the overall item)
+All 22 banks (14 small, 8 with vaults) have the same names and payout ranges on PowerPyx, Metaforge and Bloxodes; Timesaver lists the same 8 vaults with the same payouts. Counties for small banks agree on PowerPyx and Bloxodes (Metaforge groups by county). Unlocks: small banks after Chapter 3 Credit Check; vaults after the Chapter 4 optional mission "That's Where The Money Is…" (PowerPyx, Metaforge, Bloxodes, Timesaver). Timesaver notes a PowerPyx fence page saying Chapter 5 for the vault unlock – not checked, worth a glance. Gibson Brothers Bank (act-107) and Druthers State Bank (act-117) have no area on any source, so county only. Ocean Beach has two Lombank vaults (act-123, act-125) and also a small Lombank/Fleeca/Shorefront each, so names carry "(small bank)" / "(second vault)". Regions: Downtown banks "Vice City", Shorefront Ambrosia "Ambrosia", the rest "Leonida" as in earlier runs. Payouts shown as "about" since they're ranges.
+- https://www.powerpyx.com/gta-6-all-bank-jobs-locations-bank-vaults/
+- https://metaforge.app/gta-6/gta-6-bank-robbery-locations-every-bank-job-and-vault
+- https://bloxodes.com/wiki/gta-6/bank-jobs
+- https://timesaver.gg/tools/gta-6/money/bank-vaults (vaults only)
+
+### Not added this run
+- Drone race locations: Bloxodes lists 42 trials (with par times) but gives no area names; PowerPyx drone page and eGamers could not be fetched (permission prompt unanswered in this unattended run); theclick.gg refused. Still one source.
+- Stunt jumps: PowerPyx still WIP (24 of 130 named; county totals Mariana 17, Vice-Dale 55, Leonard 13, Kelly 29, Lummox 16). Single source.
+- Remaining Randy car locations (veh-04, 08, 09, 10, 14, 16) and Mamba GT: GTABase walkthrough still "coming soon"; Timesaver now says 16–18 cars (PowerPyx 18 vs FandomWire 16) with no per-car spots; op.gg entries are pre-launch catalog pages. Nothing added.
+- tro-49 Bad Luck, I Guess, pro-07/pro-08 prices: nothing new.
+- Not readable: theclick.gg, Mobalytics bank page, PowerPyx drone page, eGamers.

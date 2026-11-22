@@ -177,7 +177,7 @@
         <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
       </div>
     </div>
-    <div class="notice" id="notice">🚧 Updated 21 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with most spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps and payday loan stores are in. The tracker is being updated as players discover more.</div>
+    <div class="notice" id="notice">🚧 Updated 22 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with most spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores and all 22 bank jobs are in. The tracker is being updated as players discover more.</div>
   </div>
 </header>
 
@@ -553,7 +553,29 @@ const CATEGORIES = [
     { id:"act-101", name:"Shooting range: Hunting", region:"Leonida", note:"Rodgers Ranch, north-east of Port Gellhorn \u2013 4 gold medals to earn" },
     { id:"act-102", name:"Shooting range: Saloon", region:"Leonida", note:"Rodgers Ranch, north-east of Port Gellhorn \u2013 4 gold medals to earn" },
     { id:"act-103", name:"Shooting range: Cops & Robbers", region:"Leonida", note:"Rodgers Ranch, north-east of Port Gellhorn \u2013 4 gold medals to earn" },
-    { id:"act-104", name:"Shooting range: Alien", region:"Leonida", note:"Rodgers Ranch, north-east of Port Gellhorn \u2013 4 gold medals to earn" }
+    { id:"act-104", name:"Shooting range: Alien", region:"Leonida", note:"Rodgers Ranch, north-east of Port Gellhorn \u2013 4 gold medals to earn" },
+    { id:"act-105", name:"Bank job: Fleeca \u2013 Key Lento", region:"Leonida", note:"Small bank (till and safe) \u2013 Key Lento, Mariana County; about $5k\u2013$20k; available after Chapter 3 mission Credit Check" },
+    { id:"act-106", name:"Bank job: Shorefront \u2013 Watson Bay", region:"Leonida", note:"Small bank (till and safe) \u2013 Watson Bay, Mariana County; about $5k\u2013$20k; available after Chapter 3 mission Credit Check" },
+    { id:"act-107", name:"Bank job: Gibson Brothers Bank", region:"Leonida", note:"Small bank (till and safe) \u2013 Mariana County (exact area to be confirmed); about $10k\u2013$30k; available after Chapter 3 mission Credit Check" },
+    { id:"act-108", name:"Bank job: Lombank \u2013 Peacock Bay", region:"Leonida", note:"Small bank (till and safe) \u2013 Peacock Bay, Vice-Dale County; about $5k\u2013$20k; available after Chapter 3 mission Credit Check" },
+    { id:"act-109", name:"Bank job: Fleeca \u2013 Peacock Bay", region:"Leonida", note:"Small bank (till and safe) \u2013 Peacock Bay, Vice-Dale County; about $5k\u2013$20k; available after Chapter 3 mission Credit Check" },
+    { id:"act-110", name:"Bank job: Shorefront \u2013 Downtown", region:"Vice City", note:"Small bank (till and safe) \u2013 Downtown, Vice-Dale County; about $5k\u2013$15k; available after Chapter 3 mission Credit Check" },
+    { id:"act-111", name:"Bank job: Shorefront \u2013 Rockridge", region:"Leonida", note:"Small bank (till and safe) \u2013 Rockridge, Vice-Dale County; about $5k\u2013$20k; available after Chapter 3 mission Credit Check" },
+    { id:"act-112", name:"Bank job: Lombank \u2013 Bayside", region:"Leonida", note:"Small bank (till and safe) \u2013 Bayside, Vice-Dale County; about $15k\u2013$45k; available after Chapter 3 mission Credit Check" },
+    { id:"act-113", name:"Bank job: Fleeca \u2013 Washington Beach", region:"Leonida", note:"Small bank (till and safe) \u2013 Washington Beach, Vice-Dale County; about $10k\u2013$30k; available after Chapter 3 mission Credit Check" },
+    { id:"act-114", name:"Bank job: Lombank \u2013 Ocean Beach (small bank)", region:"Leonida", note:"Small bank (till and safe) \u2013 Ocean Beach, Vice-Dale County; about $15k\u2013$45k; available after Chapter 3 mission Credit Check" },
+    { id:"act-115", name:"Bank job: Fleeca \u2013 Ocean Beach (small bank)", region:"Leonida", note:"Small bank (till and safe) \u2013 Ocean Beach, Vice-Dale County; about $5k\u2013$15k; available after Chapter 3 mission Credit Check" },
+    { id:"act-116", name:"Bank job: Shorefront \u2013 Ocean Beach (small bank)", region:"Leonida", note:"Small bank (till and safe) \u2013 Ocean Beach, Vice-Dale County; about $5k\u2013$15k; available after Chapter 3 mission Credit Check" },
+    { id:"act-117", name:"Bank job: Druthers State Bank", region:"Leonida", note:"Small bank (till and safe) \u2013 Leonard County (exact area to be confirmed); about $15k\u2013$45k; available after Chapter 3 mission Credit Check" },
+    { id:"act-118", name:"Bank job: Shorefront \u2013 Ambrosia", region:"Ambrosia", note:"Small bank (till and safe) \u2013 Ambrosia, Kelly County; about $5k\u2013$15k; available after Chapter 3 mission Credit Check" },
+    { id:"act-119", name:"Bank vault: Fleeca \u2013 VCIA", region:"Leonida", note:"Large bank with vault \u2013 by Vice City International Airport; about $100k\u2013$150k; available after Chapter 4 optional mission That's Where The Money Is\u2026" },
+    { id:"act-120", name:"Bank vault: Fleeca \u2013 Tequesta", region:"Leonida", note:"Large bank with vault \u2013 Tequesta; about $65k\u2013$110k; available after Chapter 4 optional mission That's Where The Money Is\u2026" },
+    { id:"act-121", name:"Bank vault: Lombank \u2013 Downtown", region:"Vice City", note:"Large bank with vault \u2013 Downtown Vice City; about $135k\u2013$205k; available after Chapter 4 optional mission That's Where The Money Is\u2026" },
+    { id:"act-122", name:"Bank vault: Fleeca \u2013 Downtown", region:"Vice City", note:"Large bank with vault \u2013 Downtown Vice City; about $100k\u2013$150k; available after Chapter 4 optional mission That's Where The Money Is\u2026" },
+    { id:"act-123", name:"Bank vault: Lombank \u2013 Ocean Beach", region:"Leonida", note:"Large bank with vault \u2013 Ocean Beach; about $135k\u2013$205k; available after Chapter 4 optional mission That's Where The Money Is\u2026" },
+    { id:"act-124", name:"Bank vault: Fleeca \u2013 Ocean Beach", region:"Leonida", note:"Large bank with vault \u2013 Ocean Beach; about $75k\u2013$135k; available after Chapter 4 optional mission That's Where The Money Is\u2026" },
+    { id:"act-125", name:"Bank vault: Lombank \u2013 Ocean Beach (second vault)", region:"Leonida", note:"Large bank with vault \u2013 Ocean Beach; about $75k\u2013$135k; available after Chapter 4 optional mission That's Where The Money Is\u2026" },
+    { id:"act-126", name:"Bank vault: Shorefront \u2013 Ocean Beach", region:"Leonida", note:"Large bank with vault \u2013 Ocean Beach; about $95k\u2013$140k; available after Chapter 4 optional mission That's Where The Money Is\u2026" }
   ] },
   { key:"trophies",     title:"Trophies",              items: [
     { id:"tro-01", name:"Vice Got a Price!", region:"Leonida", note:"Platinum \u2013 unlock every other trophy" },
