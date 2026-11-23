@@ -388,3 +388,29 @@ Bloxodes (WIP, 16 of 112 scans named) and Timesaver (WIP, 5 named) both list Law
 - Remaining 49 stunt jumps: PowerPyx and Mobalytics could not be fetched (permission prompt unanswered in this unattended run); Bloxodes still has only 24; GTABase map is script-only.
 - Cocaine Flamingos: Bloxodes names 8 of 125 (Belpoint, Watson Bay, La Perle); GameTrek gives only broad areas. No second source for any spot.
 - Bret's Target Decks: GTABase page is a stub ("coming soon"); no list found.
+
+## 2026-11-23 run (third)
+
+### col-42 to col-45 (WAiNK Landmarks)
+PowerPyx's landmark page (27 of 31 named) and Bloxodes both list Farmer Scrumpy's Apple Orchard (Manifest Canyon), Belpoint Lighthouse (Belpoint), Dock Ring (Downtown) and Grayson Assembly (Grayson) as landmarks, with matching areas. Counties from PowerPyx.
+- https://www.powerpyx.com/gta-6-all-landmark-scan-locations/
+- https://bloxodes.com/wiki/gta-6/waink-locations
+
+### col-46, col-47 (WAiNK Curiosities, first items; col-26 kept as the overall item)
+Imperial Spanish Ruins (Moreau) and Big Entrance (Dalton Island) are filed as curiosities on both PowerPyx's curiosities page and Bloxodes, same areas. (Timesaver puts the ruins on Mount Kalaga's southwest peak instead – worth a glance.)
+- https://www.powerpyx.com/gta-6-all-curiosities-scan-locations/
+- https://bloxodes.com/wiki/gta-6/waink-locations
+
+### pro-07, pro-08 (prices filled in)
+Persistence Road Garage $7,600 and Vela Rota Drive Garage $24,000 on Beebom, Bloxodes and GTABase. Xbox & Play Games says $9,500 / $30,000 (outlier, not used).
+- https://beebom.com/gta-6-garage-locations/
+- https://bloxodes.com/articles/gta-6-garage-prices
+- https://www.gtabase.com/gta-6/properties/persistence-road-garage
+- https://www.gtabase.com/gta-6/properties/vela-rota-driver-garage
+
+### Not added this run
+- Other PowerPyx-only landmarks (Old Goliath, Vice City Sign, St. Lucia Lighthouse, Sahara Arena, etc.) and curiosities (Halloween House, Christmas House, Desert Island Piano, etc.): one source each.
+- Sculptures (Pixel Fountain, Neptune Rises, Triangler/Triangular Sculpture, etc.): Bloxodes only, spelling disputed. Pelican Valley Observation Tower appears in both PowerPyx landmark and curiosity lists – unclear.
+- Free/bonus garages (Thompson Court, NE 15th Street, Pegassi Residences, Paradise, Shore Court) on Beebom and Bloxodes – not added; edition/pre-order ones may not apply to everyone. Candidate for a later run (story ones at least).
+- tro-49 "Bad Luck, I Guess": still no source gives the condition (KeenGamer calls it unconfirmed).
+- Remaining stunt jumps: PowerPyx and Mobalytics could not be fetched again (permission prompt unanswered); Bloxodes still has only 24.
