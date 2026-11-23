@@ -374,3 +374,17 @@ Both on GameRant (20-car list) and Game Checklists, with matching spots (car par
 - Invetero Coquette D10 and Pfister Neon: GameRant calls them wish-list cars, but Game Checklists labels them plain "Vehicle" next to the wish-list cars – unclear whether they count. Mamba GT (added by side mission ¡Dale Mamba!): Game Checklists only. Car count still disputed (GameRant 20, Game Checklists/Insider 22).
 - Game8 Randy page could not be read.
 - Gang operation area notes (act-162 to act-183), tro-49, pro-07/pro-08 prices: not re-checked this run.
+
+## 2026-11-23 run (second)
+
+### col-39 to col-41 (WAiNK Landmarks, one item per landmark; col-25 kept as the overall item)
+Bloxodes (WIP, 16 of 112 scans named) and Timesaver (WIP, 5 named) both list Lawton Co. Paper Mill (Moreau), Gellhorn Fun Fair (Port Gellhorn) and Kalaga Lookout (Mount Kalaga National Park) as WAiNK landmarks, with matching areas. Lummox County for Moreau follows act-38's sources.
+- https://bloxodes.com/wiki/gta-6/waink-locations
+- https://timesaver.gg/tools/gta-6/map/waink
+
+### Not added this run
+- Imperial Spanish Ruins and the Corsair Key dolphin sculpture: on both pages, but Bloxodes files them as a Curiosity and a Sculpture ("Triangler Sculpture") while Timesaver lists all five as landmarks ("Triangular Sculpture") and puts the ruins on Mount Kalaga's southwest peak vs Bloxodes' Moreau. Set and spelling unclear.
+- Other Bloxodes-only WAiNK scans (Farmer Scrumpy's Apple Orchard, Belpoint Lighthouse, Dock Ring, Grayson Assembly, Big Entrance, Pixel Fountain, Neptune Rises, etc.): one source. op.gg's "Landmarks" map is a general points-of-interest list, not the WAiNK set.
+- Remaining 49 stunt jumps: PowerPyx and Mobalytics could not be fetched (permission prompt unanswered in this unattended run); Bloxodes still has only 24; GTABase map is script-only.
+- Cocaine Flamingos: Bloxodes names 8 of 125 (Belpoint, Watson Bay, La Perle); GameTrek gives only broad areas. No second source for any spot.
+- Bret's Target Decks: GTABase page is a stub ("coming soon"); no list found.
