@@ -351,3 +351,26 @@ Bloxodes names 24 of the 130 jumps (work in progress, updated 19 Nov); every one
 - About 58 more stunt jumps are named on PowerPyx only (e.g. Goliath Global Quarry jumps, VCIA Concourse, Ocean Beach car parks) – add once a second source lists them.
 - Area notes for act-162 to act-183 (gang operations): vicecity.codes, GTA Addict and GTA Six Map could not be read this run (fetch permission prompt unanswered in this unattended run), so not done.
 - Remaining Randy car spots, tro-49, pro-07/pro-08 prices: not re-checked this run.
+
+## 2026-11-23 run
+
+### act-267 to act-323 (57 more stunt jumps; act-19 kept as the overall item)
+Mobalytics now lists all 130 jump names (grouped by its six map regions, not counties). Every one of the 17 Mariana and the first 54 Vice-Dale jumps on PowerPyx (read verbatim, WIP 82/130) is on Mobalytics with the same name; the 57 not already in the tracker were added. County comes from PowerPyx's headings (Mobalytics' regions don't map one-to-one to counties, e.g. Peregrine Bay Coastal is Vice-Dale on PowerPyx but Grassrivers on Mobalytics). Region left "Leonida" as in the earlier stunt jump run. Order follows PowerPyx.
+- https://www.powerpyx.com/gta-6-all-stunt-jump-locations/
+- https://mobalytics.gg/gamebase/guides/grand-theft-auto-6-stunt-jumps-map
+
+### veh-04, veh-09, veh-10, veh-14, veh-16 (spawn notes filled in) and veh-08 (name corrected)
+GameRant and Game Checklists both put the Windsor Drop, Jubilee, Itali RSX, Dubsta and Baller ST-D at the wealthy houses in Capri (no fixed spot). Insider Gaming instead puts the Itali RSX in a garage on Vespucci Island – worth a glance. veh-08 renamed "Ocelot Jagular" -> "Ocelot Jugular" (spelled Jugular on both pages) and its spot added: outside BITE by Easy Electronics, north of Ocean Beach (both pages). Id unchanged.
+- https://gamerant.com/gta-6-all-randy-wish-list-vehicles-locations/
+- https://game-checklists.com/gta6/car-theft-missions-checklist/#wish-list-cars
+- https://insider-gaming.com/where-to-find-all-of-randys-wishlist-supercars-in-gta-6-car-locations-tips/ (RSX conflict only)
+
+### veh-18 Grotti Carbonizzare, veh-19 Ubermacht Cypher (new Randy's Wish List cars)
+Both on GameRant (20-car list) and Game Checklists, with matching spots (car parks around North Capri; outside Cirque de Cuisine, Ocean Beach).
+- Same GameRant and Game Checklists URLs as above.
+
+### Not added this run
+- Remaining 59 stunt jumps (Leone Street, plus Leonard/Kelly/Lummox beyond the 10 already in): only Mobalytics names them in full; the PowerPyx page cuts off after Vice-Dale #54 when read, so no second source. GTABase's map loads names by script and couldn't be read.
+- Invetero Coquette D10 and Pfister Neon: GameRant calls them wish-list cars, but Game Checklists labels them plain "Vehicle" next to the wish-list cars – unclear whether they count. Mamba GT (added by side mission ¡Dale Mamba!): Game Checklists only. Car count still disputed (GameRant 20, Game Checklists/Insider 22).
+- Game8 Randy page could not be read.
+- Gang operation area notes (act-162 to act-183), tro-49, pro-07/pro-08 prices: not re-checked this run.
