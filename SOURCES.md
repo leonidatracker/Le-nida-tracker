@@ -414,3 +414,21 @@ Persistence Road Garage $7,600 and Vela Rota Drive Garage $24,000 on Beebom, Blo
 - Free/bonus garages (Thompson Court, NE 15th Street, Pegassi Residences, Paradise, Shore Court) on Beebom and Bloxodes – not added; edition/pre-order ones may not apply to everyone. Candidate for a later run (story ones at least).
 - tro-49 "Bad Luck, I Guess": still no source gives the condition (KeenGamer calls it unconfirmed).
 - Remaining stunt jumps: PowerPyx and Mobalytics could not be fetched again (permission prompt unanswered); Bloxodes still has only 24.
+
+## 2026-11-23 run (fourth)
+
+### col-48 to col-53 (WAiNK Sculptures, first items; col-27 kept as the overall item)
+PowerPyx's sculptures page (22 of 23 named) and Bloxodes both list Triangler Sculpture (Corsair Key), Pixel Fountain (Tequesta), Neptune Rises, Vice Museum of Art Sculpture and Princes Robot Bubblegum Statue (all Washington Beach) and Monument of Leonidan Supremacy (Manifest Canyon), same areas. Both now spell it "Triangler" (Timesaver's "Triangular" was the odd one out). Counties from PowerPyx. Regions follow earlier runs (Vice City for Tequesta; "Leonida" for Vice Beach, as col-47).
+- https://www.powerpyx.com/gta-6-all-sculptures-scan-locations/ (read as https://www.powerpyx.com/?p=374051)
+- https://bloxodes.com/wiki/gta-6/waink-locations
+
+### Notice
+Fixed a missing comma in the notice text and added sculptures to it.
+
+### Not added this run
+- Remaining 49 stunt jumps (Leone Street, 10 Leonard, 23 Kelly, 15 Lummox): PowerPyx's page was read verbatim to the end this time and names all 130 (Leone Street is #72, the last Vice-Dale jump; e.g. Waste Transfer Services Lake/Pond/North/South, Thundergulf, The Hog House, Gellhorn Pylons, Kalaga Ridge, Macalister Gold Mine). Mobalytics could not be fetched again (permission prompt unanswered), and Bloxodes still has only 24, so no second source could be checked this run. An earlier run noted Mobalytics names all 130 – if Simon is happy to count that, these can go in next run straight from PowerPyx's list.
+- Other PowerPyx-only WAiNK entries: 20 landmarks (Old Goliath, Vice City Sign, Thicc Herbie, St. Lucia Lighthouse, Sahara Arena, etc.), 33 curiosities (Hovercraft Crash, Halloween House, C0-B8 Engine, etc.), 16 sculptures (Leonida Snow, Colossus, The Wonder Whale, etc.). One source each.
+- No Flusher Tags: "East of The Banana Hole Main Bar, Ocean Beach" is on both PowerPyx and Bloxodes, but the set total isn't agreed (GameTrek 23, PowerPyx none) and the tracker has no overall item for it yet – left for now. PowerPyx also lists a 4-item "Peewees Billboards" set no one else has.
+- tro-49 "Bad Luck, I Guess": PowerPyx now gives a method (re-rob the Little Cuba Payday Loans store from the Prologue as Lucia, alone, and escape on foot; available after Chapter 3 "Credit Check"). GamerGuides, Bloxodes, Mobalytics and KeenGamer still give no method – one source only.
+- Gang operation area notes (act-162 to act-183): no source gives per-operation locations except KeenGamer putting Palmer Fishing Warehouse in Watson Bay (one source). GameTrek's table only readable via summary.
+- https://www.powerpyx.com/?p=373173, https://www.keengamer.com/articles/guides/how-to-rob-illegal-operations-in-gta-6-all-9-gangs-and-the-pest-control-trophy/, https://www.powerpyx.com/?p=368070 for reference.
