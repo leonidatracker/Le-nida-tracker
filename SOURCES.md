@@ -489,6 +489,23 @@ Every card that has a location on PowerPyx's Flamingos, Corkers, Narcos, Right W
 - WAiNK: nothing new – Bloxodes still has the same 16, Timesaver 5, GameTrek/gmtreks only totals. Remaining PowerPyx-only entries still single-source.
 - metaforge stunt-jump page failed to load (not needed).
 
+## 2026-11-24 run (third)
+
+### col-79 to col-89 (11 more individual card locations)
+Every card with a location on PowerPyx's Liberty City Penetrators, Los Santos Pounders and Liberty City Wrath set pages, each matched to the same card, tier and spot on Bloxodes (#33–#37, #42–#44, #60–#62). As noted last run, Bloxodes' wording tracks PowerPyx closely, so it may be derived from it. Regions: Crosstown/Little Cuba/Tequesta/La Perle → Vice City; Hamlet (Vice-Dale) and Waning Sands → Leonida; Washington Beach → Leonida (as earlier runs); Port Gellhorn → Port Gellhorn; Cottonmouth Lake → Grassrivers (PowerPyx files it under Grassrivers); Mount Kalaga National Park → Mount Kalaga.
+- col-79 to col-83: https://www.powerpyx.com/?p=372979 (Penetrators)
+- col-84 to col-86: https://www.powerpyx.com/?p=372983 (Pounders)
+- col-87 to col-89: https://www.powerpyx.com/?p=372980 (Wrath)
+- all: https://bloxodes.com/wiki/gta-6/collectible-cards
+
+### Notice
+"the first 19 card locations" → "the first 30 card locations".
+
+### Not added this run
+- The other ~95 Bloxodes cards (it now lists 125 of 480) still have no second source: PowerPyx's Flamingos and Narcos pages are unchanged (3 and 1 located), other set pages not re-checked this run.
+- Bret's Target Decks (15): PowerPyx's 100% checklist and GTABase's Bret page give only the count/how to start – no per-deck locations anywhere yet. Mobalytics' collectibles page failed to load.
+- Cocaine Flamingos: games.gg, Bloxodes and PowerPyx pages turned up in search but weren't compared this run.
+
 ## Guide: gta-6-beginner-tips (added 24 Nov 2026)
 Tips 1–7 were each confirmed by at least two of: https://www.videogameschronicle.com/guide/gta-6-beginners-guide-6-tips-you-need-to-know-before-starting-gta-6/ · https://stealthygaming.com/?p=37261 · https://beebom.com/gta-6-tips-and-tricks/ . Tips 8–12 come from the tracker data and the cheat sources below. Skipped as single-source: feeding Dolores for a Focus boost, carried-cash cap.
 
