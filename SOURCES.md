@@ -511,3 +511,20 @@ Tips 1–7 were each confirmed by at least two of: https://www.videogameschronic
 
 ## Cheats che-01 to che-61 (added 24 Nov 2026)
 All 61 cheats, unlock requirements and the 17 known codes agree across: https://insider-gaming.com/all-gta-6-cheats-best-grand-theft-auto-6-cheat-codes/ · https://www.altchar.com/guides/gta-vi-cheats-list-every-code-unlock-requirement-and-how-to-use-them-aRfDb4o7avIJ · https://www.keengamer.com/articles/guides/gta-6-all-cheat-codes-for-ps5-and-xbox-and-how-to-unlock-them/ . Codes for Drunk and Raise Wanted Level appear on only one site (dexerto) so are left as "not found yet".
+
+## 2026-11-24 run (fourth)
+
+### col-90, col-91 (2 more individual card locations)
+Same basis as earlier card runs: PowerPyx set page and Bloxodes agree on card, tier and spot. Bloxodes' wording again tracks PowerPyx almost word for word, so treat as possibly one source. gta.wiki (crowd-sourced) lists Serena (Gold) in Vice City (no detail); Lalo Velasco not found there. Capri → Leonida (as earlier runs).
+- col-90: https://www.powerpyx.com/?p=372988 (Nine1Nine Dancers) · https://bloxodes.com/wiki/gta-6/collectible-cards · https://gta.wiki/w/Collectible_Card_Sets
+- col-91: https://www.powerpyx.com/?p=372978 (Liberty City Swingers) · https://bloxodes.com/wiki/gta-6/collectible-cards
+
+### Notice
+"the first 30 card locations" → "the first 32 card locations".
+
+### Not added this run
+- Swingers cards Garth Buxton (PowerPyx/Bloxodes: phone box behind Cellerica warehouse, Belville) and Seo-Jun Kim (PowerPyx/Bloxodes: Ocean Beach baseball stands) – gta.wiki puts them elsewhere (Garth: Key Lento / Port Gellhorn; Seo-Jun: a Capri garage). Conflict, skipped.
+- 91 other Bloxodes-only cards: still no PowerPyx entry on the Swingers, Nine1Nine, Flamingos or Narcos pages. games.gg card guide failed to load.
+- Cocaine Flamingos: PowerPyx and Bloxodes list the same 8 of 125 (6 Belpoint, 1 Watson Bay, 1 La Perle), but Bloxodes copies PowerPyx's wording, GameTrek gives no per-spot data and games.gg failed to load. Not added. Inflatable Flamingo cheat threshold unclear (GameTrek says 50).
+- WAiNK: PowerPyx now has all 31 Landmarks, 35 Curiosities and 23 Sculptures with districts, but Bloxodes still lists only the 15 already in the tracker and Timesaver 5. The other 74 are PowerPyx-only. Timesaver still puts Imperial Spanish Ruins (col-46) on Mount Kalaga; PowerPyx and Bloxodes say Moreau – col-46 left as is.
+- PowerPyx: https://www.powerpyx.com/?p=374044 (Landmarks) · https://www.powerpyx.com/?p=374049 (Curiosities) · https://www.powerpyx.com/?p=374051 (Sculptures) · https://www.powerpyx.com/?p=373486 (Cocaine Flamingos)
