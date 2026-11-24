@@ -459,3 +459,32 @@ Date updated to 24 November; shipwrecks and the first card location added.
 - WAiNK: no new second source. op.gg's landmark map is GTADB pre-release data (marks entries "unconfirmed"/"demolished in real life") – not used. Timesaver puts Imperial Spanish Ruins (col-46) on the south-west peak of Mount Kalaga rather than Moreau – one source, col-46 left as is. GameTrek gives set totals (31/35/23 + 23 No Flusher Tags) but no names in the readable part.
 - Randy's Wish List: PowerPyx's 18 cars are all in; Timesaver notes FandomWire says 16. Nothing new.
 - No Flusher Tags: GameTrek says 23; PowerPyx's dedicated page still has just the Banana Hole tag. Not added.
+
+## 2026-11-24 run (second)
+
+### act-324 to act-372 (remaining 49 stunt jumps – all 130 now in)
+Names and order follow PowerPyx's 130-jump list (#72 Leone Street, #73–#130 Leonard/Kelly/Lummox); counties as PowerPyx groups them. Every one of the 49 names also appears on gta6gps, gtasixmap and Mobalytics (all name 130, or 135 for gta6gps). Spelling "Thundergolf" (act-330) is what gta6gps, gtasixmap and Mobalytics all use (earlier notes here said "Thundergulf"). gta6gps files a few under different headers (e.g. Kalaga River and Henry Perculay under Lummox, though its own text says North Leonard County) – PowerPyx county kept.
+- https://www.powerpyx.com/gta-6-all-stunt-jump-locations/ (https://www.powerpyx.com/?p=373173)
+- https://gta6gps.com/map/game/stunt-jumps
+- https://www.gtasixmap.com/guides/stunt-jumps
+- https://mobalytics.gg/gamebase/guides/grand-theft-auto-6-stunt-jumps-map
+
+### col-61 to col-78 (18 individual card locations)
+Every card that has a location on PowerPyx's Flamingos, Corkers, Narcos, Right Wing, Jack of Hearts and Manatees set pages, each matched to the same card and same spot on Bloxodes. Bloxodes' wording is very close to PowerPyx's, so it may be derived from it – worth bearing in mind. gta.wiki (crowd-sourced) also backs Kyle Lewicki, Flamer (Red), Right Wing (Red) and Julian Cruz loosely. Tier shown in the name where the sources give one, since some cards come in several tiers with different spots. Regions: Vice City districts → Vice City; Vice Beach/Belville/Grayson/Watson Bay/VCIA → Leonida (as earlier runs); Gellhorn → Port Gellhorn; Gullet Marsh → Grassrivers.
+- col-61 to col-63: https://www.powerpyx.com/?p=372968 (Flamingos)
+- col-64 to col-67: https://www.powerpyx.com/?p=372981 (Corkers)
+- col-68: https://www.powerpyx.com/?p=372976 (Narcos)
+- col-69 to col-71: https://www.powerpyx.com/?p=372990 (Right Wing)
+- col-72 to col-76: https://www.powerpyx.com/?p=372987 (Jack of Hearts)
+- col-77, col-78: https://www.powerpyx.com/?p=372994 (Manatees)
+- all: https://bloxodes.com/wiki/gta-6/collectible-cards
+- partial: https://gta.wiki/w/Collectible_Card_Sets
+
+### Notice
+"81 of the 130 stunt jumps" → "all 130 stunt jumps"; "the first card location" → "the first 19 card locations".
+
+### Not added this run
+- gta.wiki card list (~300 rows): crowd-sourced, many cards listed several times at different spots and some tiers clash with PowerPyx/Bloxodes (e.g. Mateo Caballero Bronze in Ambrosia vs Silver in La Perle). Not used on its own.
+- Other Bloxodes cards (it lists 125) without a PowerPyx match yet.
+- WAiNK: nothing new – Bloxodes still has the same 16, Timesaver 5, GameTrek/gmtreks only totals. Remaining PowerPyx-only entries still single-source.
+- metaforge stunt-jump page failed to load (not needed).
