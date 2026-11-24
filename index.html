@@ -6,7 +6,7 @@
 <title>Leonida Tracker – GTA 6 Completion Checklist</title>
 <meta name="description" content="Free GTA 6 100% checklist. Track every story mission, collectible, vehicle, property, side activity and trophy – progress saves automatically on your phone or PC.">
 <link rel="canonical" href="https://leonida-tracker.com/">
-<meta name="theme-color" content="#0d0b14">
+<meta name="theme-color" content="#123c47">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3997327230760263" crossorigin="anonymous"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -23,161 +23,168 @@
 <meta name="twitter:image" content="https://leonida-tracker.com/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Leonida Tracker","url":"https://leonida-tracker.com/","description":"Free unofficial GTA 6 completion checklist for missions, collectibles, vehicles, properties, side activities and trophies.","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Figtree:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0d0b14; --panel:#16131f; --panel2:#1d1929; --line:#2a2538;
-    --text:#f3eff8; --muted:#9a93ab; --pink:#ff3d8b; --orange:#ff9a3c; --teal:#2de0c8;
-    --grad:linear-gradient(120deg,#ff3d8b 0%,#ff9a3c 100%);
+    --pool:#bfe8de; --tile:rgba(18,60,71,.07); --ink:#123c47; --ink-soft:#3f6670;
+    --flamingo:#ff4f87; --sun:#ffcf3d; --coral:#ff8a3d; --sea:#1f8f8a; --shell:#fffbf2; --done:#fff0b3;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;-webkit-font-smoothing:antialiased}
-  a{color:var(--teal)}
+  body{font-family:Figtree,system-ui,sans-serif;font-size:16px;background:var(--pool);color:var(--ink);line-height:1.5;
+    background-image:linear-gradient(var(--tile) 1px,transparent 1px),linear-gradient(90deg,var(--tile) 1px,transparent 1px);background-size:30px 30px}
+  a{color:var(--ink);text-decoration-color:var(--flamingo);text-decoration-thickness:2px;text-underline-offset:3px}
+  :focus-visible{outline:3px solid var(--flamingo);outline-offset:2px}
   .wrap{max-width:860px;margin:0 auto;padding:0 16px}
 
-  /* Hero */
-  header{position:relative;overflow:hidden;background:var(--bg);border-bottom:1px solid var(--line);padding:30px 0 24px}
-  header>.wrap{position:relative;z-index:2}
-  .scene{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-  .scene-fade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(13,11,20,.85) 0%,rgba(13,11,20,.5) 50%,rgba(13,11,20,.1) 100%),linear-gradient(0deg,rgba(13,11,20,.75) 0%,transparent 40%)}
-  .top{display:flex;align-items:center;gap:18px;justify-content:space-between}
-  .brand small{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:6px}
-  h1{font-family:"Archivo Black",sans-serif;font-size:clamp(28px,7vw,44px);line-height:1;letter-spacing:-.01em}
-  h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .tag{color:var(--muted);font-size:14px;margin-top:8px;max-width:440px}
-  .ring{position:relative;width:96px;height:96px;flex-shrink:0}
-  .ring svg{transform:rotate(-90deg)}
-  .ring{background:rgba(13,11,20,.55);border-radius:50%;backdrop-filter:blur(4px)}
-  .ring .pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .ring .pct b{font-size:22px;font-weight:700}
-  .ring .pct i{font-style:normal;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-
-  .notice{margin-top:18px;background:rgba(40,22,12,.85);backdrop-filter:blur(4px);border:1px solid rgba(255,154,60,.35);border-radius:10px;padding:10px 12px;font-size:13px;color:#ffd2a8}
+  /* Postcard header */
+  header{padding:22px 0 8px}
+  .postcard{position:relative;border:3px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);min-height:230px;background:var(--sun)}
+  .scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .logo{position:absolute;left:18px;bottom:16px;font-family:Bungee,sans-serif;font-weight:400;font-size:clamp(34px,8.5vw,62px);line-height:.92;color:var(--shell);
+    text-shadow:3px 3px 0 var(--ink),-1px -1px 0 var(--ink),1px -1px 0 var(--ink),-1px 1px 0 var(--ink);letter-spacing:.01em}
+  .logo span{display:block}
+  .logo span+span{color:var(--sun)}
+  .meter{position:absolute;right:14px;top:14px;background:var(--ink);border-radius:14px;padding:10px 12px 8px;text-align:center;border:3px solid var(--shell);box-shadow:0 0 0 3px var(--ink)}
+  .meter svg{display:block;transform:rotate(-90deg)}
+  .meter .pct{position:absolute;left:0;right:0;top:12px;height:76px;display:flex;align-items:center;justify-content:center}
+  .meter .pct b{font-family:Bungee,sans-serif;font-weight:400;font-size:21px;color:var(--sun);text-shadow:0 0 10px rgba(255,207,61,.55)}
+  .meter i{display:block;font-style:normal;font-weight:700;font-size:13px;color:var(--shell);margin-top:4px}
+  .intro{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:20px 0 4px}
+  .tag{flex:1 1 320px;font-size:17px;max-width:560px}
+  .notice{margin-top:16px;background:var(--done);border:2px solid var(--ink);border-radius:10px;padding:10px 14px;font-size:14px;line-height:20px;max-height:64px;overflow:hidden;cursor:pointer;position:relative}
+  .notice:not(.open)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;background:linear-gradient(rgba(255,240,179,0),var(--done) 70%)}
+  .notice.open{max-height:none}
 
   /* Tabs */
-  .tabs{position:sticky;top:0;z-index:5;background:rgba(13,11,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .tabs{position:sticky;top:0;z-index:5;background:var(--pool);border-bottom:2px solid var(--ink);margin-top:18px}
   .tabs .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
   .tabs .wrap::-webkit-scrollbar{display:none}
-  .tab{flex-shrink:0;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:8px 14px;font:600 13px Inter,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center}
+  .tab{flex-shrink:0;border:2px solid var(--ink);background:var(--shell);color:var(--ink);border-radius:999px;padding:7px 13px;font:700 14px Figtree,sans-serif;cursor:pointer;display:flex;gap:7px;align-items:center}
   .tab svg{width:16px;height:16px;flex-shrink:0}
-  .tab em{font-style:normal;color:var(--muted);font-weight:500;font-size:12px}
-  .tab.on{background:var(--grad);border-color:transparent;color:#1a0a12}
-  .tab.on em{color:#3b1424}
+  .tab em{font-style:normal;font-weight:400;font-size:13px;color:var(--ink-soft)}
+  .tab.on{background:var(--ink);color:var(--shell)}
+  .tab.on em{color:var(--sun)}
 
   /* Controls */
-  .controls{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 12px}
-  .controls input[type=search],.controls select{flex:1 1 180px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;font:14px Inter,sans-serif}
-  .toggle{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);padding:0 4px;cursor:pointer;user-select:none}
-  .toggle input{accent-color:var(--pink);width:16px;height:16px}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}
+  .controls input[type=search],.controls select{flex:1 1 180px;background:var(--shell);border:2px solid var(--ink);color:var(--ink);border-radius:10px;padding:10px 12px;font:16px Figtree,sans-serif}
+  .toggle{display:flex;align-items:center;gap:8px;font-size:15px;padding:0 4px;cursor:pointer;user-select:none}
+  .toggle input{accent-color:var(--ink);width:18px;height:18px}
 
-  .cathead{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 8px}
-  .cathead h2{font-size:18px}
+  .cathead{display:flex;justify-content:space-between;align-items:center;margin:6px 0 10px}
+  .cathead h2{font-family:Bungee,sans-serif;font-weight:400;font-size:22px;letter-spacing:.01em}
   .catname{display:flex;align-items:center;gap:10px}
-  .badge{width:36px;height:36px;border-radius:11px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 18px rgba(255,61,139,.25)}
+  .badge{width:38px;height:38px;border-radius:10px;background:var(--flamingo);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;color:var(--ink)}
   .badge svg{width:20px;height:20px}
-  #catCount{color:var(--muted);font-size:13px}
-  .bar{height:6px;background:var(--panel2);border-radius:99px;overflow:hidden;margin-bottom:14px}
-  .bar div{height:100%;background:var(--grad);width:0;transition:width .3s}
+  #catCount{font-weight:700;font-size:15px}
+  .bar{height:14px;background:var(--shell);border:2px solid var(--ink);border-radius:99px;overflow:hidden;margin-bottom:16px}
+  .bar div{height:100%;background:repeating-linear-gradient(-45deg,var(--flamingo) 0 10px,#ff6f9d 10px 20px);width:0;transition:width .3s}
 
   /* Items */
-  .list{display:flex;flex-direction:column;gap:6px}
-  .item{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;transition:border-color .15s,opacity .15s}
-  .item:hover{border-color:#3d3552}
-  .item.done{opacity:.55}
-  .item.done .name{text-decoration:line-through;text-decoration-color:var(--pink)}
-  .check{width:22px;height:22px;border-radius:7px;border:2px solid #4a4260;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .15s}
-  .item.done .check{background:var(--teal);border-color:var(--teal)}
+  .list{display:flex;flex-direction:column;gap:8px}
+  .item{display:flex;gap:12px;align-items:flex-start;background:var(--shell);border:2px solid var(--ink);border-radius:12px;padding:12px 14px;cursor:pointer}
+  .item:hover{box-shadow:3px 3px 0 var(--ink)}
+  .item.done{background:var(--done)}
+  .item.done .name{text-decoration:line-through;text-decoration-color:var(--flamingo);text-decoration-thickness:3px}
+  .check{width:24px;height:24px;border-radius:7px;border:2px solid var(--ink);background:var(--shell);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .item.done .check{background:var(--ink)}
   .check svg{opacity:0}
   .item.done .check svg{opacity:1}
-  .name{font-weight:600;font-size:15px}
-  .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;align-items:center}
-  .region{font-size:11px;font-weight:600;color:var(--teal);background:rgba(45,224,200,.1);border-radius:6px;padding:2px 7px}
-  .note{font-size:13px;color:var(--muted)}
-  .item .ico{margin-left:auto;color:#3d3552;flex-shrink:0;align-self:center}
+  .name{font-weight:700;font-size:16px}
+  .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:3px;align-items:center}
+  .region{font-size:12px;font-weight:700;color:var(--shell);background:var(--sea);border-radius:6px;padding:1px 7px}
+  .note{font-size:14px;color:var(--ink-soft)}
+  .code{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+  .code kbd{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:var(--ink);color:var(--sun);font:700 16px Figtree,sans-serif;box-shadow:0 2px 0 var(--flamingo)}
+  .code-tbc{display:inline-block;margin-top:6px;font-size:13px;font-style:italic;color:var(--ink-soft)}
+  .item .ico{margin-left:auto;color:var(--ink-soft);opacity:.45;flex-shrink:0;align-self:center}
   .item .ico svg{width:20px;height:20px;display:block}
-  .item.done .ico{color:var(--teal)}
-  .empty svg{display:block;margin:0 auto 10px;color:#3d3552}
-  .empty{text-align:center;color:var(--muted);padding:30px 0;font-size:14px}
+  .item.done .ico{opacity:.9;color:var(--flamingo)}
+  .empty{text-align:center;padding:30px 0;font-size:15px}
+  .empty svg{display:block;margin:0 auto 10px}
 
-  /* Ad slot + panels */
-  .ad{margin:22px 0;border:1px dashed #3a3350;border-radius:12px;min-height:100px;display:flex;align-items:center;justify-content:center;color:#5d5672;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:22px 0}
-  .panel h3{font-size:16px;margin-bottom:4px}
-  .panel p{color:var(--muted);font-size:13px;margin-bottom:12px}
-  .gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
-  .gear a{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px}
-  .gi{width:40px;height:40px;border-radius:11px;background:rgba(255,61,139,.12);color:var(--pink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .gi svg{width:22px;height:22px}
-  .gear a b{display:block;font-size:14px}
-  .gear a span{font-size:12px;color:var(--muted)}
-  .btns{display:flex;gap:8px;flex-wrap:wrap}
-  .btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:9px 14px;font:600 13px Inter,sans-serif;cursor:pointer}
-  .btn.primary{background:var(--grad);color:#1a0a12;border-color:transparent}
-  .btn.danger{color:#ff7a9f}
-  textarea{width:100%;margin-top:10px;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px;font:12px ui-monospace,monospace;min-height:70px;display:none}
-  .msg{font-size:12px;color:var(--teal);margin-top:8px;min-height:16px}
-
-  .share-btn{margin-top:14px;display:inline-flex;align-items:center;gap:8px}
+  /* Panels */
+  .panel{background:var(--shell);border:2px solid var(--ink);border-radius:14px;padding:18px;margin:26px 0;box-shadow:5px 5px 0 var(--ink)}
+  .panel h3{font-size:19px;margin-bottom:4px}
+  .panel p{color:var(--ink-soft);font-size:15px;margin-bottom:12px}
+  .panel#about p{margin-bottom:0}
   .glinks{display:flex;flex-wrap:wrap;gap:8px}
-  .glinks a{text-decoration:none;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13px;font-weight:600}
-  .glinks a em{font-style:normal;color:var(--muted);font-weight:500;margin-left:4px}
-  .glinks a:hover{border-color:#3d3552}
-  .modal .box.wide{max-width:420px}
-  #shareImg{width:100%;aspect-ratio:1;border-radius:12px;background:var(--panel2);display:block;margin-bottom:14px;border:1px solid var(--line)}
-  .modal .btns .btn{text-decoration:none;display:inline-flex;align-items:center}
-  .xclose{float:right;background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;margin:-4px -4px 0 0}
-  footer{margin-top:30px;padding:0 0 40px;color:var(--muted);font-size:12px}
-  footer p+p{margin-top:8px}
-  .footart{display:block;width:100%;height:70px;margin-bottom:20px}
+  .glinks a{text-decoration:none;color:var(--ink);background:var(--pool);border:2px solid var(--ink);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:700}
+  .glinks a em{font-style:normal;font-weight:400;margin-left:4px;color:var(--ink-soft)}
+  .glinks a:hover{background:var(--sun)}
+  .gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+  .gear a{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink);background:var(--pool);border:2px solid var(--ink);border-radius:12px;padding:12px}
+  .gear a:hover{background:var(--sun)}
+  .gi{width:40px;height:40px;border-radius:10px;background:var(--shell);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .gi svg{width:22px;height:22px}
+  .gear a b{display:block;font-size:15px}
+  .gear a span span{font-size:13px;color:var(--ink-soft)}
+  .btns{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{border:2px solid var(--ink);background:var(--shell);color:var(--ink);border-radius:10px;padding:9px 15px;font:700 15px Figtree,sans-serif;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .btn:hover{box-shadow:3px 3px 0 var(--ink);transform:translate(-1px,-1px)}
+  .btn:active{box-shadow:none;transform:none}
+  .btn.primary{background:var(--ink);color:var(--shell)}
+  .btn.hot{background:var(--flamingo);color:var(--ink)}
+  .btn.danger{color:#b3124a}
+  textarea{width:100%;margin-top:10px;background:var(--pool);border:2px solid var(--ink);color:var(--ink);border-radius:10px;padding:10px;font:13px ui-monospace,monospace;min-height:70px;display:none}
+  .msg{font-size:14px;font-weight:700;margin-top:8px;min-height:18px}
 
-  /* Dialog */
-  .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:20;padding:20px}
+  footer{background:var(--ink);color:#d9ecea;margin-top:40px;padding:0 0 40px;font-size:14px}
+  footer a{color:var(--sun)}
+  footer p+p{margin-top:8px}
+  .footart{display:block;width:100%;height:70px;margin-bottom:22px;background:var(--pool)}
+
+  /* Dialogs */
+  .modal{position:fixed;inset:0;background:rgba(18,60,71,.55);display:none;align-items:center;justify-content:center;z-index:20;padding:20px}
   .modal.show{display:flex}
-  .modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;max-width:340px;width:100%}
-  .modal h4{font-size:16px;margin-bottom:6px}
-  .modal p{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .modal .box{background:var(--shell);border:3px solid var(--ink);border-radius:16px;padding:20px;max-width:360px;width:100%;box-shadow:6px 6px 0 var(--ink)}
+  .modal .box.wide{max-width:430px}
+  .modal h4{font-size:18px;margin-bottom:6px}
+  .modal p{font-size:14px;color:var(--ink-soft);margin-bottom:16px}
+  #shareImg{width:100%;aspect-ratio:1;border-radius:12px;background:var(--pool);display:block;margin-bottom:14px;border:2px solid var(--ink)}
+  .xclose{float:right;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer;line-height:1;margin:-6px -4px 0 0}
+  @media (max-width:520px){ .postcard{min-height:200px} .meter{transform:scale(.85);transform-origin:top right} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
 </head>
 <body>
 
 <header>
-<svg class="scene" viewBox="0 0 800 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <div class="wrap">
+    <div class="postcard">
+      <svg class="scene" viewBox="0 0 800 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1030"/><stop offset=".6" stop-color="#4a1747"/><stop offset="1" stop-color="#ff6a6a"/></linearGradient>
-    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset=".55" stop-color="#ff7a4a"/><stop offset="1" stop-color="#ff3d8b"/></linearGradient>
-    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1640"/><stop offset="1" stop-color="#0d0b14"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf3d"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4f87"/><stop offset="1" stop-color="#ff4f87"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f8f8a"/><stop offset="1" stop-color="#17726e"/></linearGradient>
     <mask id="sunmask"><rect width="800" height="260" fill="#fff"/><rect x="420" y="168" width="300" height="4" fill="#000"/><rect x="420" y="184" width="300" height="6" fill="#000"/><rect x="420" y="200" width="300" height="8" fill="#000"/><rect x="420" y="216" width="300" height="10" fill="#000"/></mask>
   </defs>
   <rect width="800" height="260" fill="url(#sky)"/>
-  <g fill="#fff" opacity=".7"><circle cx="90" cy="30" r="1.2"/><circle cx="210" cy="55" r="1"/><circle cx="330" cy="22" r="1.4"/><circle cx="420" cy="60" r="1"/><circle cx="720" cy="35" r="1.2"/><circle cx="770" cy="80" r="1"/><circle cx="150" cy="95" r="1"/></g>
+  
   <circle cx="565" cy="190" r="92" fill="url(#sun)" mask="url(#sunmask)"/>
-  <path d="M0 260 V222 H0 V196 H26 V222 H26 V152 H56 V222 H56 V204 H74 V222 H74 V204 H110 V222 H110 V166 H136 V222 H136 V166 H154 V222 H154 V204 H176 V222 H176 V178 H194 V222 H194 V204 H224 V222 H224 V204 H246 V222 H246 V178 H282 V222 H282 V134 H300 V222 H300 V204 H336 V222 H336 V152 H358 V222 H358 V166 H400 V222 H400 V166 H418 V222 H418 V178 H454 V222 H454 V196 H472 V222 H472 V192 H490 V222 H490 V192 H512 V222 H512 V196 H542 V222 H542 V204 H578 V222 H578 V192 H614 V222 H614 V192 H650 V222 H650 V196 H692 V222 H692 V166 H710 V222 H710 V152 H746 V222 H746 V188 H768 V222 H768 V166 H786 V222 H786 V204 H828 V222 H800 V260 Z" fill="#1a1328"/>
-  <rect x="61" y="199" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="696" y="194" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="795" y="180" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="464" y="183" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="254" y="210" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="715" y="209" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="83" y="196" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="351" y="206" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="294" y="198" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="120" y="192" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="168" y="208" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="155" y="191" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="40" y="202" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="782" y="195" width="3" height="4" fill="#ffb86b" opacity="0.7"/><rect x="321" y="181" width="3" height="4" fill="#ffb86b" opacity="0.7"/><rect x="358" y="198" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="467" y="164" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="276" y="190" width="3" height="4" fill="#ffb86b" opacity="0.7"/><rect x="680" y="164" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="748" y="204" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="662" y="196" width="3" height="4" fill="#ffb86b" opacity="0.7"/><rect x="456" y="178" width="3" height="4" fill="#ffb86b" opacity="0.7"/><rect x="395" y="216" width="3" height="4" fill="#ffb86b" opacity="0.7"/><rect x="355" y="161" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="363" y="170" width="3" height="4" fill="#ffb86b" opacity="0.7"/><rect x="119" y="191" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="223" y="209" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="132" y="207" width="3" height="4" fill="#ffb86b" opacity="0.35"/><rect x="407" y="185" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="82" y="170" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="411" y="195" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="140" y="212" width="3" height="4" fill="#ffb86b" opacity="0.5"/><rect x="285" y="205" width="3" height="4" fill="#ffb86b" opacity="0.5"/>
+  <path d="M0 260 V222 H0 V196 H26 V222 H26 V152 H56 V222 H56 V204 H74 V222 H74 V204 H110 V222 H110 V166 H136 V222 H136 V166 H154 V222 H154 V204 H176 V222 H176 V178 H194 V222 H194 V204 H224 V222 H224 V204 H246 V222 H246 V178 H282 V222 H282 V134 H300 V222 H300 V204 H336 V222 H336 V152 H358 V222 H358 V166 H400 V222 H400 V166 H418 V222 H418 V178 H454 V222 H454 V196 H472 V222 H472 V192 H490 V222 H490 V192 H512 V222 H512 V196 H542 V222 H542 V204 H578 V222 H578 V192 H614 V222 H614 V192 H650 V222 H650 V196 H692 V222 H692 V166 H710 V222 H710 V152 H746 V222 H746 V188 H768 V222 H768 V166 H786 V222 H786 V204 H828 V222 H800 V260 Z" fill="#123c47"/>
+  <rect x="61" y="199" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="696" y="194" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="795" y="180" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="464" y="183" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="254" y="210" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="715" y="209" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="83" y="196" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="351" y="206" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="294" y="198" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="120" y="192" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="168" y="208" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="155" y="191" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="40" y="202" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="782" y="195" width="3" height="4" fill="#ffcf3d" opacity="0.7"/><rect x="321" y="181" width="3" height="4" fill="#ffcf3d" opacity="0.7"/><rect x="358" y="198" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="467" y="164" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="276" y="190" width="3" height="4" fill="#ffcf3d" opacity="0.7"/><rect x="680" y="164" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="748" y="204" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="662" y="196" width="3" height="4" fill="#ffcf3d" opacity="0.7"/><rect x="456" y="178" width="3" height="4" fill="#ffcf3d" opacity="0.7"/><rect x="395" y="216" width="3" height="4" fill="#ffcf3d" opacity="0.7"/><rect x="355" y="161" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="363" y="170" width="3" height="4" fill="#ffcf3d" opacity="0.7"/><rect x="119" y="191" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="223" y="209" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="132" y="207" width="3" height="4" fill="#ffcf3d" opacity="0.35"/><rect x="407" y="185" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="82" y="170" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="411" y="195" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="140" y="212" width="3" height="4" fill="#ffcf3d" opacity="0.5"/><rect x="285" y="205" width="3" height="4" fill="#ffcf3d" opacity="0.5"/>
   <rect y="222" width="800" height="38" fill="url(#sea)"/>
-  <g stroke="#2de0c8" stroke-linecap="round" opacity=".45"><path d="M500 232 H630" stroke-width="2"/><path d="M520 242 H610" stroke-width="2"/><path d="M545 251 H585" stroke-width="2"/><path d="M60 238 H130" stroke-width="1.5" opacity=".5"/><path d="M700 246 H770" stroke-width="1.5" opacity=".5"/></g>
-  <g transform="translate(720 228) scale(1.05)"><g fill="none" stroke="#120d1c" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g>
-  <g transform="translate(770 232) scale(.75) rotate(6)"><g fill="none" stroke="#120d1c" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g>
-  <g transform="translate(395 232) scale(.6) rotate(-5)"><g fill="none" stroke="#120d1c" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g>
+  <g stroke="#fffbf2" stroke-linecap="round" opacity=".45"><path d="M500 232 H630" stroke-width="2"/><path d="M520 242 H610" stroke-width="2"/><path d="M545 251 H585" stroke-width="2"/><path d="M60 238 H130" stroke-width="1.5" opacity=".5"/><path d="M700 246 H770" stroke-width="1.5" opacity=".5"/></g>
+  <g transform="translate(720 228) scale(1.05)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g>
+  <g transform="translate(770 232) scale(.75) rotate(6)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g>
+  <g transform="translate(395 232) scale(.6) rotate(-5)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g>
 </svg>
-<div class="scene-fade"></div>
-  <div class="wrap">
-    <div class="top">
-      <div class="brand">
-        <small>Unofficial fan tool</small>
-        <h1>LEONIDA<br><span>TRACKER</span></h1>
-        <p class="tag">Your GTA 6 100% checklist. Tick things off as you go – progress saves on this device automatically.</p>
-        <button class="btn primary share-btn" id="shareBtn" type="button">📸 Share my progress</button>
-      </div>
-      <div class="ring">
-        <svg width="96" height="96" viewBox="0 0 96 96">
-          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ff3d8b"/><stop offset="1" stop-color="#ff9a3c"/></linearGradient></defs>
-          <circle cx="48" cy="48" r="40" fill="none" stroke="#231f30" stroke-width="9"/>
-          <circle id="ringArc" cx="48" cy="48" r="40" fill="none" stroke="url(#g)" stroke-width="9" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3" style="transition:stroke-dashoffset .4s"/>
+      <h1 class="logo"><span>Leonida</span><span>Tracker</span></h1>
+      <div class="meter" aria-label="Overall completion">
+        <svg width="76" height="76" viewBox="0 0 96 96" aria-hidden="true">
+          <circle cx="48" cy="48" r="40" fill="none" stroke="#2c5a63" stroke-width="10"/>
+          <circle id="ringArc" cx="48" cy="48" r="40" fill="none" stroke="#ff4f87" stroke-width="10" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3" style="transition:stroke-dashoffset .4s;filter:drop-shadow(0 0 4px rgba(255,79,135,.8))"/>
         </svg>
-        <div class="pct"><b id="totalPct">0%</b><i>complete</i></div>
+        <div class="pct"><b id="totalPct">0%</b></div>
+        <i>done</i>
       </div>
     </div>
-    <div class="notice" id="notice">🚧 Updated 24 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 19 card locations, and every garage price are in. The tracker is being updated as players discover more.</div>
+    <div class="intro">
+      <p class="tag">A checklist for everything in GTA 6, from the first mission to the last cocaine flamingo. Tick things off as you play – it saves on this device, no account needed.</p>
+      <button class="btn hot share-btn" id="shareBtn" type="button">Share my progress</button>
+    </div>
+    <div class="notice" id="notice">Updated 24 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 19 card locations, and every garage price are in. The tracker is being updated as players discover more.</div>
   </div>
 </header>
 
@@ -185,7 +192,7 @@
 
 <main class="wrap">
   <div class="controls">
-    <input type="search" id="search" placeholder="Search…" aria-label="Search items">
+    <input type="search" id="search" placeholder="Search this list" aria-label="Search items">
     <select id="region" aria-label="Filter by region"></select>
     <label class="toggle"><input type="checkbox" id="hideDone"> Hide completed</label>
   </div>
@@ -195,16 +202,16 @@
   <div class="list" id="list"></div>
 
   <section class="panel">
-    <h3>📋 Full lists</h3>
-    <p>Every list on its own page – handy for browsing or sharing.</p>
+    <h3>Full lists and guides</h3>
+    <p>Every list on its own page, plus straight answers to the questions people ask most.</p>
     <div class="glinks"><!--GUIDES--></div>
   </section>
 
   <!-- AD SLOT: put the AdSense ad unit code here once approved -->
 
   <section class="panel">
-    <h3>🎮 Gear up for Leonida</h3>
-    <p>Kit we'd recommend for a long session. (Amazon affiliate links – they help keep this site free.)</p>
+    <h3>Kit for a long session</h3>
+    <p>A few things worth having for a 100% run. These are Amazon affiliate links, which help keep the site free.</p>
     <div class="gear">
       <a href="https://www.amazon.co.uk/s?k=ps5+dualsense+controller&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9h10a4 4 0 0 1 3.9 4.8l-.6 3a2 2 0 0 1-3.4 1L15 16H9l-1.9 1.8a2 2 0 0 1-3.4-1l-.6-3A4 4 0 0 1 7 9z"/><path d="M8 12v2M7 13h2"/><path d="M16 12.5h.01"/></svg></span><span><b>PS5 DualSense</b><span>Spare controller</span></span></a>
       <a href="https://www.amazon.co.uk/s?k=ps5+gaming+headset&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span><span><b>Gaming headset</b><span>Hear every siren</span></span></a>
@@ -214,10 +221,10 @@
   </section>
 
   <section class="panel">
-    <h3>💾 Your progress</h3>
-    <p>Playing on another device? Copy your save code and paste it there to carry your progress across.</p>
+    <h3>Your progress</h3>
+    <p>Your ticks live in this browser. To carry them to another device, copy your save code here and restore it there.</p>
     <div class="btns">
-      <button class="btn primary" id="shareBtn2" type="button">📸 Share progress</button>
+      <button class="btn hot" id="shareBtn2" type="button">Share progress</button>
       <button class="btn" id="copyBtn">Copy save code</button>
       <button class="btn" id="pasteBtn">Restore from code</button>
       <button class="btn danger" id="resetBtn">Reset all</button>
@@ -227,19 +234,19 @@
   </section>
 
   <section class="panel">
-    <h3>☕ Enjoying the tracker?</h3>
-    <p>It's free and ad-light. If it saved you some hunting, a coffee keeps the updates coming.</p>
-    <a class="btn primary" href="https://ko-fi.com/simonjwarner" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">Buy me a coffee</a>
+    <h3>Saved you some hunting?</h3>
+    <p>The tracker is free and updated every day. If it helped, a coffee keeps it going.</p>
+    <a class="btn primary" href="https://ko-fi.com/simonjwarner" target="_blank" rel="noopener">Buy me a coffee</a>
   </section>
 <!--ABOUT-->
 </main>
 
 <footer>
-  <svg class="footart" viewBox="0 0 800 70" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="fsun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a3c"/><stop offset="1" stop-color="#ff3d8b"/></linearGradient></defs><circle cx="400" cy="70" r="46" fill="url(#fsun)" opacity=".35"/><path d="M0 70 H800" stroke="#2a2538"/><g transform="translate(80 70) scale(0.45)"><g fill="none" stroke="#2a2538" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(120 70) scale(0.32)"><g fill="none" stroke="#2a2538" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(660 70) scale(0.4)"><g fill="none" stroke="#2a2538" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(720 70) scale(0.5)"><g fill="none" stroke="#2a2538" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g></svg>
+  <svg class="footart" viewBox="0 0 800 70" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="fsun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf3d"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient></defs><circle cx="400" cy="70" r="46" fill="url(#fsun)" opacity="1"/><path d="M0 70 H800" stroke="#123c47"/><g transform="translate(80 70) scale(0.45)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(120 70) scale(0.32)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(660 70) scale(0.4)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(720 70) scale(0.5)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g></svg>
   <div class="wrap">
     <p><b>Leonida Tracker is an unofficial fan site.</b> It isn't affiliated with, endorsed by or connected to Rockstar Games or Take-Two Interactive. Game titles and trademarks belong to their owners.</p>
     <p>As an Amazon Associate I earn from qualifying purchases.</p>
-    <p>Progress is stored only in your browser. This site uses cookies for ads and analytics.</p>
+    <p>Your progress is stored only in your browser.</p>
   </div>
 </footer>
 
@@ -922,7 +929,70 @@ const CATEGORIES = [
     { id:"tro-53", name:"Treat Yo Self", region:"Leonida", note:"Bronze \u2013 spend $100,000 in shops" },
     { id:"tro-54", name:"Little Boxes", region:"Leonida", note:"Bronze \u2013 buy every garage property" },
     { id:"tro-55", name:"On the Spot", region:"Leonida", note:"Bronze \u2013 register 10 vehicles on the Scooter Bros app" }
-  ] }
+  ] },
+  { key:"cheats",       title:"Cheats",                items: [
+    {id: "che-01", name: "$250,000", region: "Leonida", note: "Player cheat – unlock: finish the story", code: "↑ → ↓ ← ↑ ← ↓ →"},
+    {id: "che-02", name: "Drunk", region: "Leonida", note: "Player cheat – unlock: spend $2,500 on alcohol", code: ""},
+    {id: "che-03", name: "Raise Heat Level", region: "Leonida", note: "Player cheat – unlock: lose a 3-star wanted level 25 times", code: "← ↓ → ↓ ↑ ↓ ↑"},
+    {id: "che-04", name: "Raise Wanted Level", region: "Leonida", note: "Player cheat – unlock: lose a 3-star wanted level 50 times", code: ""},
+    {id: "che-05", name: "Unlimited Focus", region: "Leonida", note: "Player cheat – unlock: finish the story", code: "↓ ↑ ↑ ↓ ↑ ↓ ↑ ↓ ↑ →"},
+    {id: "che-06", name: "No Fall Damage", region: "Leonida", note: "Player cheat – unlock: survive a 40ft freefall 20 times", code: ""},
+    {id: "che-07", name: "Parachute", region: "Leonida", note: "Player cheat – unlock: 50 skydives or BASE jumps from 300ft or higher", code: ""},
+    {id: "che-08", name: "Body Armor", region: "Leonida", note: "Player cheat – unlock: complete 100 workouts", code: "↓ ↑ ← ↑ ↑ ↑ ↑ ↑ ↓ ↓"},
+    {id: "che-09", name: "Repair Vehicle", region: "Leonida", note: "Player cheat – unlock: win 10 races at Gellhorn Raceway, Thrillbilly Mud Club and Boone Speedway", code: ""},
+    {id: "che-10", name: "Unlimited Nitrous", region: "Leonida", note: "Player cheat – unlock: complete 50 stunt jumps", code: ""},
+    {id: "che-11", name: "Max Ammo", region: "Leonida", note: "Combat cheat – unlock: 25 bronze medals or better at shooting ranges", code: "↓ ↑ → ↓ ← ← ↑ ↑ ↓ ←"},
+    {id: "che-12", name: "Infinite Ammo", region: "Leonida", note: "Combat cheat – unlock: 25 silver medals or better at shooting ranges", code: "↓ ↑ → ↓ ← ← ↑ ↓ ↓ ↓"},
+    {id: "che-13", name: "No Reload", region: "Leonida", note: "Combat cheat – unlock: 25 gold medals at shooting ranges", code: "↓ ↑ → ↓ ← ← ↑ ↓ ↓ ↑"},
+    {id: "che-14", name: "All Explosive Weapons", region: "Leonida", note: "Combat cheat – unlock: throw 100 grenades", code: ""},
+    {id: "che-15", name: "Incendiary Ammo", region: "Leonida", note: "Combat cheat – unlock: burn 100 enemies with fire", code: ""},
+    {id: "che-16", name: "Exploding Bottles", region: "Leonida", note: "Combat cheat – unlock: throw 100 molotovs", code: ""},
+    {id: "che-17", name: "Explosive Shotgun", region: "Leonida", note: "Combat cheat – unlock: hit 100 enemies with explosive damage", code: ""},
+    {id: "che-18", name: "Hauners H-AT", region: "Leonida", note: "Combat cheat – unlock: blow up 100 vehicles", code: ""},
+    {id: "che-19", name: "Attack Force", region: "Leonida", note: "Combat cheat – unlock: finish the story", code: "↓ ↑ ← ← → ↓ ↓ ↑ ↓"},
+    {id: "che-20", name: "Exploding Balls", region: "Leonida", note: "Combat cheat – unlock: hit 20 enemies with explosive damage", code: "↓ ↑ ← ← → ↓ ↓ ↑ →"},
+    {id: "che-21", name: "Vehicle Force", region: "Leonida", note: "Combat cheat – unlock: kill 25 enemies with a vehicle (civilians count)", code: "↓ ↑ ← ← → ↓ ← ↑ ↓"},
+    {id: "che-22", name: "Interstate Ambulance", region: "Leonida", note: "Vehicle spawn – unlock: discover it in the Progress menu", code: ""},
+    {id: "che-23", name: "Airboat 09", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 survival challenges", code: ""},
+    {id: "che-24", name: "Bravado Banshee", region: "Leonida", note: "Vehicle spawn – unlock: complete all combat challenges", code: ""},
+    {id: "che-25", name: "Tuff BMX", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 fitness challenges", code: ""},
+    {id: "che-26", name: "Maibatsu Boomazoom", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 shopping challenges", code: "← ↑ → ↓ ← ← ↑ ←"},
+    {id: "che-27", name: "Nagasaki Carbon RS", region: "Leonida", note: "Vehicle spawn – unlock: complete all exploration challenges", code: ""},
+    {id: "che-28", name: "'65 Vapid Dominator", region: "Leonida", note: "Vehicle spawn – unlock: complete all fitness challenges", code: ""},
+    {id: "che-29", name: "Progen Emerus", region: "Leonida", note: "Vehicle spawn – unlock: complete all vehicle challenges", code: ""},
+    {id: "che-30", name: "Inflatable Flamingo", region: "Leonida", note: "Vehicle spawn – unlock: destroy 50 Cocaine Flamingos", code: ""},
+    {id: "che-31", name: "MTL Pumper", region: "Leonida", note: "Vehicle spawn – unlock: discover it in the Progress menu", code: "← ↑ → ↓ ← → → ↑"},
+    {id: "che-32", name: "Vapid Stanier G2 Taxi", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 sports challenges", code: ""},
+    {id: "che-33", name: "Hauners P-996 Lazer", region: "Leonida", note: "Vehicle spawn – unlock: complete every challenge", code: ""},
+    {id: "che-34", name: "HVY Bulldozer", region: "Leonida", note: "Vehicle spawn – unlock: discover it in the Progress menu", code: "← ↑ → ↓ ← → → ↓"},
+    {id: "che-35", name: "Lapwing Mallard", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 vehicle challenges", code: ""},
+    {id: "che-36", name: "Brimstone Golfer", region: "Leonida", note: "Vehicle spawn – unlock: complete all sports challenges", code: ""},
+    {id: "che-37", name: "Hauners Rhino Tank", region: "Leonida", note: "Vehicle spawn – unlock: complete all survival challenges", code: ""},
+    {id: "che-38", name: "Maibatsu Sanchez", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 criminal challenges", code: ""},
+    {id: "che-39", name: "Nagasaki Sea Sparrow", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 exploration challenges", code: ""},
+    {id: "che-40", name: "Speeder 700 GT", region: "Leonida", note: "Vehicle spawn – unlock: complete 5 combat challenges", code: ""},
+    {id: "che-41", name: "Truffade Thrax", region: "Leonida", note: "Vehicle spawn – unlock: complete all shopping challenges", code: ""},
+    {id: "che-42", name: "Western Zombie Bobber", region: "Leonida", note: "Vehicle spawn – unlock: complete all criminal challenges", code: ""},
+    {id: "che-43", name: "Move Time Forward", region: "Leonida", note: "World cheat – unlock: find 10 collectible watches", code: ""},
+    {id: "che-44", name: "Pause Time of Day", region: "Leonida", note: "World cheat – unlock: find 20 collectible watches", code: ""},
+    {id: "che-45", name: "Cycle Weather", region: "Leonida", note: "World cheat – unlock: finish the story", code: "↓ → ↑ ↓ → ↑ →"},
+    {id: "che-46", name: "Golden Hour", region: "Leonida", note: "Screen filter – unlock: spend 4 hours holding hands", code: ""},
+    {id: "che-47", name: "Powdered Sugar", region: "Leonida", note: "Screen filter – unlock: scan all the space debris with WAiNK", code: ""},
+    {id: "che-48", name: "Pinhole", region: "Leonida", note: "Screen filter – unlock: clear 25 gang operations with your partner", code: ""},
+    {id: "che-49", name: "Neon Jungle", region: "Leonida", note: "Screen filter – unlock: discover all 16 Girlypop vehicles", code: ""},
+    {id: "che-50", name: "Yesteryear", region: "Leonida", note: "Screen filter – unlock: discover the Ridgeway", code: ""},
+    {id: "che-51", name: "Cataclysm", region: "Leonida", note: "Screen filter – unlock: discover Martha's Vamos in the Progress menu", code: "↓ ↓ ↑ → → ↑ ← ← → →"},
+    {id: "che-52", name: "Videotape", region: "Leonida", note: "Screen filter – unlock: complete 50 activities with your partner", code: ""},
+    {id: "che-53", name: "Dark Mirror", region: "Leonida", note: "Screen filter – unlock: make $500,000 selling vehicles", code: ""},
+    {id: "che-54", name: "Migraine", region: "Leonida", note: "Screen filter – unlock: survive 6 minutes at a 6-star wanted level", code: ""},
+    {id: "che-55", name: "Dollhouse", region: "Leonida", note: "Screen filter – unlock: spend 8 hours with your partner", code: "↓ ↓ ↑ → → ↑ ← ← ↓ →"},
+    {id: "che-56", name: "Bubblegum", region: "Leonida", note: "Screen filter – unlock: find all 24 Vice City Flamingos cards", code: ""},
+    {id: "che-57", name: "Fast Forward", region: "Leonida", note: "Screen filter – unlock: complete 50 meditations", code: ""},
+    {id: "che-58", name: "Fisheye", region: "Leonida", note: "Screen filter – unlock: catch 100 fish", code: ""},
+    {id: "che-59", name: "Faded Glory", region: "Leonida", note: "Screen filter – unlock: rob 50 stores with your partner", code: "↓ ↓ ↑ → → ↑ ← ← ← →"},
+    {id: "che-60", name: "Pixel Art", region: "Leonida", note: "Screen filter – unlock: make $250,000 selling collectibles", code: ""},
+    {id: "che-61", name: "Hellscape", region: "Leonida", note: "Screen filter – unlock: steal 100 cop vehicles", code: ""}
+  ]}
 ];
 
 /* Category icons (keyed by category key) */
@@ -932,6 +1002,7 @@ const ICONS = {
   vehicles:'<path d="M3 16v-3l2.2-5h13.6l2.2 5v3z"/><path d="M5 13h14"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/>',
   properties:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
   activities:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/>',
+  cheats:'<rect x="3" y="7" width="18" height="10" rx="5"/><path d="M8 10v4M6 12h4"/><path d="M15 11h.01M17 13h.01"/>',
   trophies:'<path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4M9 20h6"/>'
 };
 const ico = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[k] || ICONS.collectibles}</svg>`;
@@ -972,7 +1043,7 @@ function renderTotal(){
   $("ringArc").style.strokeDashoffset = 251.3 * (1 - pct/100);
 }
 
-const tick = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d0b14" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>`;
+const tick = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fffbf2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>`;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 function renderList(){
@@ -998,7 +1069,8 @@ function renderList(){
       <div class="check">${tick}</div>
       <div>
         <div class="name">${esc(i.name)}</div>
-        <div class="meta"><span class="region">${esc(i.region)}</span><span class="note">${esc(i.note)}</span></div>
+        <div class="meta">${i.region && i.region !== "Leonida" ? `<span class="region">${esc(i.region)}</span>` : ""}<span class="note">${esc(i.note)}</span></div>
+        ${"code" in i ? (i.code ? `<div class="code" aria-label="Code: ${esc(i.code)}">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</div>` : `<span class="code-tbc">Code not found yet</span>`) : ""}
       </div>
       <span class="ico">${ico(cat.key)}</span>
     </div>`).join("") : `<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Nothing matches – try clearing the filters.</div>`;
@@ -1067,54 +1139,51 @@ async function makeShareImage(){
   const c = document.createElement("canvas"); c.width = W; c.height = H;
   const x = c.getContext("2d");
   const bg = x.createLinearGradient(0,0,0,H);
-  bg.addColorStop(0,"#1b1030"); bg.addColorStop(.5,"#3d1543"); bg.addColorStop(.52,"#0d0b14"); bg.addColorStop(1,"#0d0b14");
+  bg.addColorStop(0,"#ffcf3d"); bg.addColorStop(.5,"#ff8a3d"); bg.addColorStop(.5,"#123c47"); bg.addColorStop(1,"#123c47");
   x.fillStyle = bg; x.fillRect(0,0,W,H);
-  x.fillStyle = "rgba(255,255,255,.6)";
-  [[120,140],[260,90],[820,120],[950,200],[60,330],[1000,380],[700,60]].forEach(([a,b]) => { x.beginPath(); x.arc(a,b,2,0,7); x.fill(); });
   // sun with stripes cut out
   const s = document.createElement("canvas"); s.width = W; s.height = H;
   const sx = s.getContext("2d");
   const sg = sx.createLinearGradient(0,290,0,560);
-  sg.addColorStop(0,"#ffd27a"); sg.addColorStop(.55,"#ff7a4a"); sg.addColorStop(1,"#ff3d8b");
+  sg.addColorStop(0,"#ff4f87"); sg.addColorStop(1,"#ff4f87");
   sx.fillStyle = sg; sx.beginPath(); sx.arc(W/2,560,270,Math.PI,0); sx.fill();
   sx.globalCompositeOperation = "destination-out";
   [[452,7],[485,11],[520,15]].forEach(([y,h]) => sx.fillRect(0,y,W,h));
   x.drawImage(s,0,0);
-  x.fillStyle = "#2de0c8"; x.globalAlpha = .5;
+  x.fillStyle = "#fffbf2"; x.globalAlpha = .55;
   [[400,580,280],[440,600,200],[490,618,100]].forEach(([a,b,w]) => x.fillRect(a,b,w,3));
   x.globalAlpha = 1;
   // brand
   x.textAlign = "center"; x.textBaseline = "alphabetic";
-  x.font = '44px "Archivo Black", Inter, sans-serif';
+  x.font = '44px Bungee, sans-serif';
   const brand1 = "LEONIDA ", brand2 = "TRACKER";
   const w1 = x.measureText(brand1).width, w2 = x.measureText(brand2).width, bx = W/2 - (w1+w2)/2;
-  x.textAlign = "left"; x.fillStyle = "#f3eff8"; x.fillText(brand1, bx, 100);
-  const tg = x.createLinearGradient(bx+w1,0,bx+w1+w2,0); tg.addColorStop(0,"#ff3d8b"); tg.addColorStop(1,"#ff9a3c");
-  x.fillStyle = tg; x.fillText(brand2, bx+w1, 100);
+  x.textAlign = "left"; x.fillStyle = "#123c47"; x.fillText(brand1, bx, 100);
+  x.fillStyle = "#fffbf2"; x.fillText(brand2, bx+w1, 100);
   // percentage
   x.textAlign = "center";
-  x.shadowColor = "rgba(13,11,20,.65)"; x.shadowBlur = 30;
-  x.fillStyle = "#ffffff"; x.font = '230px "Archivo Black", Inter, sans-serif';
-  x.fillText(overallPct() + "%", W/2, 400);
-  x.font = '600 42px Inter, sans-serif'; x.fillStyle = "#f3eff8";
-  x.fillText("of GTA 6 complete", W/2, 470);
-  x.shadowBlur = 0;
+  x.shadowColor = "#123c47"; x.shadowBlur = 0; x.shadowOffsetX = 8; x.shadowOffsetY = 8;
+  x.fillStyle = "#fffbf2"; x.font = '200px Bungee, sans-serif';
+  x.fillText(overallPct() + "%", W/2, 330);
+  x.shadowOffsetX = 3; x.shadowOffsetY = 3;
+  x.font = '700 44px Figtree, sans-serif'; x.fillStyle = "#fffbf2";
+  x.fillText("of GTA 6 done", W/2, 405);
+  x.shadowOffsetX = 0; x.shadowOffsetY = 0;
   // category bars
-  let y = 690;
+  let y = 652;
   CATEGORIES.forEach(cat => {
     const d = countDone(cat.items), t = cat.items.length, f = t ? d/t : 0;
-    x.textAlign = "left"; x.font = '600 30px Inter, sans-serif'; x.fillStyle = "#f3eff8";
+    x.textAlign = "left"; x.font = '700 30px Figtree, sans-serif'; x.fillStyle = "#fffbf2";
     x.fillText(cat.title, 110, y);
-    x.textAlign = "right"; x.font = '500 28px Inter, sans-serif'; x.fillStyle = "#9a93ab";
+    x.textAlign = "right"; x.font = '400 28px Figtree, sans-serif'; x.fillStyle = "#bfe8de";
     x.fillText(d + " / " + t, 970, y);
-    x.fillStyle = "#2a2538"; x.beginPath(); x.roundRect(110, y+14, 860, 12, 6); x.fill();
+    x.fillStyle = "#2c5a63"; x.beginPath(); x.roundRect(110, y+14, 860, 12, 6); x.fill();
     if (f > 0){
-      const bg2 = x.createLinearGradient(110,0,970,0); bg2.addColorStop(0,"#ff3d8b"); bg2.addColorStop(1,"#ff9a3c");
-      x.fillStyle = bg2; x.beginPath(); x.roundRect(110, y+14, Math.max(12, 860*f), 12, 6); x.fill();
+      x.fillStyle = "#ff4f87"; x.beginPath(); x.roundRect(110, y+14, Math.max(12, 860*f), 12, 6); x.fill();
     }
-    y += 58;
+    y += 52;
   });
-  x.textAlign = "center"; x.font = '700 34px Inter, sans-serif'; x.fillStyle = "#2de0c8";
+  x.textAlign = "center"; x.font = '700 34px Figtree, sans-serif'; x.fillStyle = "#ffcf3d";
   x.fillText("leonida-tracker.com", W/2, H - 34);
   return c;
 }
@@ -1155,6 +1224,8 @@ $("copyLink").addEventListener("click", async () => {
   catch(e){ sflash(SITE_URL); }
 });
 
+$("notice").title = "Tap to read the full update";
+$("notice").addEventListener("click", () => $("notice").classList.toggle("open"));
 renderAll();
 </script>
 </body>

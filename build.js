@@ -95,6 +95,17 @@ const PAGES = {
     intro: n => `Side activities, robberies, races, stunts and Strangers & Freaks missions in Grand Theft Auto VI – ${n} entries on our list so far, with notes on what each involves and which trophies they count towards.`,
     faq: n => [[`How many side activities are in GTA 6?`, `Our checklist currently has ${n} side activity entries – activity types plus individual locations such as stunt jumps, drone races and robberies – and we add more as they're confirmed.`]]
   },
+  cheats: {
+    slug: "gta-6-cheats", noun: "cheats", h1: "GTA 6 cheats and how to unlock them",
+    title: n => `GTA 6 Cheats: All ${n} Codes and How to Unlock Each One`,
+    intro: n => `All ${n} cheats in Grand Theft Auto VI, with the button code where it's been found and the challenge that unlocks each one. Cheats only work once you've finished the story, and using one turns off saving and trophies for that session.`,
+    faq: n => [
+      [`How many cheats are in GTA 6?`, `There are ${n} cheats: player, combat, vehicle spawn, world and screen-filter cheats. Each one is unlocked by its own challenge.`],
+      [`How do you enter cheats in GTA 6?`, `Finish the story first. Then press Up on the D-pad to open the phone, hold L1 (LB on Xbox), press R1 (RB), and enter the code on the D-pad.`],
+      [`Do cheats disable trophies in GTA 6?`, `Yes. Using any cheat turns off trophies, achievements and saving for that play session, so save first and reload a clean save afterwards.`],
+      [`Can you keep the money from the $250,000 cheat?`, `No. Saving is blocked while a cheat is active, so the cash never makes it into a normal save.`]
+    ]
+  },
   trophies: {
     slug: "gta-6-trophies", noun: "trophies", h1: "GTA 6 trophies and achievements",
     title: n => `GTA 6 Trophy & Achievement List: All ${n} Trophies`,
@@ -121,9 +132,9 @@ function itemsMatching(catKey, pattern) {
 }
 function tableHTML(items) {
   if (!items.length) return `<p class="note">Nothing confirmed yet – check back soon.</p>`;
-  const showRegion = new Set(items.map(i => i.region)).size > 1;
+  const showRegion = new Set(items.map(i => i.region)).size > 1 && items.some(i => i.region !== "Leonida");
   return `<table><tbody>${items.map((i, idx) => `
-    <tr><td class="num">${idx + 1}</td><td><b>${esc(i.name)}</b>${i.note ? `<span class="note">${esc(i.note)}</span>` : ""}</td>${showRegion ? `<td class="reg">${esc(i.region)}</td>` : ""}</tr>`).join("")}
+    <tr><td class="num">${idx + 1}</td><td><b>${esc(i.name)}</b>${i.note ? `<span class="note">${esc(i.note)}</span>` : ""}${"code" in i ? (i.code ? `<span class="code">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</span>` : `<span class="note"><i>Code not found yet</i></span>`) : ""}</td>${showRegion ? `<td class="reg">${esc(i.region)}</td>` : ""}</tr>`).join("")}
   </tbody></table>`;
 }
 function chapters() {
@@ -174,56 +185,62 @@ const guides = fs.existsSync(GUIDE_DIR) ? fs.readdirSync(GUIDE_DIR).filter(f => 
   meta.slug = f.replace(/\.html$/, "");
   meta.body = m[2];
   return meta;
-}) : [];
+}).sort((a, b) => (b.published || "").localeCompare(a.published || "") || a.slug.localeCompare(b.slug)) : [];
 const slugs = new Set([...live.map(l => l.page.slug), ...guides.map(g => g.slug), "guides"]);
 if (slugs.size !== live.length + guides.length + 1) throw new Error("A guide slug clashes with another page");
 
 /* ---------- 6. Shared page shell ---------- */
 const STYLE = `
-  :root{--bg:#0d0b14;--panel:#16131f;--panel2:#1d1929;--line:#2a2538;--text:#f3eff8;--muted:#9a93ab;--pink:#ff3d8b;--orange:#ff9a3c;--teal:#2de0c8;--grad:linear-gradient(120deg,#ff3d8b 0%,#ff9a3c 100%)}
+  :root{--pool:#bfe8de;--tile:rgba(18,60,71,.07);--ink:#123c47;--ink-soft:#3f6670;--flamingo:#ff4f87;--sun:#ffcf3d;--sea:#1f8f8a;--shell:#fffbf2;--done:#fff0b3}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:var(--teal)}
-  .wrap{max-width:860px;margin:0 auto;padding:0 16px}
-  .bar{border-bottom:1px solid var(--line);background:radial-gradient(80% 140% at 100% 0%,rgba(255,61,139,.25),transparent 60%),var(--bg)}
-  .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
-  .logo{font-family:"Archivo Black",sans-serif;font-size:20px;text-decoration:none;color:var(--text);letter-spacing:-.01em}
-  .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .cta{display:inline-block;background:var(--grad);color:#1a0a12;text-decoration:none;font-weight:700;font-size:14px;padding:10px 16px;border-radius:10px;white-space:nowrap}
-  nav.cats{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+  body{font-family:Figtree,system-ui,sans-serif;font-size:17px;background:var(--pool);color:var(--ink);line-height:1.6;
+    background-image:linear-gradient(var(--tile) 1px,transparent 1px),linear-gradient(90deg,var(--tile) 1px,transparent 1px);background-size:30px 30px}
+  a{color:var(--ink);text-decoration-color:var(--flamingo);text-decoration-thickness:2px;text-underline-offset:3px}
+  :focus-visible{outline:3px solid var(--flamingo);outline-offset:2px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  .bar{background:var(--ink);border-bottom:3px solid var(--flamingo)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+  .logo{font-family:Bungee,sans-serif;font-size:20px;text-decoration:none;color:var(--shell);line-height:1}
+  .logo span{color:var(--sun)}
+  .cta{display:inline-block;background:var(--flamingo);color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;padding:9px 15px;border-radius:10px;border:2px solid var(--shell);white-space:nowrap}
+  nav.cats{display:flex;gap:8px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
   nav.cats::-webkit-scrollbar{display:none}
-  nav.cats a{flex-shrink:0;text-decoration:none;color:var(--text);border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600}
-  nav.cats a[aria-current]{background:var(--grad);color:#1a0a12;border-color:transparent}
-  .crumbs{font-size:12px;color:var(--muted);margin-top:18px}
-  .crumbs a{color:var(--muted)}
-  h1{font-family:"Archivo Black",sans-serif;font-size:clamp(26px,6vw,40px);line-height:1.1;margin:10px 0 12px;letter-spacing:-.01em}
-  .lead{color:#cfc8dc;font-size:16px;max-width:680px}
-  .answer{background:linear-gradient(120deg,rgba(255,61,139,.12),rgba(255,154,60,.08));border:1px solid rgba(255,61,139,.35);border-radius:14px;padding:16px 18px;font-size:17px;color:#fff;margin:14px 0 6px}
-  .meta{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 22px;align-items:center}
-  .pill{font-size:12px;font-weight:600;color:var(--teal);background:rgba(45,224,200,.1);border-radius:6px;padding:4px 9px}
-  article h2{font-size:21px;margin:30px 0 10px}
-  article h3{font-size:17px;margin:20px 0 6px}
-  article p{color:#d9d3e4;margin:10px 0}
-  article ul,article ol{margin:10px 0 10px 22px;color:#d9d3e4}
-  article li{margin:5px 0}
+  nav.cats a{flex-shrink:0;text-decoration:none;color:var(--ink);border:2px solid var(--ink);background:var(--shell);border-radius:999px;padding:6px 13px;font-size:14px;font-weight:700}
+  nav.cats a[aria-current]{background:var(--ink);color:var(--shell)}
+  .crumbs{font-size:14px;color:var(--ink-soft);margin-top:14px}
+  .crumbs a{color:var(--ink-soft)}
+  h1{font-family:Bungee,sans-serif;font-weight:400;font-size:clamp(27px,6vw,42px);line-height:1.08;margin:10px 0 14px}
+  .lead{font-size:18px;max-width:660px}
+  .answer{background:var(--shell);border:3px solid var(--ink);border-radius:14px;padding:16px 18px;font-size:18px;margin:14px 0 8px;box-shadow:5px 5px 0 var(--flamingo)}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px;align-items:center}
+  .pill{font-size:13px;font-weight:700;color:var(--shell);background:var(--sea);border-radius:6px;padding:3px 9px}
+  article{max-width:700px}
+  article h2{font-size:23px;margin:32px 0 10px}
+  article h3{font-size:18px;margin:20px 0 6px}
+  article p{margin:10px 0}
+  article ul,article ol{margin:10px 0 10px 22px}
+  article li{margin:6px 0}
   table{width:100%;border-collapse:separate;border-spacing:0 6px;margin:8px 0}
-  td{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 12px;vertical-align:top;font-size:15px}
-  td:first-child{border-left:1px solid var(--line);border-radius:10px 0 0 10px}
-  td:last-child{border-right:1px solid var(--line);border-radius:0 10px 10px 0}
-  td.num{color:var(--muted);width:44px;font-variant-numeric:tabular-nums;font-size:13px;padding-top:13px}
-  td.reg{color:var(--teal);font-size:12px;font-weight:600;white-space:nowrap}
-  td b{display:block;font-weight:600}
-  .note{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-  .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin:26px 0}
-  .box h2{font-size:18px;margin:0 0 8px}
-  .box p{color:var(--muted);font-size:14px}
-  .box .cta{margin-top:14px}
-  .faq h3{font-size:15px;margin:14px 0 4px}
+  td{background:var(--shell);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:11px 12px;vertical-align:top;font-size:16px}
+  td:first-child{border-left:2px solid var(--ink);border-radius:10px 0 0 10px}
+  td:last-child{border-right:2px solid var(--ink);border-radius:0 10px 10px 0}
+  td.num{color:var(--ink-soft);width:46px;font-variant-numeric:tabular-nums;font-size:14px;padding-top:13px}
+  td.reg{font-size:13px;font-weight:700;white-space:nowrap;color:var(--sea)}
+  td b{display:block}
+  .note{display:block;color:var(--ink-soft);font-size:14px;margin-top:2px}
+  .code{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+  .code kbd{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:var(--ink);color:var(--sun);font:700 16px Figtree,sans-serif;box-shadow:0 2px 0 var(--flamingo)}
+  .box{background:var(--shell);border:2px solid var(--ink);border-radius:14px;padding:18px;margin:28px 0;box-shadow:5px 5px 0 var(--ink)}
+  .box h2{font-size:20px;margin:0 0 8px}
+  .box p{color:var(--ink-soft);font-size:16px}
+  .box .cta{margin-top:14px;border-color:var(--ink)}
+  .faq h3{font-size:17px;margin:16px 0 4px}
   .glist{display:grid;gap:8px;margin:10px 0}
-  .glist a{display:block;text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .glist a b{display:block;font-size:15px}
-  .glist a span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-  footer{border-top:1px solid var(--line);margin-top:34px;padding:22px 0 40px;color:var(--muted);font-size:12px}
+  .glist a{display:block;text-decoration:none;color:var(--ink);background:var(--pool);border:2px solid var(--ink);border-radius:12px;padding:13px 16px}
+  .glist a:hover{background:var(--sun)}
+  .glist a b{display:block;font-size:16px}
+  .glist a span{display:block;color:var(--ink-soft);font-size:14px;margin-top:2px}
+  footer{background:var(--ink);color:#d9ecea;margin-top:40px;padding:24px 0 40px;font-size:14px}
   footer p+p{margin-top:8px}
 `;
 const navLinks = active => live.map(({ cat, page }) =>
@@ -240,7 +257,7 @@ function shell({ slug, title, description, ogType = "article", ld = [], ctaHash 
 <title>${esc(title)} | Leonida Tracker</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
-<meta name="theme-color" content="#0d0b14">
+<meta name="theme-color" content="#123c47">
 ${ADSENSE}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="${ogType}">
@@ -253,13 +270,13 @@ ${ADSENSE}
 <meta name="twitter:image" content="${SITE}/og-image.png">
 ${ld.length ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Figtree:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>${STYLE}</style>
 </head>
 <body>
 <div class="bar"><div class="wrap">
-  <a class="logo" href="/">LEONIDA <span>TRACKER</span></a>
-  <a class="cta" href="/${ctaHash ? "#" + esc(ctaHash) : ""}">Open tracker →</a>
+  <a class="logo" href="/">Leonida <span>Tracker</span></a>
+  <a class="cta" href="/${ctaHash ? "#" + esc(ctaHash) : ""}">Open the tracker</a>
 </div></div>
 <main class="wrap">
   <nav class="cats" aria-label="Lists">${navLinks(slug)}</nav>
@@ -306,7 +323,7 @@ function categoryPage({ cat, page, items }) {
   <div class="box">
     <h2>Track your progress</h2>
     <p>Tick these off as you play – your progress saves on your device, no sign-up. Filter by region, search, and hide what you've finished.</p>
-    <a class="cta" href="/#${esc(cat.key)}">Track ${esc(page.noun)} →</a>
+    <a class="cta" href="/#${esc(cat.key)}">Track ${esc(page.noun)}</a>
   </div>
   ${related.length ? `<section class="box"><h2>Related guides</h2><div class="glist">${related.map(g => `<a href="/${g.slug}/"><b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`).join("")}</div></section>` : ""}
   ${faqHTML(faq.map(([q, a]) => [esc(q), esc(a)]))}`
@@ -342,7 +359,7 @@ function guidePage(g) {
   <div class="box">
     <h2>Track it as you play</h2>
     <p>Leonida Tracker is a free GTA 6 checklist – tick things off as you go, and your progress saves on your device. No sign-up.</p>
-    <a class="cta" href="/${g.cat ? "#" + esc(g.cat) : ""}">Open the tracker →</a>
+    <a class="cta" href="/${g.cat ? "#" + esc(g.cat) : ""}">Open the tracker</a>
   </div>
   ${rel.length ? `<section class="box"><h2>Related</h2><div class="glist">${rel.map(r => `<a href="${r.href}"><b>${esc(r.title)}</b><span>${esc(r.sub)}</span></a>`).join("")}</div></section>` : ""}
   ${faqHTML(faq)}`
@@ -373,7 +390,7 @@ const homeFaq = [
 const about = `
   <section class="panel" id="about">
     <h3>About this GTA 6 checklist</h3>
-    <p>Leonida Tracker is a free GTA 6 100% checklist. It currently tracks ${countOf("missions")} story missions, ${countOf("trophies")} trophies, ${countOf("collectibles")} collectible entries, ${countOf("vehicles")} vehicles, ${countOf("properties")} properties and ${countOf("activities")} side activities and locations. Everything is checked against more than one source before it's added, and the lists are updated daily (last update ${esc(prettyDate)}).</p>
+    <p>Leonida Tracker is a free GTA 6 100% checklist. It currently tracks ${countOf("missions")} story missions, ${countOf("trophies")} trophies, all ${countOf("cheats")} cheats and their unlock challenges, ${countOf("collectibles")} collectible entries, ${countOf("vehicles")} vehicles, ${countOf("properties")} properties and ${countOf("activities")} side activities and locations. Everything is checked against more than one source before it's added, and the lists are updated daily (last update ${esc(prettyDate)}).</p>
     ${guides.length ? `<p style="margin-top:10px"><b>Popular guides:</b> ${guides.slice(0, 6).map(g => `<a href="/${g.slug}/">${esc(g.h1)}</a>`).join(" · ")} · <a href="/guides/">all guides</a></p>` : ""}
     ${homeFaq.map(([q, a]) => `<p style="margin-top:10px"><b>${esc(q)}</b><br>${esc(a)}</p>`).join("")}
   </section>`;

@@ -488,3 +488,9 @@ Every card that has a location on PowerPyx's Flamingos, Corkers, Narcos, Right W
 - Other Bloxodes cards (it lists 125) without a PowerPyx match yet.
 - WAiNK: nothing new – Bloxodes still has the same 16, Timesaver 5, GameTrek/gmtreks only totals. Remaining PowerPyx-only entries still single-source.
 - metaforge stunt-jump page failed to load (not needed).
+
+## Guide: gta-6-beginner-tips (added 24 Nov 2026)
+Tips 1–7 were each confirmed by at least two of: https://www.videogameschronicle.com/guide/gta-6-beginners-guide-6-tips-you-need-to-know-before-starting-gta-6/ · https://stealthygaming.com/?p=37261 · https://beebom.com/gta-6-tips-and-tricks/ . Tips 8–12 come from the tracker data and the cheat sources below. Skipped as single-source: feeding Dolores for a Focus boost, carried-cash cap.
+
+## Cheats che-01 to che-61 (added 24 Nov 2026)
+All 61 cheats, unlock requirements and the 17 known codes agree across: https://insider-gaming.com/all-gta-6-cheats-best-grand-theft-auto-6-cheat-codes/ · https://www.altchar.com/guides/gta-vi-cheats-list-every-code-unlock-requirement-and-how-to-use-them-aRfDb4o7avIJ · https://www.keengamer.com/articles/guides/gta-6-all-cheat-codes-for-ps5-and-xbox-and-how-to-unlock-them/ . Codes for Drunk and Raise Wanted Level appear on only one site (dexerto) so are left as "not found yet".
