@@ -432,3 +432,30 @@ Fixed a missing comma in the notice text and added sculptures to it.
 - tro-49 "Bad Luck, I Guess": PowerPyx now gives a method (re-rob the Little Cuba Payday Loans store from the Prologue as Lucia, alone, and escape on foot; available after Chapter 3 "Credit Check"). GamerGuides, Bloxodes, Mobalytics and KeenGamer still give no method – one source only.
 - Gang operation area notes (act-162 to act-183): no source gives per-operation locations except KeenGamer putting Palmer Fishing Warehouse in Watson Bay (one source). GameTrek's table only readable via summary.
 - https://www.powerpyx.com/?p=373173, https://www.keengamer.com/articles/guides/how-to-rob-illegal-operations-in-gta-6-all-9-gangs-and-the-pest-control-trophy/, https://www.powerpyx.com/?p=368070 for reference.
+
+## 2026-11-24 run
+
+### col-54 to col-59 (Kenton's shipwrecks, first items; col-28 kept as the overall item)
+Six wrecks around Key Lento, named the same way with matching positions and treasure counts by SlashGear and GTABoom (the GTABoom table covers all six). La Noche (7) and Ética Laxa (5) are also on GrindnStrat and ItemLevel; Lujuriosa (6) also on GamesHorizon. Del Ocio: SlashGear and GTABoom both say 10 gold doubloons and that it is the Island Dreams wreck; GamesHorizon describes an unnamed Island Dreams wreck with 3 doubloons (may be only the mission part) – worth a quick in-game check. The 7th set (col-28 says 7) isn't named anywhere yet. Region "Leonida" (Mariana County), as for other Key Lento items.
+- https://www.slashgear.com/2322274/gta-6-how-to-make-money-early-underwater-shipwreck-treasure-dives-locations/
+- https://www.gtaboom.com/gta-6-treasure-hunting-2b73
+- https://grindnstrat.com/?p=10377 (col-54, col-55)
+- https://itemlevel.net/gta-6-nuestra-senora-de-la-noche-treasure-locations/ (col-54)
+- https://itemlevel.net/gta-6-all-5-treasure-locations-in-nuestra-senora-de-la-etica-laxa/ (col-55)
+- https://gameshorizon.com/guides/how-to-find-all-nuestra-senora-lujuriosa-treasures-in-gta-6/ (col-56)
+- https://gameshorizon.com/guides/how-to-find-underwater-treasure-locations-in-gta-6/ (col-59, conflicting count)
+
+### col-60 (first individual card: Backyard Wrestling – J.D. Wild)
+PowerPyx (#11 of 12) and Bloxodes (#67) give the same main spot (Grayson, north of the Pay 'n' Spray, back deck) and the same alternate spawn (Grassrivers gator-head shack). Card numbering differs between the two, so no number in the note.
+- https://www.powerpyx.com/gta-6-backyard-wrestling-collectible-card-set-locations/
+- https://bloxodes.com/wiki/gta-6/collectible-cards
+
+### Notice
+Date updated to 24 November; shipwrecks and the first card location added.
+
+### Not added this run
+- Other card locations: Bloxodes lists 125 cards with counties, but PowerPyx's per-set pages are still mostly blank ("?"), so no second source yet. Bloxodes' per-set numbering doesn't match the 12/24/36-card sets.
+- Remaining 49 stunt jumps: Bloxodes still has 24; Mobalytics didn't appear in search and wasn't fetched. Still PowerPyx only.
+- WAiNK: no new second source. op.gg's landmark map is GTADB pre-release data (marks entries "unconfirmed"/"demolished in real life") – not used. Timesaver puts Imperial Spanish Ruins (col-46) on the south-west peak of Mount Kalaga rather than Moreau – one source, col-46 left as is. GameTrek gives set totals (31/35/23 + 23 No Flusher Tags) but no names in the readable part.
+- Randy's Wish List: PowerPyx's 18 cars are all in; Timesaver notes FandomWire says 16. Nothing new.
+- No Flusher Tags: GameTrek says 23; PowerPyx's dedicated page still has just the Banana Hole tag. Not added.
