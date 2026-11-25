@@ -558,3 +558,24 @@ Date → 25 November; "the first 32 card locations" → "the first 53 card locat
 - Bret's Target Decks: GTABase still "coming soon"; no list anywhere.
 - tro-49 "Bad Luck, I Guess": GamerGuides, Mobalytics, Bloxodes, KeenGamer, OfZen give no method (KeenGamer: unconfirmed). Still PowerPyx only.
 - Free/bonus garages: Beebom and Bloxodes garage pages couldn't be fetched (permission prompt unanswered). PowerPyx card hub and Push Square card index also blocked the same way.
+
+## 2026-11-25 run (second)
+
+### col-113 to col-116 (Push Square + Bloxodes)
+Push Square's Nine1Nine and Jack of Hearts WIP pages (updated 20–21 Nov) are independently worded and agree with Bloxodes on these four spots. Tiers come from Bloxodes only (Push Square gives none). Abismo Key and Permit Keys → Leonida (Mariana County), North Kelly County → Leonida, Gellhorn Drive-In → Port Gellhorn.
+- col-113 Braelynn (Deep Red), Hoffman Observatory: https://www.pushsquare.com/guides/gta-6-nine1nine-dancers-card-locations · https://bloxodes.com/wiki/gta-6/collectible-cards (#103)
+- col-114 MonaLi$a (Gold), island SE of Abismo Key: https://www.pushsquare.com/guides/gta-6-jack-of-hearts-dancers-card-locations · Bloxodes #99
+- col-115 Lexi Campbell (Gold), Gellhorn Drive-In: Push Square Jack of Hearts page · Bloxodes #97
+- col-116 Pricilla Pace (Silver), Permit Keys beach party huts: Push Square Jack of Hearts page · Bloxodes #100
+
+### Notice
+"the first 53 card locations" → "the first 57 card locations".
+
+### Not added this run
+- Push Square vs Bloxodes conflicts: Malena (PS: Mount Kalaga lookout tower; Bloxodes Deep Red: Belville house), Jesenia/Jesina (PS: party boats off Permit Keys; Bloxodes: Vespucci Island mansion), Right Wing (PS: Mount Kalaga pinboard; Bloxodes Red: Bayside – maybe a different variant, no tier given), Kelly (PS: north Port Gellhorn trailer; Bloxodes Deep Red: coastal trailer south of Kolt stash house – unclear if same), Chrissie (PS: trailer east of Uncle Jack's Liquor; Bloxodes: trailer east of Pay 'n' Spray – unclear).
+- Push Square only: Aimie (Rusty Bucket, Key Lento), Georgia (Steven Strachan Construction, Key Lento), Thelma (Key Lento tower control room).
+- Right Wing vs Left Wing (Port Gellhorn funfair bumper car): Bloxodes plus a Push Square reader comment only.
+- Cocaine Flamingos: PowerPyx and Bloxodes still the same 8 of 125 (Bloxodes tracks PowerPyx's wording); games.gg failed again; GameTrek gives areas only.
+- WAiNK: no new named entries beyond the 15 in the tracker (Bloxodes 16 names, timesaver 5, op.gg is a general POI map).
+- tro-49 "Bad Luck, I Guess": PowerPyx says rob the Little Cuba Payday Loans again as Lucia (after Credit Check) and escape on foot; GamerGuides, xboxplay.games and playday.one give no method. Still single-source.
+- MetaForge card page: set totals only, no per-card spots.
