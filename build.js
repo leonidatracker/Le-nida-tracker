@@ -22,6 +22,11 @@
     {{chapters}}                  table of story chapters with mission counts (from mission notes)
     {{tiers}}                     trophy tier breakdown, e.g. "1 Platinum, 3 Gold, 7 Silver and 44 Bronze"
     {{updated}}                   build date, e.g. 23 November 2026
+    {{bycounty:CAT:PATTERN}}      tables grouped by the county named in each note
+    {{cardsets}}                  every trading-card set with its confirmed card locations
+    {{route:CAT:TITLE::PATTERN}}  loop diagram of matching items in data order (schematic, not to scale)
+  Guide meta can also have "stats": { "cards": [[value, label], ...], "verified": [found, total, label] }
+  and "icon" (flamingo, card, bank, stunt, garage, trophy, flag, tips, lotus, book, people, car, check, alert, pad).
 */
 const fs = require("fs");
 const path = require("path");
@@ -51,6 +56,8 @@ for (const c of CATEGORIES) for (const i of c.items) {
 const realItems = c => c.items.filter(i => !i.placeholder);
 // Items whose note says they can be missed (same rule as the tracker page)
 const isMissable = i => /missable|can't be reached after|Chapter 1 only/i.test(i.note || "");
+// "map region to be confirmed" is never shown – a region appears only once it's confirmed
+const cleanNote = n => String(n || "").replace(/\s*[–-]\s*map region to be confirmed/gi, "").trim();
 const catByKey = k => {
   const c = CATEGORIES.find(c => c.key === k);
   if (!c) throw new Error("Unknown category in guide token: " + k);
@@ -136,7 +143,7 @@ function tableHTML(items) {
   if (!items.length) return `<p class="note">Nothing confirmed yet – check back soon.</p>`;
   const showRegion = new Set(items.map(i => i.region)).size > 1 && items.some(i => i.region !== "Leonida");
   return `<table><tbody>${items.map((i, idx) => `
-    <tr><td class="num">${idx + 1}</td><td><b>${esc(i.name)}${isMissable(i) ? '<span class="missable">Missable</span>' : ""}</b>${i.note ? `<span class="note">${esc(i.note)}</span>` : ""}${"code" in i ? (i.code ? `<span class="code">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</span>` : `<span class="note"><i>Code not found yet</i></span>`) : ""}</td>${showRegion ? `<td class="reg">${esc(i.region)}</td>` : ""}</tr>`).join("")}
+    <tr><td class="num">${idx + 1}</td><td><b>${esc(i.name)}${isMissable(i) ? '<span class="missable">Missable</span>' : ""}</b>${cleanNote(i.note) ? `<span class="note">${esc(cleanNote(i.note))}</span>` : ""}${"code" in i ? (i.code ? `<span class="code">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</span>` : `<span class="note"><i>Code not found yet</i></span>`) : ""}</td>${showRegion ? `<td class="reg">${esc(i.region)}</td>` : ""}</tr>`).join("")}
   </tbody></table>`;
 }
 // Group items by the county (or region) named in their note; unknown areas go last, marked as not yet verified.
@@ -194,6 +201,7 @@ function render(text) {
       case "chapters": return chapters();
       case "bycounty": return byCounty(itemsMatching(cat, pattern));
       case "cardsets": return cardSets();
+      case "route": { const [title, ...rest] = pattern.split("::"); return routeHTML({ cat, title, pattern: rest.join("::") }); }
       case "tiers": return tiers();
       case "updated": return prettyDate;
       default: throw new Error("Unknown guide token: {{" + tok + "}}");
@@ -218,6 +226,55 @@ const guides = fs.existsSync(GUIDE_DIR) ? fs.readdirSync(GUIDE_DIR).filter(f => 
 const slugs = new Set([...live.map(l => l.page.slug), ...guides.map(g => g.slug), "guides"]);
 if (slugs.size !== live.length + guides.length + 1) throw new Error("A guide slug clashes with another page");
 
+/* ---------- 5a. Guide graphics: thumbnails, stat cards, route diagrams (all inline SVG, no image requests) ---------- */
+const THUMB_ICONS = {
+  flamingo: '<path d="M15 3.5a2 2 0 1 0 0 4c-2.2 1.8-2.5 4.3-.6 5.6 2.3 1.6 1.8 5-1.9 5H9.2c-2.6 0-3.4-2.8-1-3.8 1.8-.7 3.7-.3 5.3.6"/><path d="M12 18v3.5M10 21.5h4"/><path d="M17 5l2.2.9"/>',
+  card: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6"/><path d="M12 16.5h.01"/>',
+  bank: '<path d="M3 9l9-5 9 5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/>',
+  stunt: '<path d="M3 19h9l6-7"/><path d="M5 19v-2.5"/><path d="M13 8.5c2.2-3.5 6-3.6 8-.8"/><path d="M19.4 5.4l1.7 2.4-2.8.6"/>',
+  garage: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M8 20v-6h8v6M8 17h8"/>',
+  trophy: '<path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4M9 20h6"/>',
+  flag: '<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>',
+  tips: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+  lotus: '<path d="M12 20c-4 0-8-2-9-6 3 0 6 1 9 4 3-3 6-4 9-4-1 4-5 6-9 6z"/><path d="M12 18c-2-3-2-7 0-11 2 4 2 8 0 11z"/>',
+  book: '<path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1z"/><path d="M12 6v14"/>',
+  people: '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.5-4 3-6 5.5-6s5 2 5.5 6M13.5 19c.4-3 2-4.5 3.5-4.5s3.2 1.5 3.5 4.5"/>',
+  car: '<path d="M3 16v-3l2.2-5h13.6l2.2 5v3z"/><path d="M5 13h14"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/>',
+  check: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9l2 2 4-4M8 15h8"/>',
+  alert: '<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/>',
+  pad: '<rect x="3" y="7" width="18" height="10" rx="5"/><path d="M8 10v4M6 12h4"/><path d="M15 11h.01M17 13h.01"/>'
+};
+const thumbIconFor = slug => [["flamingo","flamingo"],["card","card"],["bank","bank"],["stunt","stunt"],["garage","garage"],["trophy","trophy"],["mission","flag"],["beginner","tips"],["meditation","lotus"],["book","book"],["strangers","people"],["randy","car"],["100-percent","check"],["chapter-1","alert"],["cheat","pad"],["setup","pad"]].find(([k]) => slug.includes(k))?.[1] || "check";
+function thumbSVG(icon, size = 64) {
+  return `<svg class="thumb" width="${size}" height="${size}" viewBox="0 0 64 64" aria-hidden="true"><rect x="1.5" y="1.5" width="61" height="61" rx="12" fill="#ffcf3d" stroke="#123c47" stroke-width="3"/><path d="M3 30h58v20H3z" fill="#ff8a3d"/><path d="M12 50a20 20 0 0 1 40 0z" fill="#ff4f87"/><path d="M3 50h58v6a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z" fill="#123c47"/><circle cx="32" cy="27" r="16" fill="#fffbf2" stroke="#123c47" stroke-width="2.5"/><g transform="translate(20 15)" fill="none" stroke="#123c47" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${THUMB_ICONS[icon] || THUMB_ICONS.check}</g></svg>`;
+}
+// Stat card: meta.stats = { cards: [[value, label], ...], verified: [found, total, label] } – values may use tokens
+function statsHTML(st) {
+  if (!st) return "";
+  const cards = (st.cards || []).map(([v, l]) => `<div class="stat"><b>${render(v)}</b><span>${render(l)}</span></div>`).join("");
+  let bar = "";
+  if (st.verified) {
+    const f = +stripTags(render(st.verified[0])), t = +stripTags(render(st.verified[1]));
+    const pct = t ? Math.min(100, Math.round(f / t * 100)) : 0;
+    bar = `<div class="vwrap"><div class="vlabel"><b>${f} of ${t}</b> ${esc(render(st.verified[2] || "verified so far"))}${f < t ? " – the rest are not yet verified" : ""}</div><div class="vbar" role="img" aria-label="${f} of ${t} verified"><i style="width:${pct}%"></i></div></div>`;
+  }
+  return `<div class="statcard">${cards ? `<div class="stats">${cards}</div>` : ""}${bar}</div>`;
+}
+// Route diagram: stops in the order the data lists them, drawn as one loop. Schematic, not to scale.
+function routeHTML(r) {
+  const stops = itemsMatching(r.cat, r.pattern);
+  if (stops.length < 2) return "";
+  const W = 640, H = 340, cx = 320, cy = 170, rx = 140, ry = 108, n = stops.length;
+  const pts = stops.map((_, k) => { const a = -Math.PI * 0.75 + k * 2 * Math.PI / n; return [cx + rx * Math.cos(a), cy + ry * Math.sin(a)]; });
+  const loop = pts.map((p, k) => `${k ? "L" : "M"}${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(" ") + " Z";
+  const label = i => esc(i.name.replace(/^[^:]+:\s*/, "").replace(/^Belpoint |^Vice City /, ""));
+  const dots = pts.map((p, k) => {
+    const right = p[0] >= cx, lx = p[0] + (right ? 22 : -22), ly = p[1] + (p[1] < cy ? -16 : 26);
+    return `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="16" fill="${k ? "#ff4f87" : "#1f8f8a"}" stroke="#123c47" stroke-width="3"/><text x="${p[0].toFixed(1)}" y="${(p[1] + 6).toFixed(1)}" class="rn">${k + 1}</text><text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="rl" text-anchor="${right ? "start" : "end"}">${label(stops[k])}</text>`;
+  }).join("");
+  return `<figure class="route"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(r.title)}: ${stops.map(label).join(", ")}"><rect width="${W}" height="${H}" rx="16" fill="#bfe8de"/><path d="${loop}" fill="none" stroke="#123c47" stroke-width="4" stroke-dasharray="10 8" stroke-linejoin="round"/>${dots}</svg><figcaption><b>${esc(r.title)}</b> – suggested order, not to scale. Start at 1 (teal) and follow the loop; each stop's note below says exactly where it is.</figcaption><ol>${stops.map(i => `<li><b>${esc(i.name.replace(/^[^:]+:\s*/, ""))}</b> – ${esc(cleanNote(i.note))}</li>`).join("")}</ol></figure>`;
+}
+
 /* ---------- 5b. Small shared helpers ---------- */
 // TODO(AdSense): replace each AD_SLOT comment with an ad unit once approval is confirmed. Never place one inside the checklist or over the map.
 const AD_SLOT = where => `\n<!-- AD SLOT (${where}) – disabled until AdSense approval is confirmed. Paste the ad unit code here later. -->\n`;
@@ -231,7 +288,7 @@ const POPULAR = ["gta-6-cocaine-flamingo-locations", "gta-6-collectible-cards", 
 
 /* ---------- 6. Shared page shell ---------- */
 const STYLE = `
-  :root{--pool:#bfe8de;--tile:rgba(18,60,71,.07);--ink:#123c47;--ink-soft:#3f6670;--flamingo:#ff4f87;--sun:#ffcf3d;--sea:#1f8f8a;--shell:#fffbf2;--done:#fff0b3}
+  :root{--pool:#bfe8de;--tile:rgba(18,60,71,.03);--ink:#123c47;--ink-soft:#1f434b;--flamingo:#ff4f87;--sun:#ffcf3d;--sea:#1f8f8a;--shell:#fffbf2;--done:#fff0b3}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Figtree,system-ui,sans-serif;font-size:17px;background:var(--pool);color:var(--ink);line-height:1.6;
     background-image:linear-gradient(var(--tile) 1px,transparent 1px),linear-gradient(90deg,var(--tile) 1px,transparent 1px);background-size:30px 30px}
@@ -284,9 +341,29 @@ const STYLE = `
   .glist a:hover{background:var(--sun)}
   .glist a b{display:block;font-size:16px}
   .glist a span{display:block;color:var(--ink-soft);font-size:14px;margin-top:2px}
+  .ghead{display:flex;gap:14px;align-items:center;margin:10px 0 4px}
+  .ghead h1{margin:0}
+  .ghead .thumb{flex-shrink:0}
+  .statcard{background:var(--shell);border:2px solid var(--ink);border-radius:14px;padding:14px;margin:14px 0 6px;box-shadow:4px 4px 0 var(--ink)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+  .stat{background:var(--pool);border:2px solid var(--ink);border-radius:12px;padding:10px 12px}
+  .stat b{display:block;font-family:Bungee,sans-serif;font-weight:400;font-size:26px;line-height:1.1}
+  .stat span{font-size:14px;font-weight:700}
+  .vwrap{margin-top:12px}
+  .vlabel{font-size:15px;margin-bottom:6px}
+  .vbar{height:16px;border:2px solid var(--ink);border-radius:99px;background:var(--pool);overflow:hidden}
+  .vbar i{display:block;height:100%;background:repeating-linear-gradient(-45deg,var(--flamingo) 0 10px,#ff6f9d 10px 20px)}
+  .route{background:var(--shell);border:2px solid var(--ink);border-radius:14px;padding:12px;margin:16px 0;box-shadow:4px 4px 0 var(--ink)}
+  .route svg{display:block;width:100%;height:auto}
+  .route .rn{font:800 17px Figtree,sans-serif;fill:#fffbf2;text-anchor:middle}
+  .route .rl{font:800 17px Figtree,sans-serif;fill:#123c47;paint-order:stroke;stroke:#bfe8de;stroke-width:5px;stroke-linejoin:round}
+  .route figcaption{font-size:14px;margin:8px 2px}
+  .route ol{margin:6px 0 0 22px;font-size:15px}
+  .glist a{display:flex !important;gap:12px;align-items:center}
+  .glist a .gtext{display:block;min-width:0}
   .sharebar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:26px 0 6px}
   .sharebar .cta{border-color:var(--ink);cursor:pointer;font-family:inherit}
-  .cta.ghost{background:var(--shell)}
+  .cta.ghost{background:var(--shell);border-color:var(--ink)}
   .share-msg{font-weight:700;font-size:14px}
   .tellus{font-size:15px;margin:10px 0 0}
   .missable{display:inline-block;font-size:12px;font-weight:800;color:var(--shell);background:#b3124a;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
@@ -378,7 +455,7 @@ function categoryPage({ cat, page, items }) {
     <p>Tick these off as you play – your progress saves on your device, no sign-up. Filter by region, search, and hide what you've finished.</p>
     <a class="cta" href="/#${esc(cat.key)}">Track ${esc(page.noun)}</a>
   </div>
-  ${related.length ? `<section class="box"><h2>Related guides</h2><div class="glist">${related.map(g => `<a href="/${g.slug}/"><b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`).join("")}</div></section>` : ""}
+  ${related.length ? `<section class="box"><h2>Related guides</h2><div class="glist">${related.map(g => `<a href="/${g.slug}/">${thumbSVG(g.icon || thumbIconFor(g.slug), 44)}<span class="gtext"><b>${esc(g.h1)}</b><span>${esc(g.description)}</span></span></a>`).join("")}</div></section>` : ""}
   ${faqHTML(faq.map(([q, a]) => [esc(q), esc(a)]))}`
   });
 }
@@ -408,8 +485,9 @@ function guidePage(g) {
     content: `
   <div class="crumbs"><a href="/">Leonida Tracker</a> › <a href="/guides/">Guides</a> › ${esc(g.h1)}</div>
   <article>
-  <h1>${esc(g.h1)}</h1>
+  <div class="ghead">${thumbSVG(g.icon || thumbIconFor(g.slug), 64)}<h1>${esc(g.h1)}</h1></div>
   <p class="answer">${answer}</p>
+  ${statsHTML(g.stats)}
   <div class="meta"><span class="pill">Updated ${esc(prettyDate)}</span>${g.cat ? `<span class="pill">Tracked in the ${esc(catByKey(g.cat).title)} checklist</span>` : ""}</div>
   ${body}
   </article>
@@ -425,7 +503,7 @@ function guidePage(g) {
     <p>Leonida Tracker is a free GTA 6 checklist – tick things off as you go, and your progress saves on your device. No sign-up.</p>
     <a class="cta" href="/${g.cat ? "#" + esc(g.cat) : ""}">Open the tracker</a>
   </div>
-  ${rel.length ? `<section class="box"><h2>Related</h2><div class="glist">${rel.map(r => `<a href="${r.href}"><b>${esc(r.title)}</b><span>${esc(r.sub)}</span></a>`).join("")}</div></section>` : ""}
+  ${rel.length ? `<section class="box"><h2>Related</h2><div class="glist">${rel.map(r => `<a href="${r.href}">${thumbSVG(thumbIconFor(r.href), 44)}<span class="gtext"><b>${esc(r.title)}</b><span>${esc(r.sub)}</span></span></a>`).join("")}</div></section>` : ""}
   ${faqHTML(faq)}
   ${AD_SLOT("end of guide")}
   <script>${SHARE_JS}</script>`
@@ -441,7 +519,7 @@ function guidesIndex() {
   <div class="crumbs"><a href="/">Leonida Tracker</a> › Guides</div>
   <h1>GTA 6 guides</h1>
   <p class="lead">Straight answers to the questions players ask most, built from the same checked data as the tracker – so the numbers stay current.</p>
-  <div class="glist" style="margin-top:20px">${guides.map(g => `<a href="/${g.slug}/"><b>${esc(g.h1)}</b><span>${esc(g.description)}</span></a>`).join("")}</div>`
+  <div class="glist" style="margin-top:20px">${guides.map(g => `<a href="/${g.slug}/">${thumbSVG(g.icon || thumbIconFor(g.slug), 52)}<span class="gtext"><b>${esc(g.h1)}</b><span>${esc(g.description)}</span></span></a>`).join("")}</div>`
   });
 }
 
@@ -451,13 +529,13 @@ const homeFaq = [
   ["What is Leonida Tracker?", "A free, unofficial GTA 6 completion checklist. Tick off story missions, collectibles, vehicles, properties, side activities and trophies as you play – progress saves on your device with no account needed."],
   ["How many story missions are in GTA 6?", `Our list currently has ${countOf("missions")} confirmed main story missions.`],
   ["How many trophies are in GTA 6?", `There are ${countOf("trophies")} trophies on our list, including the Platinum.`],
-  ["Does Leonida Tracker work on phones and consoles?", "Yes – it runs in any web browser, including phones and the PS5 and Xbox browsers. Use the save code to move your progress between devices."]
+  ["Does Leonida Tracker work on phones and consoles?", "It runs in any web browser – phones, tablets, PCs and the Microsoft Edge browser on Xbox. Use the save code or optional sync to move your progress between devices."]
 ];
 const about = `
   <section class="panel" id="about">
     <h3>About this GTA 6 checklist</h3>
     <p>Leonida Tracker is a free GTA 6 100% checklist. It currently tracks ${countOf("missions")} story missions, ${countOf("trophies")} trophies, all ${countOf("cheats")} cheats and their unlock challenges, ${countOf("collectibles")} collectible entries, ${countOf("vehicles")} vehicles, ${countOf("properties")} properties and ${countOf("activities")} side activities and locations. Everything is checked against more than one source before it's added, and the lists are updated daily (last update ${esc(prettyDate)}).</p>
-    ${guides.length ? `<p style="margin-top:10px"><b>Popular guides:</b></p><ul class="poplist">${POPULAR.map(sl => guides.find(g => g.slug === sl)).filter(Boolean).map(g => `<li><a href="/${g.slug}/">${esc(g.h1)}</a></li>`).join("")}<li><a href="/guides/">All ${guides.length} guides</a></li></ul>` : ""}
+    ${guides.length ? `<p style="margin-top:10px"><b>Popular guides:</b></p><div class="poplist">${POPULAR.map(sl => guides.find(g => g.slug === sl)).filter(Boolean).map(g => `<a href="/${g.slug}/">${thumbSVG(g.icon || thumbIconFor(g.slug), 40)}<span>${esc(g.h1)}</span></a>`).join("")}<a href="/guides/">${thumbSVG("check", 40)}<span>All ${guides.length} guides</span></a></div>` : ""}
     <p style="margin-top:10px">Leonida Tracker is an unofficial fan site. It isn't affiliated with, endorsed by or connected to Rockstar Games or Take-Two Interactive.</p>
     ${homeFaq.map(([q, a]) => `<p style="margin-top:10px"><b>${esc(q)}</b><br>${esc(a)}</p>`).join("")}
   </section>`;
@@ -477,7 +555,8 @@ for (const g of guides) writePage(g.slug, guidePage(g));
 if (guides.length) writePage("guides", guidesIndex());
 
 // Map, gear, progress-share and feedback pages + map data (see extras.js)
-const extras = require("./extras.js")({ CATEGORIES, realItems, isMissable, esc, shell, crumbsLD, faqLD, faqHTML, prettyDate, today, SITE, AD_SLOT, SHARE_JS });
+const updateHeadline = stripTags((/<b id="updateHeadline">([\s\S]*?)<\/b>/.exec(html) || [])[1] || "");
+const extras = require("./extras.js")({ CATEGORIES, realItems, isMissable, esc, shell, crumbsLD, faqLD, faqHTML, prettyDate, today, SITE, AD_SLOT, SHARE_JS, thumbSVG, updateHeadline });
 for (const pg of extras.pages) writePage(pg.slug, pg.html);
 for (const f of extras.files) fs.writeFileSync(path.join(OUT, f.name), f.content);
 

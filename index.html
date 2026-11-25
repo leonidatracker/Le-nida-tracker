@@ -26,7 +26,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Figtree:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --pool:#bfe8de; --tile:rgba(18,60,71,.07); --ink:#123c47; --ink-soft:#3f6670;
+    --pool:#bfe8de; --tile:rgba(18,60,71,.03); --ink:#123c47; --ink-soft:#1f434b;
     --flamingo:#ff4f87; --sun:#ffcf3d; --coral:#ff8a3d; --sea:#1f8f8a; --shell:#fffbf2; --done:#fff0b3;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -51,8 +51,14 @@
   .meter i{display:block;font-style:normal;font-weight:700;font-size:13px;color:var(--shell);margin-top:4px}
   .intro{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:20px 0 4px}
   .tag{flex:1 1 320px;font-size:17px;max-width:560px}
+  .upd{display:flex;gap:12px;align-items:flex-start;margin-top:16px;background:linear-gradient(100deg,#ffcf3d,#ff8a3d);border:2px solid var(--ink);border-radius:12px;padding:10px 12px;box-shadow:4px 4px 0 var(--ink)}
+  .upd svg{flex-shrink:0;width:54px;height:34px;margin-top:2px}
+  .upd>div{flex:1;min-width:0}
+  .upd b#updateHeadline{display:block;font-family:Bungee,sans-serif;font-weight:400;font-size:17px;line-height:1.15;color:var(--ink)}
+  .upd .notice{margin-top:4px;border:0;padding:0;background:none}
+  .upd .notice:not(.open)::after{background:linear-gradient(rgba(255,170,60,0),#ffad3d 75%)}
   .notice{margin-top:16px;background:var(--done);border:2px solid var(--ink);border-radius:10px;padding:10px 14px;font-size:14px;line-height:20px;max-height:64px;overflow:hidden;cursor:pointer;position:relative}
-  .notice:not(.open)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;background:linear-gradient(rgba(255,240,179,0),var(--done) 70%)}
+  .notice:not(.open)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(rgba(255,240,179,0),var(--done) 70%)}
   .notice.open{max-height:none}
 
   /* Tabs */
@@ -68,7 +74,8 @@
   .tab{flex-shrink:0;border:2px solid var(--ink);background:var(--shell);color:var(--ink);border-radius:999px;padding:7px 13px;font:700 14px Figtree,sans-serif;cursor:pointer;display:flex;gap:7px;align-items:center}
   .tab svg{width:16px;height:16px;flex-shrink:0}
   .tab em{font-style:normal;font-weight:400;font-size:13px;color:var(--ink-soft)}
-  .tab.on{background:var(--ink);color:var(--shell)}
+  .tab{background:linear-gradient(90deg,#9fdccf var(--p,0%),var(--shell) var(--p,0%))}
+  .tab.on{background:linear-gradient(90deg,#2a6b76 var(--p,0%),var(--ink) var(--p,0%));color:var(--shell)}
   .tab.on em{color:var(--sun)}
 
   /* Controls */
@@ -82,7 +89,13 @@
   .catname{display:flex;align-items:center;gap:10px}
   .badge{width:38px;height:38px;border-radius:10px;background:var(--flamingo);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;color:var(--ink)}
   .badge svg{width:20px;height:20px}
-  #catCount{font-weight:700;font-size:15px}
+  #catCount{font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px}
+  .cring{position:relative;width:44px;height:44px;flex-shrink:0}
+  .cring svg{transform:rotate(-90deg);display:block}
+  .cring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 11px Figtree,sans-serif}
+  .group-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:800;font-size:16px;margin:14px 2px 2px;padding-bottom:4px;border-bottom:2px solid var(--ink)}
+  .group-h:first-child{margin-top:0}
+  .group-h span{font-weight:700;font-size:14px;color:var(--ink-soft);white-space:nowrap}
   .bar{height:14px;background:var(--shell);border:2px solid var(--ink);border-radius:99px;overflow:hidden;margin-bottom:16px}
   .bar div{height:100%;background:repeating-linear-gradient(-45deg,var(--flamingo) 0 10px,#ff6f9d 10px 20px);width:0;transition:width .3s}
 
@@ -103,9 +116,9 @@
   .code{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
   .code kbd{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:var(--ink);color:var(--sun);font:700 16px Figtree,sans-serif;box-shadow:0 2px 0 var(--flamingo)}
   .code-tbc{display:inline-block;margin-top:6px;font-size:13px;font-style:italic;color:var(--ink-soft)}
-  .item .ico{margin-left:auto;color:var(--ink-soft);opacity:.45;flex-shrink:0;align-self:center}
+  .item .ico{margin-left:auto;width:36px;height:36px;border-radius:50%;background:var(--pool);border:2px solid var(--ink);color:var(--ink);flex-shrink:0;align-self:center;display:flex;align-items:center;justify-content:center}
   .item .ico svg{width:20px;height:20px;display:block}
-  .item.done .ico{opacity:.9;color:var(--flamingo)}
+  .item.done .ico{background:var(--sea);color:var(--shell)}
   .empty{text-align:center;padding:30px 0;font-size:15px}
   .empty svg{display:block;margin:0 auto 10px}
 
@@ -115,14 +128,18 @@
   .panel p{color:var(--ink-soft);font-size:15px;margin-bottom:12px}
   .panel#about p{margin-bottom:0}
   .glinks{display:flex;flex-wrap:wrap;gap:8px}
+  .poplist{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin-top:8px}
+  .poplist a{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink);background:var(--pool);border:2px solid var(--ink);border-radius:12px;padding:8px 10px;font-weight:700;font-size:15px;min-height:56px}
+  .poplist a:hover{background:var(--sun)}
+  .poplist .thumb{flex-shrink:0}
   .glinks a{text-decoration:none;color:var(--ink);background:var(--pool);border:2px solid var(--ink);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:700}
   .glinks a em{font-style:normal;font-weight:400;margin-left:4px;color:var(--ink-soft)}
   .glinks a:hover{background:var(--sun)}
   .gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
   .gear a{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink);background:var(--pool);border:2px solid var(--ink);border-radius:12px;padding:12px}
   .gear a:hover{background:var(--sun)}
-  .gi{width:40px;height:40px;border-radius:10px;background:var(--shell);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .gi svg{width:22px;height:22px}
+  .gi{width:64px;height:64px;border-radius:12px;background:var(--shell);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .gi svg{width:52px;height:52px}
   .gear a b{display:block;font-size:15px}
   .gear a span span{font-size:13px;color:var(--ink-soft)}
   .btns{display:flex;gap:8px;flex-wrap:wrap}
@@ -135,10 +152,11 @@
   textarea{width:100%;margin-top:10px;background:var(--pool);border:2px solid var(--ink);color:var(--ink);border-radius:10px;padding:10px;font:13px ui-monospace,monospace;min-height:70px;display:none}
   .msg{font-size:14px;font-weight:700;margin-top:8px;min-height:18px}
 
-  footer{background:var(--ink);color:#d9ecea;margin-top:40px;padding:0 0 40px;font-size:14px}
+  footer{background:var(--ink);color:#e6f2f0;margin-top:40px;padding:0;font-size:14px}
   footer a{color:var(--sun)}
   footer p+p{margin-top:8px}
-  .footart{display:block;width:100%;height:70px;margin-bottom:22px;background:var(--pool)}
+  .footart{display:block;width:100%;height:96px;background:var(--pool)}
+  footer .wrap{padding-top:24px;padding-bottom:72px}
 
   /* Dialogs */
   .modal{position:fixed;inset:0;background:rgba(18,60,71,.55);display:none;align-items:center;justify-content:center;z-index:20;padding:20px}
@@ -147,7 +165,8 @@
   .modal .box.wide{max-width:430px}
   .modal h4{font-size:18px;margin-bottom:6px}
   .modal p{font-size:14px;color:var(--ink-soft);margin-bottom:16px}
-  #shareImg{width:100%;aspect-ratio:1;border-radius:12px;background:var(--pool);display:block;margin-bottom:14px;border:2px solid var(--ink)}
+  #shareImg{width:100%;border-radius:12px;background:var(--pool);display:block;margin-bottom:14px;border:2px solid var(--ink)}
+  #fmtWide[aria-pressed="true"],#fmtSquare[aria-pressed="true"]{background:var(--ink);color:var(--shell)}
   .xclose{float:right;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer;line-height:1;margin:-6px -4px 0 0}
   .hero-btns{display:flex;flex-wrap:wrap;gap:8px}
   .miss{display:inline-block;font-size:12px;font-weight:800;color:var(--shell);background:#b3124a;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
@@ -209,7 +228,13 @@
         <button class="btn hot share-btn" id="shareBtn" type="button">Share my progress</button>
       </div>
     </div>
-    <div class="notice" id="notice">Updated 25 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 57 card locations, the first 8 Cocaine Flamingos, every garage price and all four free story garages are in. The tracker is being updated as players discover more.</div>
+    <div class="upd" id="updBanner">
+      <svg viewBox="0 0 54 34" aria-hidden="true"><rect width="54" height="34" rx="6" fill="#123c47"/><path d="M11 28a16 16 0 0 1 32 0z" fill="#ff4f87"/><rect x="9" y="20" width="36" height="2" fill="#123c47"/><rect x="9" y="24" width="36" height="2.5" fill="#123c47"/><rect x="4" y="28" width="46" height="3" rx="1.5" fill="#1f8f8a"/></svg>
+      <div>
+        <b id="updateHeadline">First Cocaine Flamingos and 3 free garages added</b>
+        <div class="notice" id="notice">Updated 25 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 57 card locations, the first 8 Cocaine Flamingos, every garage price and all four free story garages are in. The tracker is being updated as players discover more.</div>
+      </div>
+    </div>
   </div>
 </header>
 <!-- AD SLOT (homepage, below hero) – disabled until AdSense approval is confirmed. Paste the ad unit code here later. Never put an ad inside the checklist below. -->
@@ -228,7 +253,7 @@
     <label class="toggle"><input type="checkbox" id="hideDone"> Hide completed</label>
   </div>
 
-  <div class="cathead"><div class="catname"><span class="badge" id="catIcon"></span><h2 id="catTitle"></h2></div><span id="catCount"></span></div>
+  <div class="cathead"><div class="catname"><span class="badge" id="catIcon"></span><h2 id="catTitle"></h2></div><span id="catCount"><span class="cring" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="17" fill="var(--shell)" stroke="#9fdccf" stroke-width="6"/><circle id="catRing" cx="22" cy="22" r="17" fill="none" stroke="#ff4f87" stroke-width="6" stroke-linecap="round" stroke-dasharray="106.8" stroke-dashoffset="106.8"/></svg><b id="catPct">0%</b></span><span id="catNum"></span></span></div>
   <div class="bar"><div id="catBar"></div></div>
   <div class="list" id="list"></div>
 
@@ -244,10 +269,10 @@
     <h3>Kit for a long session</h3>
     <p>A few things worth having for a 100% run. These are Amazon affiliate links – as an Amazon Associate I earn from qualifying purchases, which helps keep the site free. <a href="/gta-6-best-setup/">See the full setup guide</a>.</p>
     <div class="gear">
-      <a href="https://www.amazon.co.uk/s?k=ps5+dualsense+controller&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9h10a4 4 0 0 1 3.9 4.8l-.6 3a2 2 0 0 1-3.4 1L15 16H9l-1.9 1.8a2 2 0 0 1-3.4-1l-.6-3A4 4 0 0 1 7 9z"/><path d="M8 12v2M7 13h2"/><path d="M16 12.5h.01"/></svg></span><span><b>PS5 DualSense</b><span>Spare controller</span></span></a>
-      <a href="https://www.amazon.co.uk/s?k=ps5+gaming+headset&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span><span><b>Gaming headset</b><span>Hear every siren</span></span></a>
-      <a href="https://www.amazon.co.uk/s?k=2tb+nvme+ssd+ps5+heatsink&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M6 11h6M6 13h4"/><path d="M17.5 12h.01"/></svg></span><span><b>2TB NVMe SSD</b><span>Extra room for big installs</span></span></a>
-      <a href="https://www.amazon.co.uk/s?k=dualsense+charging+station&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="16" height="9" rx="2"/><path d="M21 11v3"/><path d="M11.5 9.5l-2 3h3l-2 3"/></svg></span><span><b>Charging dock</b><span>Never die mid-heist</span></span></a>
+      <a href="https://www.amazon.co.uk/s?k=ps5+dualsense+controller&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 22h28c6 0 10 4 11 10l2 12c1 5-5 8-8 4l-5-6H18l-5 6c-3 4-9 1-8-4l2-12c1-6 5-10 11-10z" fill="#fffbf2" stroke="#123c47" stroke-width="3" stroke-linejoin="round"/><path d="M20 29v8M16 33h8" stroke="#123c47" stroke-width="3" stroke-linecap="round"/><circle cx="43" cy="30" r="2.6" fill="#ff4f87"/><circle cx="48" cy="35" r="2.6" fill="#ffcf3d"/><circle cx="38" cy="35" r="2.6" fill="#1f8f8a"/><circle cx="43" cy="40" r="2.6" fill="#123c47"/></svg></span><span><b>PS5 DualSense</b><span>Spare controller</span></span></a>
+      <a href="https://www.amazon.co.uk/s?k=ps5+gaming+headset&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 38V30a18 18 0 0 1 36 0v8" fill="none" stroke="#123c47" stroke-width="5" stroke-linecap="round"/><rect x="8" y="34" width="12" height="18" rx="5" fill="#ff4f87" stroke="#123c47" stroke-width="3"/><rect x="44" y="34" width="12" height="18" rx="5" fill="#ff4f87" stroke="#123c47" stroke-width="3"/><path d="M14 52c0 5 6 6 12 6" fill="none" stroke="#123c47" stroke-width="2.5" stroke-linecap="round"/><circle cx="28" cy="58" r="2.5" fill="#123c47"/></svg></span><span><b>Gaming headset</b><span>Hear every siren</span></span></a>
+      <a href="https://www.amazon.co.uk/s?k=2tb+nvme+ssd+ps5+heatsink&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="22" width="52" height="20" rx="3" fill="#1f8f8a" stroke="#123c47" stroke-width="3"/><rect x="12" y="27" width="10" height="10" rx="1.5" fill="#123c47"/><rect x="25" y="27" width="10" height="10" rx="1.5" fill="#123c47"/><rect x="38" y="28" width="12" height="8" rx="1.5" fill="#ffcf3d" stroke="#123c47" stroke-width="1.5"/><path d="M53 26v12" stroke="#fffbf2" stroke-width="2" stroke-dasharray="2 2"/><path d="M10 46h44" stroke="#123c47" stroke-width="2.5" stroke-linecap="round" opacity=".35"/></svg></span><span><b>2TB NVMe SSD</b><span>Extra room for big installs</span></span></a>
+      <a href="https://www.amazon.co.uk/s?k=dualsense+charging+station&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="42" width="48" height="12" rx="4" fill="#123c47"/><circle cx="20" cy="48" r="2" fill="#ffcf3d"/><circle cx="44" cy="48" r="2" fill="#ffcf3d"/><path d="M12 30c0-4 3-7 7-7h2c4 0 7 3 7 7v12H12z" fill="#fffbf2" stroke="#123c47" stroke-width="2.5"/><path d="M36 30c0-4 3-7 7-7h2c4 0 7 3 7 7v12H36z" fill="#ff4f87" stroke="#123c47" stroke-width="2.5"/><path d="M31 12l-4 8h6l-4 8" fill="none" stroke="#123c47" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Charging dock</b><span>Never die mid-heist</span></span></a>
     </div>
   </section>
 
@@ -264,7 +289,7 @@
     <div class="msg" id="msg"></div>
     <div class="sync" id="syncBox">
       <h4>Sync across devices (optional)</h4>
-      <p id="syncText">Keep your ticks the same on your phone, PC, PS5 and Xbox browsers. No account or email – you get a private sync code to enter on your other devices. Your ticks still save on this device as normal.</p>
+      <p id="syncText">Keep your ticks the same on your phone, tablet, PC and the Xbox browser. No account or email – you get a private sync code to enter on your other devices. Your ticks still save on this device as normal.</p>
       <div id="syncOff" class="btns">
         <button class="btn primary" id="syncStart" type="button">Turn on sync</button>
         <input id="syncIn" placeholder="Sync code" aria-label="Sync code" maxlength="14" autocomplete="off">
@@ -293,7 +318,16 @@
 </main>
 
 <footer>
-  <svg class="footart" viewBox="0 0 800 70" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="fsun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf3d"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient></defs><circle cx="400" cy="70" r="46" fill="url(#fsun)" opacity="1"/><path d="M0 70 H800" stroke="#123c47"/><g transform="translate(80 70) scale(0.45)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(120 70) scale(0.32)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(660 70) scale(0.4)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g><g transform="translate(720 70) scale(0.5)"><g fill="none" stroke="#123c47" stroke-linecap="round"><path d="M0 0 C 3 -35 10 -75 6 -118" stroke-width="7"/><g stroke-width="5"><path d="M6 -118 q -28 -14 -58 6"/><path d="M6 -118 q -34 2 -50 30"/><path d="M6 -118 q 30 -16 60 4"/><path d="M6 -118 q 34 4 46 32"/><path d="M6 -118 q -4 -24 -24 -36"/><path d="M6 -118 q 10 -24 32 -32"/></g></g></g></svg>
+  <svg class="footart" viewBox="0 0 420 96" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <defs><mask id="fsunm"><rect width="420" height="96" fill="#fff"/><rect x="0" y="66" width="420" height="4" fill="#000"/><rect x="0" y="76" width="420" height="5" fill="#000"/><rect x="0" y="86" width="420" height="6" fill="#000"/></mask></defs>
+    <path d="M150 96a60 60 0 0 1 120 0z" fill="#ff8a3d" mask="url(#fsunm)"/>
+    <path d="M166 96a44 44 0 0 1 88 0z" fill="#ff4f87" mask="url(#fsunm)"/>
+    <g fill="none" stroke="#123c47" stroke-linecap="round">
+      <path d="M96 96c2-18 6-36 3-54" stroke-width="5"/><g stroke-width="4"><path d="M99 42q-20-9-40 4"/><path d="M99 42q-24 2-34 22"/><path d="M99 42q20-11 41 3"/><path d="M99 42q23 3 31 22"/><path d="M99 42q-2-16-16-24"/><path d="M99 42q7-16 22-21"/></g>
+      <path d="M128 96c1-12 4-24 2-36" stroke-width="4"/><g stroke-width="3.2"><path d="M130 60q-14-6-28 3"/><path d="M130 60q14-8 29 2"/><path d="M130 60q-2-11-11-17"/><path d="M130 60q5-11 15-14"/></g>
+      <path d="M322 96c-2-16-5-32-2-48" stroke-width="5"/><g stroke-width="4"><path d="M320 48q-20-9-40 4"/><path d="M320 48q20-11 41 3"/><path d="M320 48q23 3 31 22"/><path d="M320 48q-24 2-34 22"/><path d="M320 48q-2-16-16-24"/><path d="M320 48q7-16 22-21"/></g>
+    </g>
+  </svg>
   <div class="wrap">
     <p><b>Leonida Tracker is an unofficial fan site.</b> It isn't affiliated with, endorsed by or connected to Rockstar Games or Take-Two Interactive. Game titles and trademarks belong to their owners.</p>
     <p>As an Amazon Associate I earn from qualifying purchases.</p>
@@ -317,7 +351,11 @@
     <button class="xclose" id="shareClose" aria-label="Close">×</button>
     <h4>Share your progress</h4>
     <p>Post it, send it to your mates, or save the image.</p>
-    <img id="shareImg" alt="Your GTA 6 progress image">
+    <div class="btns" style="margin-bottom:10px" role="group" aria-label="Image shape">
+      <button class="btn" id="fmtWide" type="button" aria-pressed="true">Wide – X &amp; Reddit</button>
+      <button class="btn" id="fmtSquare" type="button" aria-pressed="false">Square – Discord</button>
+    </div>
+    <img id="shareImg" alt="Your GTA 6 progress card">
     <div class="btns">
       <button class="btn primary" id="nativeShare" type="button">Share…</button>
       <a class="btn" id="dlBtn" download="leonida-tracker-progress.png" href="#">Download image</a>
@@ -1098,13 +1136,19 @@ const CATEGORIES = [
 /* Category icons (keyed by category key) */
 const ICONS = {
   missions:'<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>',
-  collectibles:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+  collectibles:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6"/><path d="M12 16.5h.01"/>',
+  card:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6"/><path d="M12 16.5h.01"/>',
+  flamingo:'<path d="M15 3.5a2 2 0 1 0 0 4c-2.2 1.8-2.5 4.3-.6 5.6 2.3 1.6 1.8 5-1.9 5H9.2c-2.6 0-3.4-2.8-1-3.8 1.8-.7 3.7-.3 5.3.6"/><path d="M12 18v3.5M10 21.5h4"/><path d="M17 5l2.2.9"/>',
+  stunt:'<path d="M3 19h9l6-7"/><path d="M5 19v-2.5"/><path d="M13 8.5c2.2-3.5 6-3.6 8-.8"/><path d="M19.4 5.4l1.7 2.4-2.8.6"/>',
+  bank:'<path d="M3 9l9-5 9 5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/>',
   vehicles:'<path d="M3 16v-3l2.2-5h13.6l2.2 5v3z"/><path d="M5 13h14"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/>',
   properties:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
   activities:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/>',
   cheats:'<rect x="3" y="7" width="18" height="10" rx="5"/><path d="M8 10v4M6 12h4"/><path d="M15 11h.01M17 13h.01"/>',
   trophies:'<path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4M9 20h6"/>'
 };
+// Pick a more specific icon for some items (flamingos, cards, stunt jumps, banks)
+const itemIcon = (i, catKey) => /^Cocaine Flamingo/.test(i.name) ? "flamingo" : / card:| card set$/.test(i.name) ? "card" : /^Stunt jump/.test(i.name) ? "stunt" : /^Bank (job|vault)/.test(i.name) ? "bank" : catKey;
 const ico = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[k] || ICONS.collectibles}</svg>`;
 
 /* ============================================================
@@ -1137,7 +1181,7 @@ function countDone(items){ return items.filter(i => done[i.id]).length; }
 
 function renderTabs(){
   $("tabs").innerHTML = CATEGORIES.map(c =>
-    `<button class="tab ${c.key===current?"on":""}" data-k="${c.key}">${ico(c.key)}${c.title}<em>${countDone(c.items)}/${c.items.length}</em></button>`
+    `<button class="tab ${c.key===current?"on":""}" data-k="${c.key}" style="--p:${c.items.length ? Math.round(countDone(c.items) / c.items.length * 100) : 0}%" aria-label="${esc(c.title)}: ${countDone(c.items)} of ${c.items.length} done">${ico(c.key)}${c.title}<em>${countDone(c.items)}/${c.items.length}</em></button>`
   ).join("");
   const on = $("tabs").querySelector(".tab.on");
   if (on) $("tabs").scrollLeft = on.offsetLeft - ($("tabs").clientWidth - on.offsetWidth) / 2;
@@ -1153,6 +1197,14 @@ function renderTotal(){
 const tick = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fffbf2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>`;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
+// Notes: drop "map region to be confirmed" (shown nowhere until a region is confirmed) and,
+// where items are grouped by chapter, drop the chapter prefix that the group heading already shows.
+const CHAPTER_RE = /^Chapter (\d+)(?: \(([^)]*)\))?/;
+function cleanNote(note, stripChapter){
+  let n = String(note || "").replace(/\s*[–-]\s*map region to be confirmed/gi, "").trim();
+  if (stripChapter) n = n.replace(/^Chapter \d+(?: \([^)]*\))?\s*[–-]?\s*/, "").trim();
+  return n;
+}
 function renderList(){
   const cat = CATEGORIES.find(c => c.key === current);
   const q = $("search").value.trim().toLowerCase();
@@ -1168,19 +1220,36 @@ function renderList(){
   const n = countDone(cat.items);
   $("catTitle").textContent = cat.title;
   $("catIcon").innerHTML = ico(cat.key);
-  $("catCount").textContent = `${n} of ${cat.items.length}`;
+  const cpct = cat.items.length ? Math.round(n / cat.items.length * 100) : 0;
+  $("catNum").textContent = `${n} of ${cat.items.length}`;
+  $("catPct").textContent = cpct + "%";
+  $("catRing").style.strokeDashoffset = 106.8 * (1 - cpct / 100);
   $("catBar").style.width = (cat.items.length ? n / cat.items.length * 100 : 0) + "%";
 
-  $("list").innerHTML = shown.length ? shown.map(i => `
+  const byChapter = shown.length > 0 && shown.every(i => CHAPTER_RE.test(i.note || ""));
+  let lastChap = null;
+  $("list").innerHTML = shown.length ? shown.map(i => {
+    let head = "";
+    if (byChapter) {
+      const m = CHAPTER_RE.exec(i.note);
+      if (m[0] !== lastChap) {
+        lastChap = m[0];
+        const inChap = cat.items.filter(x => (CHAPTER_RE.exec(x.note || "") || [])[0] === m[0]);
+        head = `<div class="group-h">Chapter ${m[1]}${m[2] ? ": " + esc(m[2]) : ""}<span>${countDone(inChap)} of ${inChap.length} done</span></div>`;
+      }
+    }
+    const note = cleanNote(i.note, byChapter);
+    return head + `
     <div class="item ${done[i.id]?"done":""}" data-id="${esc(i.id)}" role="checkbox" aria-checked="${!!done[i.id]}" tabindex="0">
       <div class="check">${tick}</div>
       <div>
         <div class="name">${esc(i.name)}${isMissable(i) ? '<span class="miss">Missable</span>' : ""}</div>
-        <div class="meta">${i.region && i.region !== "Leonida" ? `<span class="region">${esc(i.region)}</span>` : ""}<span class="note">${esc(i.note)}</span></div>
+        ${(i.region && i.region !== "Leonida") || note ? `<div class="meta">${i.region && i.region !== "Leonida" ? `<span class="region">${esc(i.region)}</span>` : ""}${note ? `<span class="note">${esc(note)}</span>` : ""}</div>` : ""}
         ${"code" in i ? (i.code ? `<div class="code" aria-label="Code: ${esc(i.code)}">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</div>` : `<span class="code-tbc">Code not found yet</span>`) : ""}
       </div>
-      <span class="ico">${ico(cat.key)}</span>
-    </div>`).join("") : `<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Nothing matches – try clearing the filters.</div>`;
+      <span class="ico">${ico(itemIcon(i, cat.key))}</span>
+    </div>`;
+  }).join("") : `<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Nothing matches – try clearing the filters.</div>`;
 }
 
 function itemHTML(i, catKey){
@@ -1189,9 +1258,9 @@ function itemHTML(i, catKey){
       <div class="check">${tick}</div>
       <div>
         <div class="name">${esc(i.name)}</div>
-        <div class="meta"><span class="note">${esc(i.note)}</span></div>
+        ${cleanNote(i.note) ? `<div class="meta"><span class="note">${esc(cleanNote(i.note))}</span></div>` : ""}
       </div>
-      <span class="ico">${ico(catKey)}</span>
+      <span class="ico">${ico(itemIcon(i, catKey))}</span>
     </div>`;
 }
 function renderMust(){
@@ -1279,58 +1348,54 @@ function overallPct(){
   const all = CATEGORIES.flatMap(c => c.items);
   return all.length ? Math.round(countDone(all) / all.length * 100) : 0;
 }
-async function makeShareImage(){
+// Share card in the sunset-postcard style. "square" (1080×1080) suits Discord/Instagram, "wide" (1200×630) suits X/Reddit.
+let shareFmt = "wide";
+async function makeShareImage(fmt){
   try { await document.fonts.ready; } catch(e){}
-  const W = 1080, H = 1080;
+  const wide = fmt === "wide", W = wide ? 1200 : 1080, H = wide ? 630 : 1080;
   const c = document.createElement("canvas"); c.width = W; c.height = H;
   const x = c.getContext("2d");
-  const bg = x.createLinearGradient(0,0,0,H);
-  bg.addColorStop(0,"#ffcf3d"); bg.addColorStop(.5,"#ff8a3d"); bg.addColorStop(.5,"#123c47"); bg.addColorStop(1,"#123c47");
-  x.fillStyle = bg; x.fillRect(0,0,W,H);
-  // sun with stripes cut out
-  const s = document.createElement("canvas"); s.width = W; s.height = H;
-  const sx = s.getContext("2d");
-  const sg = sx.createLinearGradient(0,290,0,560);
-  sg.addColorStop(0,"#ff4f87"); sg.addColorStop(1,"#ff4f87");
-  sx.fillStyle = sg; sx.beginPath(); sx.arc(W/2,560,270,Math.PI,0); sx.fill();
+  const rr = (X, Y, w, h, r) => { x.beginPath(); if (x.roundRect) x.roundRect(X, Y, w, h, r); else x.rect(X, Y, w, h); };
+  const stat = k => { const cat = CATEGORIES.find(z => z.key === k); return cat ? [countDone(cat.items), cat.items.length] : [0, 0]; };
+  const horizon = wide ? 470 : 560, sunX = wide ? 330 : W / 2, sunR = wide ? 200 : 260;
+  // sky + sun with stripes
+  const sky = x.createLinearGradient(0, 0, 0, horizon); sky.addColorStop(0, "#ffcf3d"); sky.addColorStop(1, "#ff8a3d");
+  x.fillStyle = sky; x.fillRect(0, 0, W, horizon);
+  const s2 = document.createElement("canvas"); s2.width = W; s2.height = H; const sx = s2.getContext("2d");
+  sx.fillStyle = "#ff4f87"; sx.beginPath(); sx.arc(sunX, horizon, sunR, Math.PI, 0); sx.fill();
   sx.globalCompositeOperation = "destination-out";
-  [[452,7],[485,11],[520,15]].forEach(([y,h]) => sx.fillRect(0,y,W,h));
-  x.drawImage(s,0,0);
-  x.fillStyle = "#fffbf2"; x.globalAlpha = .55;
-  [[400,580,280],[440,600,200],[490,618,100]].forEach(([a,b,w]) => x.fillRect(a,b,w,3));
-  x.globalAlpha = 1;
+  [[0.30, 7], [0.18, 11], [0.07, 15]].forEach(([f, h]) => sx.fillRect(0, horizon - sunR * f - h, W, h));
+  x.drawImage(s2, 0, 0);
+  x.fillStyle = "#1f8f8a"; x.fillRect(0, horizon, W, 18);
+  x.fillStyle = "#123c47"; x.fillRect(0, horizon + 18, W, H - horizon - 18);
   // brand
-  x.textAlign = "center"; x.textBaseline = "alphabetic";
-  x.font = '44px Bungee, sans-serif';
-  const brand1 = "LEONIDA ", brand2 = "TRACKER";
-  const w1 = x.measureText(brand1).width, w2 = x.measureText(brand2).width, bx = W/2 - (w1+w2)/2;
-  x.textAlign = "left"; x.fillStyle = "#123c47"; x.fillText(brand1, bx, 100);
-  x.fillStyle = "#fffbf2"; x.fillText(brand2, bx+w1, 100);
-  // percentage
-  x.textAlign = "center";
-  x.shadowColor = "#123c47"; x.shadowBlur = 0; x.shadowOffsetX = 8; x.shadowOffsetY = 8;
-  x.fillStyle = "#fffbf2"; x.font = '200px Bungee, sans-serif';
-  x.fillText(overallPct() + "%", W/2, 330);
-  x.shadowOffsetX = 3; x.shadowOffsetY = 3;
-  x.font = '700 44px Figtree, sans-serif'; x.fillStyle = "#fffbf2";
-  x.fillText("of GTA 6 done", W/2, 405);
+  x.textBaseline = "alphabetic"; x.font = (wide ? 38 : 44) + "px Bungee, sans-serif";
+  const b1 = "LEONIDA ", b2 = "TRACKER", w1 = x.measureText(b1).width, w2 = x.measureText(b2).width;
+  const bx = wide ? 50 : W / 2 - (w1 + w2) / 2, by = wide ? 72 : 96;
+  x.textAlign = "left"; x.fillStyle = "#123c47"; x.fillText(b1, bx, by); x.fillStyle = "#fffbf2"; x.fillText(b2, bx + w1, by);
+  // big percentage
+  x.textAlign = "center"; x.shadowColor = "#123c47"; x.shadowOffsetX = 8; x.shadowOffsetY = 8;
+  x.fillStyle = "#fffbf2"; x.font = (wide ? 170 : 200) + "px Bungee, sans-serif";
+  x.fillText(overallPct() + "%", sunX, wide ? 300 : 330);
+  x.shadowOffsetX = 3; x.shadowOffsetY = 3; x.font = "800 " + (wide ? 38 : 44) + "px Figtree, sans-serif";
+  x.fillText("of GTA 6 done", sunX, wide ? 362 : 405);
   x.shadowOffsetX = 0; x.shadowOffsetY = 0;
-  // category bars
-  let y = 652;
-  CATEGORIES.forEach(cat => {
-    const d = countDone(cat.items), t = cat.items.length, f = t ? d/t : 0;
-    x.textAlign = "left"; x.font = '700 30px Figtree, sans-serif'; x.fillStyle = "#fffbf2";
-    x.fillText(cat.title, 110, y);
-    x.textAlign = "right"; x.font = '400 28px Figtree, sans-serif'; x.fillStyle = "#bfe8de";
-    x.fillText(d + " / " + t, 970, y);
-    x.fillStyle = "#2c5a63"; x.beginPath(); x.roundRect(110, y+14, 860, 12, 6); x.fill();
-    if (f > 0){
-      x.fillStyle = "#ff4f87"; x.beginPath(); x.roundRect(110, y+14, Math.max(12, 860*f), 12, 6); x.fill();
-    }
-    y += 52;
+  // stat tiles: missions, trophies, collectibles
+  const tiles = [["Story missions", stat("missions")], ["Trophies", stat("trophies")], ["Collectibles", stat("collectibles")]];
+  tiles.forEach(([label, [d, t]], k) => {
+    let X, Y, w, h;
+    if (wide) { X = 680; w = 470; h = 146; Y = 34 + k * 186; } else { w = 290; h = 220; X = 80 + k * (w + 25); Y = horizon + 70; }
+    if (wide) { x.fillStyle = "#123c47"; rr(X - 8, Y - 8, w + 16, h + 16, 22); x.fill(); }
+    x.fillStyle = "#fffbf2"; rr(X, Y, w, h, 18); x.fill();
+    x.textAlign = "left"; x.fillStyle = "#1f434b"; x.font = "800 " + (wide ? 28 : 30) + "px Figtree, sans-serif";
+    x.fillText(label, X + 22, Y + (wide ? 44 : 52));
+    x.fillStyle = "#123c47"; x.font = (wide ? 52 : 58) + "px Bungee, sans-serif";
+    x.fillText(d + "/" + t, X + 22, Y + (wide ? 104 : 136));
+    x.fillStyle = "#bfe8de"; rr(X + 22, Y + h - (wide ? 30 : 46), w - 44, 14, 7); x.fill();
+    if (t && d) { x.fillStyle = "#ff4f87"; rr(X + 22, Y + h - (wide ? 30 : 46), Math.max(14, (w - 44) * d / t), 14, 7); x.fill(); }
   });
-  x.textAlign = "center"; x.font = '700 34px Figtree, sans-serif'; x.fillStyle = "#ffcf3d";
-  x.fillText("leonida-tracker.com", W/2, H - 34);
+  x.textAlign = "center"; x.fillStyle = "#ffcf3d"; x.font = "800 34px Figtree, sans-serif";
+  x.fillText("leonida-tracker.com", sunX, H - (wide ? 52 : 50));
   return c;
 }
 let shareBlob = null, shareObjURL = null;
@@ -1348,7 +1413,7 @@ async function openShare(){
   $("nativeShare").style.display = navigator.share ? "" : "none";
   $("xBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText()) + "&url=" + encodeURIComponent(progressURL());
   try {
-    const canvas = await makeShareImage();
+    const canvas = await makeShareImage(shareFmt);
     canvas.toBlob(b => {
       if (!b) return;
       shareBlob = b;
@@ -1360,6 +1425,11 @@ async function openShare(){
   } catch(e){ sflash("Couldn't draw the image on this browser – you can still share the link."); }
 }
 $("shareBtn").addEventListener("click", openShare);
+["fmtWide", "fmtSquare"].forEach(id => $(id).addEventListener("click", () => {
+  shareFmt = id === "fmtWide" ? "wide" : "square";
+  $("fmtWide").setAttribute("aria-pressed", shareFmt === "wide"); $("fmtSquare").setAttribute("aria-pressed", shareFmt === "square");
+  openShare();
+}));
 $("shareBtn2").addEventListener("click", openShare);
 $("shareClose").addEventListener("click", () => $("shareModal").classList.remove("show"));
 $("shareModal").addEventListener("click", e => { if (e.target.id === "shareModal") $("shareModal").classList.remove("show"); });

@@ -23,3 +23,9 @@ Unofficial GTA 6 completion tracker – https://leonida-tracker.com
 - **Ads**: AdSense ad units are NOT live. Placeholder comments marked `AD SLOT` show where they'd go (below the homepage hero, between panels, between guide sections, end of guides, gear page). Never place one inside the checklist or over the map.
 - **Pages**: `/gta-6-best-setup/` (Amazon UK), `/progress/` (share card, numbers travel in the link), `/tell-us/` (Netlify Forms – enable form detection in Netlify).
 - **Guide tokens**: `{{bycounty:CAT:PATTERN}}` groups a table by county; `{{cardsets}}` lists every card set with its confirmed card locations.
+
+## Design pass 25 Nov 2026
+- Update banner: the homepage headline lives in `<b id="updateHeadline">` (keep it under ~8 words), with the full details in `#notice` below it. `/banner/` (not linked) makes matching images for social posts from that headline.
+- Story missions are grouped under chapter headings; notes never show "map region to be confirmed" (stripped at render/build), so the region only appears once one is confirmed in the data.
+- Guide graphics are all inline SVG built by `build.js`: thumbnails (meta `icon`), stat cards (meta `stats`), route diagrams (`{{route:CAT:TITLE::PATTERN}}`). Product pictures are our own illustrations in `art/products.json`.
+- Map pins: pink = to do, teal = done, yellow = missable.

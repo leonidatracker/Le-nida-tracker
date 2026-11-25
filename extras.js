@@ -11,7 +11,9 @@
   spot. Items with no confirmed county go in the "Area not confirmed yet" list – never guess one.
 */
 module.exports = function extras(h) {
-  const { CATEGORIES, realItems, isMissable, esc, shell, crumbsLD, faqLD, faqHTML, prettyDate, SITE, AD_SLOT } = h;
+  const { CATEGORIES, realItems, isMissable, esc, shell, crumbsLD, faqLD, faqHTML, prettyDate, SITE, AD_SLOT, thumbSVG } = h;
+  const ART = require("./art/products.json"); // our own product illustrations (not photos of specific products)
+  const headline = h.updateHeadline || "New locations added";
   const TAG = "simonjwarnera-21";
   const amazon = q => `https://www.amazon.co.uk/s?k=${encodeURIComponent(q).replace(/%20/g, "+")}&amp;tag=${TAG}`;
   const pages = [], files = [];
@@ -92,7 +94,8 @@ module.exports = function extras(h) {
   #leo .lbl.small{font-size:13px}
   #leo .cnt{font:800 14px Figtree,sans-serif;fill:#123c47;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#fffbf2;stroke-width:4px;stroke-linejoin:round}
   #leo .pin{cursor:pointer;stroke:#123c47;stroke-width:1.5}
-  #leo .pin.done{opacity:.35}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;padding:8px 12px;border-top:2px solid var(--ink);font-weight:700;font-size:14px;background:var(--shell)}
+  .legend i{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--ink);margin-right:6px;vertical-align:-2px}
   .mapnote{font-size:13px;color:var(--ink-soft);padding:8px 12px;border-top:2px solid var(--ink);background:var(--done)}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}
   .chip{display:inline-flex;align-items:center;gap:7px;border:2px solid var(--ink);background:var(--shell);border-radius:999px;padding:8px 13px;font:700 15px Figtree,sans-serif;color:var(--ink);cursor:pointer;min-height:44px}
@@ -147,7 +150,9 @@ module.exports = function extras(h) {
       var sp = Math.min(b[2] / cols, (b[3] - 10) / rows, 22), r = Math.max(2.5, Math.min(7, sp * 0.38));
       its.forEach(function(i, k){
         var x = b[0] + (k % cols + 0.5) * (b[2] / cols), y = b[1] + 12 + (Math.floor(k / cols) + 0.5) * sp;
-        out += '<circle class="pin'+(done[i.id]?' done':'')+'" data-id="'+i.id+'" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+color(i.group)+'"><title>'+esc(i.name)+'</title></circle>';
+        // pin colours: teal = done, yellow = missable, pink = still to do
+        var fill = done[i.id] ? "#1f8f8a" : i.missable ? "#ffcf3d" : "#ff4f87";
+        out += '<circle class="pin'+(done[i.id]?' done':'')+'" data-id="'+i.id+'" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+fill+'"><title>'+esc(i.name)+(done[i.id]?' (done)':'')+'</title></circle>';
       });
     });
     $("pins").innerHTML = out; $("labels").innerHTML = lbl;
@@ -230,6 +235,7 @@ module.exports = function extras(h) {
   <div class="mapwrap">
     <div class="mapbox">
       ${MAP_SVG}
+      <div class="legend"><span><i style="background:#ff4f87"></i>To do</span><span><i style="background:#1f8f8a"></i>Done</span><span><i style="background:#ffcf3d"></i>Missable</span></div>
       <p class="mapnote"><b>Unofficial schematic map – not to scale.</b> Counties are drawn from community mapping, and pins are grouped by county, so they show the area rather than the exact spot. Each item's note gives the location. ${placed} of ${mapItems.length} items have a confirmed county.</p>
     </div>
     <section class="panel">
@@ -245,24 +251,25 @@ module.exports = function extras(h) {
 
   /* ---------------- Best setup (gear) page ---------------- */
   const gear = [
-    ["A comfortable headset", "Long sessions are easier with a headset that doesn't pinch. A wired one plugs straight into the 3.5mm jack on a DualSense or Xbox controller; wireless ones need their own dongle or console support, so check the box says PS5 or Xbox Series X|S.", [["PS5 gaming headsets", "ps5 gaming headset"], ["Xbox Series X|S headsets", "xbox series x headset"]]],
-    ["A second controller and a charger", "A spare controller on charge means you never stop mid-heist for a flat battery. A two-controller charging dock keeps both topped up.", [["DualSense controllers", "ps5 dualsense controller"], ["Xbox Wireless Controllers", "xbox wireless controller"], ["DualSense charging stations", "dualsense charging station"]]],
-    ["More storage", "On PS5 you can add an M.2 NVMe SSD inside the console – Sony asks for a PCIe Gen4 drive, recommends 5,500MB/s or faster, and says to use a heatsink. On Xbox Series X|S, games run from internal storage or an official Storage Expansion Card; an ordinary USB drive can hold Series X|S games but not run them.", [["PS5 M.2 SSDs with heatsink", "ps5 m.2 ssd heatsink 2tb"], ["Xbox Series storage expansion cards", "xbox series x storage expansion card"]]],
-    ["A TV or monitor you can read text on", "Map labels, phone messages and the checklist all mean a lot of small text. Pick a screen size that suits how far away you sit – and if you play at a desk, a monitor can be easier on the eyes than a TV across the room.", [["4K TVs", "4k tv"], ["Gaming monitors", "gaming monitor 27 inch"]]],
-    ["A chair you can sit in for hours", "100% runs take a long time. A supportive chair with adjustable height makes a real difference over a weekend of collectible hunting.", [["Gaming chairs", "gaming chair"], ["Ergonomic office chairs", "ergonomic office chair"]]],
-    ["A stand for your phone or tablet", "Prop the tracker up next to the TV so you can tick things off without picking your phone up.", [["Phone and tablet stands", "phone tablet stand adjustable"]]]
+    ["headset", "A comfortable headset", "Long sessions are easier with a headset that doesn't pinch. A wired one plugs straight into the 3.5mm jack on a DualSense or Xbox controller; wireless ones need their own dongle or console support, so check the box says PS5 or Xbox Series X|S.", [["PS5 gaming headsets", "ps5 gaming headset"], ["Xbox Series X|S headsets", "xbox series x headset"]]],
+    ["dock", "A second controller and a charger", "A spare controller on charge means you never stop mid-heist for a flat battery. A two-controller charging dock keeps both topped up.", [["DualSense controllers", "ps5 dualsense controller"], ["Xbox Wireless Controllers", "xbox wireless controller"], ["DualSense charging stations", "dualsense charging station"]]],
+    ["ssd", "More storage", "On PS5 you can add an M.2 NVMe SSD inside the console – Sony asks for a PCIe Gen4 drive, recommends 5,500MB/s or faster, and says to use a heatsink. On Xbox Series X|S, games run from internal storage or an official Storage Expansion Card; an ordinary USB drive can hold Series X|S games but not run them.", [["PS5 M.2 SSDs with heatsink", "ps5 m.2 ssd heatsink 2tb"], ["Xbox Series storage expansion cards", "xbox series x storage expansion card"]]],
+    ["tv", "A TV or monitor you can read text on", "Map labels, phone messages and the checklist all mean a lot of small text. Pick a screen size that suits how far away you sit – and if you play at a desk, a monitor can be easier on the eyes than a TV across the room.", [["4K TVs", "4k tv"], ["Gaming monitors", "gaming monitor 27 inch"]]],
+    ["chair", "A chair you can sit in for hours", "100% runs take a long time. A supportive chair with adjustable height makes a real difference over a weekend of collectible hunting.", [["Gaming chairs", "gaming chair"], ["Ergonomic office chairs", "ergonomic office chair"]]],
+    ["stand", "A stand for your phone or tablet", "Prop the tracker up next to the TV so you can tick things off without picking your phone up.", [["Phone and tablet stands", "phone tablet stand adjustable"]]]
   ];
   pages.push({ slug: "gta-6-best-setup", sitemap: true, html: shell({
     slug: "gta-6-best-setup", title: "Best Setup for a GTA 6 100% Run: Headset, Controller, Storage & More",
     description: "What's worth having for a long GTA 6 completion run – headset, spare controller, storage, screen, chair and a stand for the tracker.",
+    head: `<style>.gh{display:flex;align-items:center;gap:12px}.gart{width:64px;height:64px;flex-shrink:0;background:var(--shell);border:2px solid var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:center}.gart svg{width:52px;height:52px}</style>`,
     ld: [crumbsLD("Best setup", `${SITE}/gta-6-best-setup/`)],
     content: `
   <div class="crumbs"><a href="/">Leonida Tracker</a> › Best setup</div>
   <article>
   <h1>Best setup for a GTA 6 100% run</h1>
   <p class="answer"><b>For a long completion run, the things that make the most difference are comfort and not running out of charge:</b> a headset you can wear for hours, a spare controller on charge, enough storage, a screen you can read small text on, and a decent chair.</p>
-  <p class="note" style="margin:8px 0 18px"><b>Affiliate disclosure:</b> the links below go to Amazon UK. As an Amazon Associate I earn from qualifying purchases – it doesn't cost you anything extra and it helps keep the tracker free. We don't list specific models we haven't checked; the links open Amazon searches so you can compare current prices and reviews.</p>
-  ${gear.map(([t, d, links], k) => `<h2>${esc(t)}</h2><p>${esc(d)}</p><p>${links.map(([lt, q]) => `<a class="cta ghost" style="margin:4px 6px 4px 0;white-space:normal" href="${amazon(q)}" target="_blank" rel="sponsored nofollow noopener">${esc(lt)} on Amazon</a>`).join("")}</p>${k === 2 ? AD_SLOT("between gear sections") : ""}`).join("")}
+  <p class="note" style="margin:8px 0 18px"><b>Affiliate disclosure:</b> the links below go to Amazon UK. As an Amazon Associate I earn from qualifying purchases – it doesn't cost you anything extra and it helps keep the tracker free. We don't list specific models we haven't checked; the links open Amazon searches so you can compare current prices and reviews. The pictures are our own illustrations, not photos of particular products.</p>
+  ${gear.map(([art, t, d, links], k) => `<h2 class="gh">${ART[art] ? `<span class="gart">${ART[art]}</span>` : ""}${esc(t)}</h2><p>${esc(d)}</p><p>${links.map(([lt, q]) => `<a class="cta ghost" style="margin:4px 6px 4px 0;white-space:normal" href="${amazon(q)}" target="_blank" rel="sponsored nofollow noopener">${esc(lt)} on Amazon</a>`).join("")}</p>${k === 2 ? AD_SLOT("between gear sections") : ""}`).join("")}
   </article>
   <div class="box"><h2>Ready to start?</h2><p>The checklist is free and saves on your device.</p><a class="cta" href="/">Open the tracker</a></div>
   ${AD_SLOT("end of gear page")}`
@@ -325,6 +332,49 @@ module.exports = function extras(h) {
   pages.push({ slug: "tell-us/thanks", sitemap: false, html: shell({
     slug: "tell-us/thanks", title: "Thanks – we got it", noindex: true, description: "Thanks for the tip.",
     content: `<h1>Thanks – we got it</h1><p class="lead">We'll check it against our sources and add it if it's confirmed.</p><p style="margin-top:14px"><a class="cta" href="/">Back to the tracker</a></p>`
+  }) });
+
+  /* ---------------- Update banner maker (for social posts; not linked from the site) ---------------- */
+  pages.push({ slug: "banner", sitemap: false, html: shell({
+    slug: "banner", title: "Update banner maker", noindex: true, description: "Make a sunset-style update banner for social posts.",
+    content: `
+  <h1>Update banner maker</h1>
+  <p class="lead">Type the update, pick a size, and download the image for Reddit, X or Discord. The homepage banner uses the same style.</p>
+  <div class="box" style="max-width:640px">
+    <p><label><b>Headline</b><br><input id="bh" value="${esc(headline)}" maxlength="60" style="width:100%;margin-top:6px;padding:10px;border:2px solid var(--ink);border-radius:10px;font:16px Figtree,sans-serif"></label></p>
+    <p style="margin-top:10px"><label><b>Second line</b><br><input id="bs" value="Free GTA 6 100% checklist – updated ${esc(prettyDate)}" maxlength="80" style="width:100%;margin-top:6px;padding:10px;border:2px solid var(--ink);border-radius:10px;font:16px Figtree,sans-serif"></label></p>
+    <p style="margin-top:10px"><label><b>Size</b><br><select id="bz" style="margin-top:6px;padding:10px;border:2px solid var(--ink);border-radius:10px;font:16px Figtree,sans-serif"><option value="1200x630">Wide 1200×630 (X, Reddit, Discord)</option><option value="1080x1080">Square 1080×1080</option></select></label></p>
+  </div>
+  <canvas id="bc" style="width:100%;max-width:640px;height:auto;border:3px solid var(--ink);border-radius:14px;display:block"></canvas>
+  <p style="margin-top:12px"><a class="cta" id="bd" download="leonida-tracker-update.png" href="#">Download image</a></p>
+  <script>
+  (function(){
+    var c = document.getElementById("bc"), x = c.getContext("2d");
+    function wrap(t, maxW){ var w = t.split(" "), lines = [], l = ""; w.forEach(function(word){ var tst = l ? l + " " + word : word; if (x.measureText(tst).width > maxW && l) { lines.push(l); l = word; } else l = tst; }); if (l) lines.push(l); return lines; }
+    function draw(){
+      var sz = document.getElementById("bz").value.split("x"), W = +sz[0], H = +sz[1]; c.width = W; c.height = H;
+      var hz = Math.round(H * 0.62), g = x.createLinearGradient(0, 0, 0, hz); g.addColorStop(0, "#ffcf3d"); g.addColorStop(1, "#ff8a3d");
+      x.fillStyle = g; x.fillRect(0, 0, W, hz);
+      x.fillStyle = "#ff4f87"; x.beginPath(); x.arc(W * 0.78, hz, H * 0.3, Math.PI, 0); x.fill();
+      x.fillStyle = "#ff8a3d"; [0.05, 0.12, 0.2].forEach(function(f, k){ x.fillRect(W * 0.78 - H * 0.3, hz - H * f - 6, H * 0.6, 4 + k * 3); });
+      x.fillStyle = "#1f8f8a"; x.fillRect(0, hz, W, 16); x.fillStyle = "#123c47"; x.fillRect(0, hz + 16, W, H - hz - 16);
+      x.textAlign = "left"; x.textBaseline = "alphabetic"; x.font = "34px Bungee, sans-serif";
+      x.fillStyle = "#123c47"; x.fillText("LEONIDA", 50, 70); var w1 = x.measureText("LEONIDA ").width; x.fillStyle = "#fffbf2"; x.fillText("TRACKER", 50 + w1, 70);
+      var fs = W > 1100 ? 80 : 74, lines;
+      do { x.font = fs + "px Bungee, sans-serif"; lines = wrap(document.getElementById("bh").value.toUpperCase(), W * 0.62); fs -= 4; } while (lines.length > 3 && fs > 36);
+      fs += 4;
+      var y0 = hz - 30 - (lines.length - 1) * fs * 1.05;
+      x.shadowColor = "#123c47"; x.shadowOffsetX = 5; x.shadowOffsetY = 5; x.fillStyle = "#fffbf2";
+      lines.forEach(function(l, k){ x.fillText(l, 50, y0 + k * fs * 1.05); });
+      x.shadowOffsetX = 0; x.shadowOffsetY = 0;
+      x.font = "800 34px Figtree, sans-serif"; x.fillStyle = "#fffbf2"; x.fillText(document.getElementById("bs").value, 50, hz + 16 + (H - hz - 16) / 2);
+      x.fillStyle = "#ffcf3d"; x.font = "800 30px Figtree, sans-serif"; x.fillText("leonida-tracker.com", 50, H - 40);
+      try { document.getElementById("bd").href = c.toDataURL("image/png"); } catch(e){}
+    }
+    ["bh", "bs", "bz"].forEach(function(id){ document.getElementById(id).addEventListener("input", draw); });
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(draw); draw();
+  })();
+  </script>`
   }) });
 
   return { pages, files };
