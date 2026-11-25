@@ -49,6 +49,8 @@ for (const c of CATEGORIES) for (const i of c.items) {
   ids.add(i.id);
 }
 const realItems = c => c.items.filter(i => !i.placeholder);
+// Items whose note says they can be missed (same rule as the tracker page)
+const isMissable = i => /missable|can't be reached after|Chapter 1 only/i.test(i.note || "");
 const catByKey = k => {
   const c = CATEGORIES.find(c => c.key === k);
   if (!c) throw new Error("Unknown category in guide token: " + k);
@@ -128,14 +130,39 @@ function itemsMatching(catKey, pattern) {
   const items = realItems(catByKey(catKey));
   if (!pattern) return items;
   const re = new RegExp(pattern, "i");
-  return items.filter(i => re.test(i.name) || re.test(i.note || ""));
+  return items.filter(i => re.test(i.name) || re.test(i.note || "") || re.test(i.name + " | " + (i.note || "")));
 }
 function tableHTML(items) {
   if (!items.length) return `<p class="note">Nothing confirmed yet – check back soon.</p>`;
   const showRegion = new Set(items.map(i => i.region)).size > 1 && items.some(i => i.region !== "Leonida");
   return `<table><tbody>${items.map((i, idx) => `
-    <tr><td class="num">${idx + 1}</td><td><b>${esc(i.name)}</b>${i.note ? `<span class="note">${esc(i.note)}</span>` : ""}${"code" in i ? (i.code ? `<span class="code">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</span>` : `<span class="note"><i>Code not found yet</i></span>`) : ""}</td>${showRegion ? `<td class="reg">${esc(i.region)}</td>` : ""}</tr>`).join("")}
+    <tr><td class="num">${idx + 1}</td><td><b>${esc(i.name)}${isMissable(i) ? '<span class="missable">Missable</span>' : ""}</b>${i.note ? `<span class="note">${esc(i.note)}</span>` : ""}${"code" in i ? (i.code ? `<span class="code">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</span>` : `<span class="note"><i>Code not found yet</i></span>`) : ""}</td>${showRegion ? `<td class="reg">${esc(i.region)}</td>` : ""}</tr>`).join("")}
   </tbody></table>`;
+}
+// Group items by the county (or region) named in their note; unknown areas go last, marked as not yet verified.
+function areaOf(i) {
+  const t = (i.note || "") + " | " + (i.region || "");
+  const m = /\b((?:North |South |East |West )?[A-Z][a-z]+(?:-[A-Z][a-z]+)? County)\b/.exec(t);
+  if (m) return m[1].replace(/^(North|South|East|West) /, "");
+  for (const r of ["Vice City", "Ambrosia", "Port Gellhorn", "Mount Kalaga", "Grassrivers", "Leonida Keys"]) if (t.includes(r)) return r;
+  return "";
+}
+function byCounty(items) {
+  if (!items.length) return `<p class="note">Nothing confirmed yet – check back soon.</p>`;
+  const groups = new Map();
+  for (const i of items) { const a = areaOf(i) || "Area not yet verified"; if (!groups.has(a)) groups.set(a, []); groups.get(a).push(i); }
+  const keys = [...groups.keys()].sort((a, b) => (a === "Area not yet verified") - (b === "Area not yet verified") || groups.get(b).length - groups.get(a).length);
+  return keys.map(k => `<h3>${esc(k)} (${groups.get(k).length})</h3>${tableHTML(groups.get(k))}`).join("");
+}
+// One section per trading-card set: how many cards, how many locations are confirmed, then the confirmed ones.
+function cardSets() {
+  const coll = realItems(catByKey("collectibles"));
+  return coll.filter(i => / card set$/.test(i.name)).map(set => {
+    const name = set.name.replace(/ card set$/, "");
+    const total = +((/(\d+)/.exec(set.note || "") || [])[1] || 0);
+    const found = coll.filter(i => i.name.startsWith(name + " card: "));
+    return `<h3>${esc(name)} – ${total} cards</h3><p class="note" style="margin:2px 0 6px">${found.length} of ${total} locations confirmed${found.length < total ? "; the rest are not yet verified and will be added once they are." : "."}</p>${found.length ? tableHTML(found) : ""}`;
+  }).join("");
 }
 function chapters() {
   const map = new Map();
@@ -165,6 +192,8 @@ function render(text) {
       case "sumnum": return fmt(itemsMatching(cat, pattern).reduce((s, i) => { const m = /(\d[\d,]*)/.exec(i.note || ""); return s + (m ? +m[1].replace(/,/g, "") : 0); }, 0));
       case "sumcash": return "$" + fmt(itemsMatching(cat, pattern).reduce((s, i) => { const m = /\$(\d[\d,]*)/.exec(i.note || ""); return s + (m ? +m[1].replace(/,/g, "") : 0); }, 0));
       case "chapters": return chapters();
+      case "bycounty": return byCounty(itemsMatching(cat, pattern));
+      case "cardsets": return cardSets();
       case "tiers": return tiers();
       case "updated": return prettyDate;
       default: throw new Error("Unknown guide token: {{" + tok + "}}");
@@ -188,6 +217,17 @@ const guides = fs.existsSync(GUIDE_DIR) ? fs.readdirSync(GUIDE_DIR).filter(f => 
 }).sort((a, b) => (b.published || "").localeCompare(a.published || "") || a.slug.localeCompare(b.slug)) : [];
 const slugs = new Set([...live.map(l => l.page.slug), ...guides.map(g => g.slug), "guides"]);
 if (slugs.size !== live.length + guides.length + 1) throw new Error("A guide slug clashes with another page");
+
+/* ---------- 5b. Small shared helpers ---------- */
+// TODO(AdSense): replace each AD_SLOT comment with an ad unit once approval is confirmed. Never place one inside the checklist or over the map.
+const AD_SLOT = where => `\n<!-- AD SLOT (${where}) – disabled until AdSense approval is confirmed. Paste the ad unit code here later. -->\n`;
+const SHARE_JS = `document.querySelectorAll(".share-guide").forEach(b => b.addEventListener("click", async () => {
+  const url = location.origin + location.pathname, msg = b.parentNode.querySelector(".share-msg");
+  try { if (navigator.share) { await navigator.share({ title: b.dataset.title, url }); return; } await navigator.clipboard.writeText(url); msg.textContent = "Link copied"; }
+  catch (e) { if (e && e.name !== "AbortError") msg.textContent = url; }
+}));`;
+// Guides shown in "Popular guides" on the homepage, in this order (missing slugs are skipped).
+const POPULAR = ["gta-6-cocaine-flamingo-locations", "gta-6-collectible-cards", "gta-6-bank-robbery-locations", "gta-6-stunt-jumps", "gta-6-garages-prices", "what-to-do-before-finishing-chapter-1-gta-6", "gta-6-beginner-tips", "gta-6-100-percent-completion-checklist"];
 
 /* ---------- 6. Shared page shell ---------- */
 const STYLE = `
@@ -244,14 +284,22 @@ const STYLE = `
   .glist a:hover{background:var(--sun)}
   .glist a b{display:block;font-size:16px}
   .glist a span{display:block;color:var(--ink-soft);font-size:14px;margin-top:2px}
+  .sharebar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:26px 0 6px}
+  .sharebar .cta{border-color:var(--ink);cursor:pointer;font-family:inherit}
+  .cta.ghost{background:var(--shell)}
+  .share-msg{font-weight:700;font-size:14px}
+  .tellus{font-size:15px;margin:10px 0 0}
+  .missable{display:inline-block;font-size:12px;font-weight:800;color:var(--shell);background:#b3124a;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
   footer{background:var(--ink);color:#d9ecea;margin-top:40px;padding:24px 0 40px;font-size:14px}
+  footer a{color:var(--sun)}
   footer p+p{margin-top:8px}
 `;
 const navLinks = active => live.map(({ cat, page }) =>
   `<a href="/${page.slug}/"${page.slug === active ? ' aria-current="page"' : ""}>${esc(cat.title)}</a>`).join("") +
-  (guides.length ? `<a href="/guides/"${active === "guides" ? ' aria-current="page"' : ""}>Guides</a>` : "");
+  (guides.length ? `<a href="/guides/"${active === "guides" ? ' aria-current="page"' : ""}>Guides</a>` : "") +
+  `<a href="/map/"${active === "map" ? ' aria-current="page"' : ""}>Map</a><a href="/gta-6-best-setup/"${active === "gta-6-best-setup" ? ' aria-current="page"' : ""}>Best setup</a>`;
 
-function shell({ slug, title, description, ogType = "article", ld = [], ctaHash = "", content }) {
+function shell({ slug, title, description, ogType = "article", ld = [], ctaHash = "", content, head = "", noindex = false }) {
   const url = `${SITE}/${slug}/`;
   return `<!DOCTYPE html>
 <html lang="en">
@@ -261,7 +309,7 @@ function shell({ slug, title, description, ogType = "article", ld = [], ctaHash 
 <title>${esc(title)} | Leonida Tracker</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
-<meta name="theme-color" content="#123c47">
+${noindex ? '<meta name="robots" content="noindex">\n' : ""}<meta name="theme-color" content="#123c47">
 ${ADSENSE}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="${ogType}">
@@ -276,6 +324,7 @@ ${ld.length ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Figtree:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>${STYLE}</style>
+${head}
 </head>
 <body>
 <div class="bar"><div class="wrap">
@@ -337,7 +386,11 @@ function categoryPage({ cat, page, items }) {
 /* ---------- 8. Guide pages ---------- */
 function guidePage(g) {
   const url = `${SITE}/${g.slug}/`;
-  const answer = render(g.answer), body = render(g.body);
+  const answer = render(g.answer);
+  let body = render(g.body);
+  // TODO(AdSense): prepared slot between guide sections – disabled until AdSense approval is confirmed.
+  const h2s = [...body.matchAll(/<h2[\s>]/g)];
+  if (h2s.length >= 3) body = body.slice(0, h2s[2].index) + AD_SLOT("between guide sections") + body.slice(h2s[2].index);
   const faq = (g.faq || []).map(([q, a]) => [render(q), render(a)]);
   const rel = (g.related || []).map(s => {
     const l = live.find(l => l.page.slug === s); if (l) return { href: `/${s}/`, title: l.page.h1, sub: `Full list – ${l.items.length} ${l.page.noun}` };
@@ -360,13 +413,22 @@ function guidePage(g) {
   <div class="meta"><span class="pill">Updated ${esc(prettyDate)}</span>${g.cat ? `<span class="pill">Tracked in the ${esc(catByKey(g.cat).title)} checklist</span>` : ""}</div>
   ${body}
   </article>
+  <div class="sharebar">
+    <button class="cta share-guide" type="button" data-title="${esc(g.h1)}">Share this guide</button>
+    <a class="cta ghost" href="https://www.reddit.com/submit?url=${encodeURIComponent(url)}&amp;title=${encodeURIComponent(g.h1)}" target="_blank" rel="noopener">Post to Reddit</a>
+    <a class="cta ghost" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&amp;text=${encodeURIComponent(g.h1)}" target="_blank" rel="noopener">Post on X</a>
+    <span class="share-msg" aria-live="polite"></span>
+  </div>
+  <p class="tellus">Found a location we missed, or something that's wrong? <a href="/tell-us/?page=${encodeURIComponent(g.slug)}">Tell us</a> and we'll check it.</p>
   <div class="box">
     <h2>Track it as you play</h2>
     <p>Leonida Tracker is a free GTA 6 checklist – tick things off as you go, and your progress saves on your device. No sign-up.</p>
     <a class="cta" href="/${g.cat ? "#" + esc(g.cat) : ""}">Open the tracker</a>
   </div>
   ${rel.length ? `<section class="box"><h2>Related</h2><div class="glist">${rel.map(r => `<a href="${r.href}"><b>${esc(r.title)}</b><span>${esc(r.sub)}</span></a>`).join("")}</div></section>` : ""}
-  ${faqHTML(faq)}`
+  ${faqHTML(faq)}
+  ${AD_SLOT("end of guide")}
+  <script>${SHARE_JS}</script>`
   });
 }
 function guidesIndex() {
@@ -395,7 +457,8 @@ const about = `
   <section class="panel" id="about">
     <h3>About this GTA 6 checklist</h3>
     <p>Leonida Tracker is a free GTA 6 100% checklist. It currently tracks ${countOf("missions")} story missions, ${countOf("trophies")} trophies, all ${countOf("cheats")} cheats and their unlock challenges, ${countOf("collectibles")} collectible entries, ${countOf("vehicles")} vehicles, ${countOf("properties")} properties and ${countOf("activities")} side activities and locations. Everything is checked against more than one source before it's added, and the lists are updated daily (last update ${esc(prettyDate)}).</p>
-    ${guides.length ? `<p style="margin-top:10px"><b>Popular guides:</b> ${guides.slice(0, 6).map(g => `<a href="/${g.slug}/">${esc(g.h1)}</a>`).join(" · ")} · <a href="/guides/">all guides</a></p>` : ""}
+    ${guides.length ? `<p style="margin-top:10px"><b>Popular guides:</b></p><ul class="poplist">${POPULAR.map(sl => guides.find(g => g.slug === sl)).filter(Boolean).map(g => `<li><a href="/${g.slug}/">${esc(g.h1)}</a></li>`).join("")}<li><a href="/guides/">All ${guides.length} guides</a></li></ul>` : ""}
+    <p style="margin-top:10px">Leonida Tracker is an unofficial fan site. It isn't affiliated with, endorsed by or connected to Rockstar Games or Take-Two Interactive.</p>
     ${homeFaq.map(([q, a]) => `<p style="margin-top:10px"><b>${esc(q)}</b><br>${esc(a)}</p>`).join("")}
   </section>`;
 
@@ -413,6 +476,11 @@ for (const p of live) writePage(p.page.slug, categoryPage(p));
 for (const g of guides) writePage(g.slug, guidePage(g));
 if (guides.length) writePage("guides", guidesIndex());
 
+// Map, gear, progress-share and feedback pages + map data (see extras.js)
+const extras = require("./extras.js")({ CATEGORIES, realItems, isMissable, esc, shell, crumbsLD, faqLD, faqHTML, prettyDate, today, SITE, AD_SLOT, SHARE_JS });
+for (const pg of extras.pages) writePage(pg.slug, pg.html);
+for (const f of extras.files) fs.writeFileSync(path.join(OUT, f.name), f.content);
+
 let indexOut = html;
 const glinks = live.map(({ cat, page, items }) => `<a href="/${page.slug}/">${esc(cat.title)} <em>${items.length}</em></a>`).join("") +
   (guides.length ? `<a href="/guides/">Guides <em>${guides.length}</em></a>` : "");
@@ -420,7 +488,7 @@ indexOut = indexOut.replace("<!--GUIDES-->", glinks).replace("<!--ABOUT-->", abo
   .replace("</head>", `<script type="application/ld+json">${JSON.stringify(faqLD(homeFaq)[0])}</script>\n</head>`);
 fs.writeFileSync(path.join(OUT, "index.html"), indexOut);
 
-const urls = [`${SITE}/`, ...live.map(({ page }) => `${SITE}/${page.slug}/`), ...(guides.length ? [`${SITE}/guides/`] : []), ...guides.map(g => `${SITE}/${g.slug}/`)];
+const urls = [`${SITE}/`, ...live.map(({ page }) => `${SITE}/${page.slug}/`), ...(guides.length ? [`${SITE}/guides/`] : []), ...guides.map(g => `${SITE}/${g.slug}/`), ...extras.pages.filter(pg => pg.sitemap).map(pg => `${SITE}/${pg.slug}/`)];
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map(u => `  <url><loc>${u}</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq></url>`).join("\n") + `\n</urlset>\n`);

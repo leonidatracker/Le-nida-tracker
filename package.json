@@ -1,0 +1,7 @@
+{
+  "name": "leonida-tracker",
+  "private": true,
+  "description": "Leonida Tracker – static GTA 6 checklist built by build.js; netlify/functions/sync.mjs powers optional sync.",
+  "scripts": { "build": "node build.js" },
+  "dependencies": { "@netlify/blobs": "8.2.0" }
+}

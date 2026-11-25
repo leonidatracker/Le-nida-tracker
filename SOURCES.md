@@ -615,3 +615,9 @@ PowerPyx, Bloxodes and Beebom (independently worded, updated 25 Nov) agree on al
 - Cocaine Flamingos: PowerPyx and Bloxodes still 8/125; GameTrek totals only; games.gg failed again. Push Square's 5 Key Lento spots still single-source.
 - Bret's Target Decks: GTABase page is still a "coming soon" stub; theclick.gg failed to load.
 - guides/gta-6-garages-prices.html still mentions only Port Gellhorn Station as a free garage – not edited (data-only run).
+
+## Guides added/updated 25 Nov 2026
+- gta-6-cocaine-flamingo-locations: 125 total, any 100 for 100%, black-and-white beak, 50 unlock Inflatable Flamingo – https://www.powerpyx.com/?p=373486 · https://gmtreks.com/gta6/page/01M7R0NDXV2A4TFKEQR0EC1AK9 · https://games.gg/grand-theft-auto-vi/guides/all-cocaine-flamingo-locations-in-gta-6/ · https://thegameswiki.com/gta6/wiki/collectibles
+- gta-6-collectible-cards: 15 of 18 sets needed for 100% – https://gmtreks.com/gta6/page/01M7Q14Z47TMRMR101MF07KYYA · https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/
+- what-to-do-before-finishing-chapter-1-gta-6: "nothing missable is needed for 100%" – https://www.powerpyx.com/?p=374397 · https://www.gamerfuzion.com/gta-6-100-percent-completion-checklist-platinum-roadmap/ ; missable items themselves come from the tracker data.
+- Map county layout (schematic only): https://allthings.how/gta-6-map-locations-every-confirmed-region-in-leonida/ (community mapping; Rockstar hasn't published a county map).

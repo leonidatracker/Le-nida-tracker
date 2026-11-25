@@ -88,11 +88,11 @@
 
   /* Items */
   .list{display:flex;flex-direction:column;gap:8px}
-  .item{display:flex;gap:12px;align-items:flex-start;background:var(--shell);border:2px solid var(--ink);border-radius:12px;padding:12px 14px;cursor:pointer}
+  .item{display:flex;gap:12px;align-items:flex-start;background:var(--shell);border:2px solid var(--ink);border-radius:12px;padding:14px;cursor:pointer;min-height:56px}
   .item:hover{box-shadow:3px 3px 0 var(--ink)}
   .item.done{background:var(--done)}
   .item.done .name{text-decoration:line-through;text-decoration-color:var(--flamingo);text-decoration-thickness:3px}
-  .check{width:24px;height:24px;border-radius:7px;border:2px solid var(--ink);background:var(--shell);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .check{width:28px;height:28px;border-radius:8px;border:2px solid var(--ink);background:var(--shell);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
   .item.done .check{background:var(--ink)}
   .check svg{opacity:0}
   .item.done .check svg{opacity:1}
@@ -149,6 +149,22 @@
   .modal p{font-size:14px;color:var(--ink-soft);margin-bottom:16px}
   #shareImg{width:100%;aspect-ratio:1;border-radius:12px;background:var(--pool);display:block;margin-bottom:14px;border:2px solid var(--ink)}
   .xclose{float:right;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer;line-height:1;margin:-6px -4px 0 0}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:8px}
+  .miss{display:inline-block;font-size:12px;font-weight:800;color:var(--shell);background:#b3124a;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+  .mustdo{background:var(--shell);border:2px solid #b3124a;border-radius:14px;margin:18px 0 0;box-shadow:4px 4px 0 #b3124a}
+  .mustdo summary{cursor:pointer;padding:12px 14px;font-weight:800;font-size:16px;list-style:none;display:flex;gap:10px;align-items:center;min-height:48px}
+  .mustdo summary::-webkit-details-marker{display:none}
+  .mustdo summary b{background:#b3124a;color:var(--shell);border-radius:8px;padding:2px 9px;font-size:14px}
+  .mustdo summary span{margin-left:auto;font-weight:400;font-size:14px;color:var(--ink-soft)}
+  .mustdo .list{padding:0 12px 12px}
+  .mustdo p.more{padding:0 14px 14px;font-size:14px}
+  .item.flash{box-shadow:0 0 0 4px var(--flamingo)}
+  .sync{margin-top:16px;padding-top:14px;border-top:2px dashed rgba(18,60,71,.25);display:none}
+  .sync.on{display:block}
+  .sync h4{font-size:16px;margin-bottom:4px}
+  .sync .code-out{font:800 22px Figtree,sans-serif;letter-spacing:.08em;background:var(--pool);border:2px solid var(--ink);border-radius:10px;padding:8px 12px;display:inline-block;margin:6px 0}
+  .sync input{font:700 18px Figtree,sans-serif;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);border-radius:10px;padding:9px 12px;width:220px;max-width:100%;background:var(--shell);color:var(--ink)}
+  .pro-hook{display:none}
   @media (max-width:520px){ .postcard{min-height:200px} .meter{transform:scale(.85);transform-origin:top right} }
   @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
@@ -188,15 +204,24 @@
     </div>
     <div class="intro">
       <p class="tag">A checklist for everything in GTA 6, from the first mission to the last cocaine flamingo. Tick things off as you play – it saves on this device, no account needed.</p>
-      <button class="btn hot share-btn" id="shareBtn" type="button">Share my progress</button>
+      <div class="hero-btns">
+        <a class="btn primary" href="/map/">Open the map</a>
+        <button class="btn hot share-btn" id="shareBtn" type="button">Share my progress</button>
+      </div>
     </div>
     <div class="notice" id="notice">Updated 25 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 57 card locations, the first 8 Cocaine Flamingos, every garage price and all four free story garages are in. The tracker is being updated as players discover more.</div>
   </div>
 </header>
+<!-- AD SLOT (homepage, below hero) – disabled until AdSense approval is confirmed. Paste the ad unit code here later. Never put an ad inside the checklist below. -->
 
 <nav class="tabs"><div class="wrap" id="tabs"></div></nav>
 
 <main class="wrap">
+  <details class="mustdo" id="mustdo">
+    <summary><b id="mustCount">0</b> Missable – do these first<span id="mustHint">Show</span></summary>
+    <div class="list" id="mustList"></div>
+    <p class="more">Everything else can still be done after the story. See <a href="/what-to-do-before-finishing-chapter-1-gta-6/">what to do before finishing Chapter 1</a>.</p>
+  </details>
   <div class="controls">
     <input type="search" id="search" placeholder="Search this list" aria-label="Search items">
     <select id="region" aria-label="Filter by region"></select>
@@ -213,15 +238,15 @@
     <div class="glinks"><!--GUIDES--></div>
   </section>
 
-  <!-- AD SLOT: put the AdSense ad unit code here once approved -->
+  <!-- AD SLOT (homepage, between panels) – disabled until AdSense approval is confirmed. Paste the ad unit code here later. -->
 
   <section class="panel">
     <h3>Kit for a long session</h3>
-    <p>A few things worth having for a 100% run. These are Amazon affiliate links, which help keep the site free.</p>
+    <p>A few things worth having for a 100% run. These are Amazon affiliate links – as an Amazon Associate I earn from qualifying purchases, which helps keep the site free. <a href="/gta-6-best-setup/">See the full setup guide</a>.</p>
     <div class="gear">
       <a href="https://www.amazon.co.uk/s?k=ps5+dualsense+controller&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9h10a4 4 0 0 1 3.9 4.8l-.6 3a2 2 0 0 1-3.4 1L15 16H9l-1.9 1.8a2 2 0 0 1-3.4-1l-.6-3A4 4 0 0 1 7 9z"/><path d="M8 12v2M7 13h2"/><path d="M16 12.5h.01"/></svg></span><span><b>PS5 DualSense</b><span>Spare controller</span></span></a>
       <a href="https://www.amazon.co.uk/s?k=ps5+gaming+headset&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span><span><b>Gaming headset</b><span>Hear every siren</span></span></a>
-      <a href="https://www.amazon.co.uk/s?k=2tb+nvme+ssd+ps5+heatsink&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M6 11h6M6 13h4"/><path d="M17.5 12h.01"/></svg></span><span><b>2TB NVMe SSD</b><span>Room for a 100GB+ install</span></span></a>
+      <a href="https://www.amazon.co.uk/s?k=2tb+nvme+ssd+ps5+heatsink&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M6 11h6M6 13h4"/><path d="M17.5 12h.01"/></svg></span><span><b>2TB NVMe SSD</b><span>Extra room for big installs</span></span></a>
       <a href="https://www.amazon.co.uk/s?k=dualsense+charging+station&amp;tag=simonjwarnera-21" target="_blank" rel="sponsored nofollow noopener"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="16" height="9" rx="2"/><path d="M21 11v3"/><path d="M11.5 9.5l-2 3h3l-2 3"/></svg></span><span><b>Charging dock</b><span>Never die mid-heist</span></span></a>
     </div>
   </section>
@@ -237,6 +262,26 @@
     </div>
     <textarea id="codeBox" placeholder="Paste your save code here, then tap Restore again"></textarea>
     <div class="msg" id="msg"></div>
+    <div class="sync" id="syncBox">
+      <h4>Sync across devices (optional)</h4>
+      <p id="syncText">Keep your ticks the same on your phone, PC, PS5 and Xbox browsers. No account or email – you get a private sync code to enter on your other devices. Your ticks still save on this device as normal.</p>
+      <div id="syncOff" class="btns">
+        <button class="btn primary" id="syncStart" type="button">Turn on sync</button>
+        <input id="syncIn" placeholder="Sync code" aria-label="Sync code" maxlength="14" autocomplete="off">
+        <button class="btn" id="syncJoin" type="button">Use this code</button>
+      </div>
+      <div id="syncOnBox" style="display:none">
+        <p>Sync is on. Enter this code on your other devices:</p>
+        <div class="code-out" id="syncCode"></div>
+        <div class="btns"><button class="btn" id="syncNow" type="button">Sync now</button><button class="btn danger" id="syncStop" type="button">Turn off on this device</button></div>
+      </div>
+      <div class="msg" id="syncMsg"></div>
+    </div>
+    <!-- TODO(Pro): hidden until a Pro tier launches (ad-free, cloud sync, offline mode, printable PDF). Set PRO.enabled = true in the script to show. -->
+    <div class="btns pro-hook" id="proHooks" style="margin-top:12px">
+      <button class="btn" id="proPrint" type="button">Printable checklist (Pro)</button>
+      <button class="btn" id="proAdFree" type="button">Go ad-free (Pro)</button>
+    </div>
   </section>
 
   <section class="panel">
@@ -1071,10 +1116,17 @@ let memoryOnly = false;
 try { done = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
 catch(e){ memoryOnly = true; }
 
-function save(){
+const UPDATED_KEY = "leonida-tracker-updated";
+function save(fromSync){
   if (memoryOnly) return;
-  try { localStorage.setItem(STORE_KEY, JSON.stringify(done)); } catch(e){ memoryOnly = true; }
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(done));
+    if (!fromSync) localStorage.setItem(UPDATED_KEY, String(Date.now()));
+  } catch(e){ memoryOnly = true; }
+  if (!fromSync && typeof syncSchedule === "function") syncSchedule();
 }
+// Missable = the item's note says it can be missed (kept in step with build.js)
+const isMissable = i => /missable|can't be reached after|Chapter 1 only/i.test(i.note || "");
 
 const $ = id => document.getElementById(id);
 let current = CATEGORIES[0].key;
@@ -1123,7 +1175,7 @@ function renderList(){
     <div class="item ${done[i.id]?"done":""}" data-id="${esc(i.id)}" role="checkbox" aria-checked="${!!done[i.id]}" tabindex="0">
       <div class="check">${tick}</div>
       <div>
-        <div class="name">${esc(i.name)}</div>
+        <div class="name">${esc(i.name)}${isMissable(i) ? '<span class="miss">Missable</span>' : ""}</div>
         <div class="meta">${i.region && i.region !== "Leonida" ? `<span class="region">${esc(i.region)}</span>` : ""}<span class="note">${esc(i.note)}</span></div>
         ${"code" in i ? (i.code ? `<div class="code" aria-label="Code: ${esc(i.code)}">${i.code.split(" ").map(k => `<kbd>${esc(k)}</kbd>`).join("")}</div>` : `<span class="code-tbc">Code not found yet</span>`) : ""}
       </div>
@@ -1131,7 +1183,40 @@ function renderList(){
     </div>`).join("") : `<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Nothing matches – try clearing the filters.</div>`;
 }
 
-function renderAll(){ renderTabs(); renderTotal(); renderList(); }
+function itemHTML(i, catKey){
+  return `
+    <div class="item ${done[i.id]?"done":""}" data-id="${esc(i.id)}" role="checkbox" aria-checked="${!!done[i.id]}" tabindex="0">
+      <div class="check">${tick}</div>
+      <div>
+        <div class="name">${esc(i.name)}</div>
+        <div class="meta"><span class="note">${esc(i.note)}</span></div>
+      </div>
+      <span class="ico">${ico(catKey)}</span>
+    </div>`;
+}
+function renderMust(){
+  const must = CATEGORIES.flatMap(c => c.items.filter(isMissable).map(i => [i, c.key]));
+  $("mustdo").style.display = must.length ? "" : "none";
+  $("mustCount").textContent = must.filter(([i]) => !done[i.id]).length;
+  $("mustList").innerHTML = must.map(([i, k]) => itemHTML(i, k)).join("");
+}
+function renderAll(){ renderTabs(); renderTotal(); renderList(); renderMust(); }
+
+/* Deep links: /#col-117 opens that item's list, scrolls to it and highlights it (used by the map) */
+function goToItem(id){
+  const cat = CATEGORIES.find(c => c.items.some(i => i.id === id));
+  if (!cat) return false;
+  current = cat.key; $("search").value = ""; $("region").value = ""; $("hideDone").checked = false;
+  renderAll();
+  const el = $("list").querySelector(`[data-id="${CSS.escape ? CSS.escape(id) : id}"]`);
+  if (el){ el.scrollIntoView({ block: "center" }); el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 1800); }
+  return true;
+}
+
+/* Ticks made on the map page (or another tab) show up here */
+function reloadDone(){ try { done = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch(e){} renderAll(); }
+window.addEventListener("storage", e => { if (e.key === STORE_KEY) reloadDone(); });
+window.addEventListener("pageshow", e => { if (e.persisted) reloadDone(); });
 
 function toggle(id){
   if (done[id]) delete done[id]; else done[id] = 1;
@@ -1139,6 +1224,11 @@ function toggle(id){
 }
 
 $("list").addEventListener("click", e => { const el = e.target.closest(".item"); if (el) toggle(el.dataset.id); });
+$("mustdo").addEventListener("toggle", () => { $("mustHint").textContent = $("mustdo").open ? "Hide" : "Show"; });
+$("mustList").addEventListener("click", e => { const el = e.target.closest(".item"); if (el) toggle(el.dataset.id); });
+$("mustList").addEventListener("keydown", e => {
+  if ((e.key === " " || e.key === "Enter") && e.target.classList.contains("item")) { e.preventDefault(); toggle(e.target.dataset.id); }
+});
 $("list").addEventListener("keydown", e => {
   if ((e.key === " " || e.key === "Enter") && e.target.classList.contains("item")) { e.preventDefault(); toggle(e.target.dataset.id); }
 });
@@ -1151,6 +1241,7 @@ $("tabs").addEventListener("click", e => {
 window.addEventListener("hashchange", () => {
   const k = location.hash.slice(1);
   if (CATEGORIES.some(c => c.key === k)) { current = k; renderAll(); }
+  else if (k) goToItem(k);
 });
 const startKey = location.hash.slice(1);
 if (CATEGORIES.some(c => c.key === startKey)) current = startKey;
@@ -1244,13 +1335,18 @@ async function makeShareImage(){
 }
 let shareBlob = null, shareObjURL = null;
 const shareText = () => `I'm ${overallPct()}% through GTA 6 🌴 Tracking every mission, collectible and trophy with Leonida Tracker`;
+// A link to a progress card: numbers travel in the link itself, nothing is stored on a server
+function progressURL(){
+  const part = k => { const c = CATEGORIES.find(x => x.key === k); return c ? `${countDone(c.items)}-${c.items.length}` : ""; };
+  return `${SITE_URL}/progress/#p=${overallPct()}&m=${part("missions")}&t=${part("trophies")}&c=${part("collectibles")}&h=${part("cheats")}`;
+}
 const sflash = t => { $("shareMsg").textContent = t; setTimeout(() => $("shareMsg").textContent = "", 3500); };
 
 async function openShare(){
   $("shareModal").classList.add("show");
   $("shareImg").removeAttribute("src");
   $("nativeShare").style.display = navigator.share ? "" : "none";
-  $("xBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText()) + "&url=" + encodeURIComponent(SITE_URL);
+  $("xBtn").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText()) + "&url=" + encodeURIComponent(progressURL());
   try {
     const canvas = await makeShareImage();
     canvas.toBlob(b => {
@@ -1270,13 +1366,13 @@ $("shareModal").addEventListener("click", e => { if (e.target.id === "shareModal
 $("nativeShare").addEventListener("click", async () => {
   try {
     const file = shareBlob ? new File([shareBlob], "leonida-tracker-progress.png", { type: "image/png" }) : null;
-    if (file && navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file], text: shareText(), url: SITE_URL });
-    else await navigator.share({ text: shareText(), url: SITE_URL });
+    if (file && navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file], text: shareText(), url: progressURL() });
+    else await navigator.share({ text: shareText(), url: progressURL() });
   } catch(e){ /* cancelled */ }
 });
 $("copyLink").addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText(shareText() + " " + SITE_URL); sflash("Copied ✓"); }
-  catch(e){ sflash(SITE_URL); }
+  try { await navigator.clipboard.writeText(shareText() + " " + progressURL()); sflash("Link copied ✓"); }
+  catch(e){ sflash(progressURL()); }
 });
 
 /* Tab strip: mouse wheel scrolls sideways when it overflows; hide the fade at the end */
@@ -1287,9 +1383,78 @@ tabStrip.addEventListener("wheel", e => {
 const tabFade = () => tabStrip.classList.toggle("end", tabStrip.scrollLeft + tabStrip.clientWidth >= tabStrip.scrollWidth - 4);
 tabStrip.addEventListener("scroll", tabFade); window.addEventListener("resize", tabFade);
 setTimeout(tabFade, 0);
+/* ------------------------------------------------------------
+   Optional cloud sync – no account. A random sync code stores the list of ticked ids
+   (nothing personal) via the /api/sync Netlify function. Hidden unless the service answers.
+   Newest change wins: each side keeps the time of its last edit.
+   ------------------------------------------------------------ */
+const SYNC_STORE = "leonida-sync-key";
+let syncKey = null, syncTimer = null;
+try { syncKey = localStorage.getItem(SYNC_STORE); } catch(e){}
+const smsg = t => { $("syncMsg").textContent = t; setTimeout(() => { if ($("syncMsg").textContent === t) $("syncMsg").textContent = ""; }, 4000); };
+const fmtCode = k => k ? k.match(/.{1,4}/g).join("-") : "";
+const localUpdated = () => { try { return +localStorage.getItem(UPDATED_KEY) || 0; } catch(e){ return 0; } };
+async function syncApi(method, path, body){
+  const r = await fetch("/api/sync" + path, { method, headers: { "content-type": "application/json" }, body: body ? JSON.stringify(body) : undefined });
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+function syncUI(){
+  $("syncOff").style.display = syncKey ? "none" : "";
+  $("syncOnBox").style.display = syncKey ? "" : "none";
+  $("syncCode").textContent = fmtCode(syncKey);
+}
+async function syncPush(){
+  if (!syncKey) return;
+  try { await syncApi("PUT", "/" + syncKey, { ids: Object.keys(done), updated: localUpdated() || Date.now() }); }
+  catch(e){ smsg("Couldn't reach sync – your ticks are still saved on this device."); }
+}
+function syncSchedule(){ if (!syncKey) return; clearTimeout(syncTimer); syncTimer = setTimeout(syncPush, 1500); }
+async function syncPull(replace){
+  if (!syncKey) return;
+  try {
+    const r = await syncApi("GET", "/" + syncKey);
+    if (replace || (r.updated || 0) > localUpdated()) {
+      done = {}; (r.ids || []).forEach(id => done[id] = 1);
+      save(true); try { localStorage.setItem(UPDATED_KEY, String(r.updated || Date.now())); } catch(e){}
+      renderAll(); smsg("Synced ✓");
+    } else if (localUpdated() > (r.updated || 0)) { await syncPush(); smsg("Synced ✓"); }
+  } catch(e){ smsg(String(e.message) === "404" ? "That sync code wasn't found." : "Couldn't reach sync right now."); throw e; }
+}
+$("syncStart").addEventListener("click", async () => {
+  try {
+    const r = await syncApi("POST", "", { ids: Object.keys(done), updated: localUpdated() || Date.now() });
+    syncKey = r.key; try { localStorage.setItem(SYNC_STORE, syncKey); } catch(e){}
+    syncUI(); smsg("Sync is on ✓");
+  } catch(e){ smsg("Couldn't turn on sync right now – try again later."); }
+});
+let joinArmed = false;
+$("syncJoin").addEventListener("click", async () => {
+  const k = $("syncIn").value.toUpperCase().replace(/[^A-Z0-9]/g, "");
+  if (!/^[A-Z2-9]{12}$/.test(k)) { smsg("Sync codes are 12 letters and numbers."); return; }
+  if (!joinArmed && Object.keys(done).length) { joinArmed = true; $("syncJoin").textContent = "Replace this device's ticks"; smsg("This replaces the ticks on this device with the ones saved under that code. Tap again to confirm."); return; }
+  joinArmed = false; $("syncJoin").textContent = "Use this code";
+  const prev = syncKey; syncKey = k;
+  try { await syncPull(true); try { localStorage.setItem(SYNC_STORE, k); } catch(e){} syncUI(); }
+  catch(e){ syncKey = prev; }
+});
+$("syncNow").addEventListener("click", () => syncPull(false).catch(() => {}));
+$("syncStop").addEventListener("click", () => { syncKey = null; try { localStorage.removeItem(SYNC_STORE); } catch(e){} syncUI(); smsg("Sync is off on this device. Your ticks stay here."); });
+// Only show sync if the service is there
+fetch("/api/sync/health").then(r => r.ok ? r.json() : null).then(j => {
+  if (j && j.ok) { $("syncBox").classList.add("on"); syncUI(); if (syncKey) syncPull(false).catch(() => {}); }
+}).catch(() => {});
+
+/* TODO(Pro): a future Pro tier (ad-free, cloud sync perks, offline mode, printable PDF checklist).
+   Everything here stays hidden and inactive until PRO.enabled is set to true and pricing is decided.
+   Never move existing free features behind it. */
+const PRO = { enabled: false };
+if (PRO.enabled) $("proHooks").classList.remove("pro-hook");
+
 $("notice").title = "Tap to read the full update";
 $("notice").addEventListener("click", () => $("notice").classList.toggle("open"));
 renderAll();
+{ const h = location.hash.slice(1); if (h && !CATEGORIES.some(c => c.key === h)) goToItem(h); }
 </script>
 </body>
 </html>
