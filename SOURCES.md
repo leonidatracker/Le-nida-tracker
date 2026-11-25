@@ -594,3 +594,24 @@ Added "the first 8 Cocaine Flamingos".
 - Push Square Cocaine Flamingo WIP page (24 Nov): 5 Key Lento spots (east of the Rusty Anchor; white house on Surfside Dr south of Key Lento Kahuna; fence by the nautical building on Sunset Dr; rocks north of The Wonder Whale; decorated house on Surfside Dr, right-hand flamingo). None appear on PowerPyx or ShowGamer – single source.
 - MetaForge, Magic Game World and games.gg flamingo pages failed to load.
 - No new leads checked for cards, WAiNK or Bret's Target Decks beyond the earlier runs today.
+
+## 2026-11-25 run (fourth)
+
+### pro-10 to pro-12 (free story garages)
+PowerPyx, Bloxodes and Beebom (independently worded, updated 25 Nov) agree on all three: name, unlocking mission/chapter and number of spaces. Locations are from Beebom only (PowerPyx and Bloxodes give none), so treat the area in each note as worth an in-game look. Ocean Beach → Leonida (as pro-06); Wynwood and Tequesta Retreat → Vice City (as veh-05).
+- pro-10 Thompson Court Garage (Company Cars, Ch 4, 2 spaces, Ocean Beach)
+- pro-11 NE 15th Street Garage (Operation Savage Glory, Ch 5, 2 spaces, Stockyard/Wynwood)
+- pro-12 Pegassi Residences Garage (Operation Savage Glory, Ch 5, 3 spaces, Tequesta Retreat)
+- https://www.powerpyx.com/gta-6-all-garage-locations/ · https://bloxodes.com/wiki/gta-6/properties · https://beebom.com/gta-6-garage-locations/
+
+### Notice
+"and every garage price are in" → "every garage price and all four free story garages are in".
+
+### Not added this run
+- Southside Storage (1 space, reward for all 5 "1010 Murals", holds the 1010 Cheetah): PowerPyx only. 1010 Murals themselves not checked against a second source yet.
+- Paradise Garage (Watson Bay, Ultimate Edition) and Shore Court Garage (Ocean Beach, Vintage Vice City pre-order pack): gta.wiki and Beebom agree, but they're edition/pre-order extras not everyone can get (xboxplay.games instead says Wyman gives Paradise Garage in the story). Left out.
+- Safehouses (Jason's house in Key Lento, Starlet Motel): gta.wiki and Bloxodes agree they exist but name different unlocking missions, and both are lost later in the story. Bayside safehouse: gta.wiki only.
+- Price conflicts on existing garages, left unchanged: Beebom says Atlantic Court $50,000 (PowerPyx, Bloxodes, xboxplay: $40,000); xboxplay says Persistence Road $9,500 and Vela Rota $30,000 (others $7,600 / $24,000).
+- Cocaine Flamingos: PowerPyx and Bloxodes still 8/125; GameTrek totals only; games.gg failed again. Push Square's 5 Key Lento spots still single-source.
+- Bret's Target Decks: GTABase page is still a "coming soon" stub; theclick.gg failed to load.
+- guides/gta-6-garages-prices.html still mentions only Port Gellhorn Station as a free garage – not edited (data-only run).
