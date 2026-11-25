@@ -528,3 +528,33 @@ Same basis as earlier card runs: PowerPyx set page and Bloxodes agree on card, t
 - Cocaine Flamingos: PowerPyx and Bloxodes list the same 8 of 125 (6 Belpoint, 1 Watson Bay, 1 La Perle), but Bloxodes copies PowerPyx's wording, GameTrek gives no per-spot data and games.gg failed to load. Not added. Inflatable Flamingo cheat threshold unclear (GameTrek says 50).
 - WAiNK: PowerPyx now has all 31 Landmarks, 35 Curiosities and 23 Sculptures with districts, but Bloxodes still lists only the 15 already in the tracker and Timesaver 5. The other 74 are PowerPyx-only. Timesaver still puts Imperial Spanish Ruins (col-46) on Mount Kalaga; PowerPyx and Bloxodes say Moreau – col-46 left as is.
 - PowerPyx: https://www.powerpyx.com/?p=374044 (Landmarks) · https://www.powerpyx.com/?p=374049 (Curiosities) · https://www.powerpyx.com/?p=374051 (Sculptures) · https://www.powerpyx.com/?p=373486 (Cocaine Flamingos)
+
+## 2026-11-25 run
+
+### col-92 to col-110 (19 more card locations from sets not checked before)
+PowerPyx's Los Santos Panic, America's Next Top Hooker, Club de Futbol, Delights Dancers, Legends of Ratface and Ed Comics Universe set pages (all modified 19 Nov) had located cards that earlier runs hadn't compared. Each card below is on the PowerPyx set page and on Bloxodes with the same tier and spot. As before, Bloxodes' wording tracks PowerPyx closely, so treat it as possibly one source. This run also checked each against gta.wiki (crowd-sourced, vaguer): it agrees with Marquise Bernard, Vicki, Harley, Wokester and Side Effect, and is compatible or silent on the rest (e.g. Captain Kreuks Blue on a Vice City rooftop, Ratster on a watchtower, Dr. Placebo on a shelf in a Vice City building, Kalisha listed only as a Bronze copy elsewhere). Regions as in earlier runs: Vice City districts → Vice City; Key Lento, Watson Bay, Ocean Beach, Belville, Bonanza, Buckskin Swamp → Leonida; Gellhorn/Port Gellhorn → Port Gellhorn.
+- col-92 to col-95: https://www.powerpyx.com/?p=372982 (Panic); col-92 also https://www.pushsquare.com/guides/gta-6-los-santos-panic-card-locations
+- col-96, col-97: https://www.powerpyx.com/?p=372985 (Top Hooker)
+- col-98 to col-100: https://www.powerpyx.com/?p=372977 (Club de Futbol)
+- col-101 to col-104: https://www.powerpyx.com/?p=372986 (Delights)
+- col-105 to col-108: https://www.powerpyx.com/?p=372989 (Ratface)
+- col-109, col-110: https://www.powerpyx.com/?p=372991 (Ed Comics)
+- all: https://bloxodes.com/wiki/gta-6/collectible-cards · https://gta.wiki/w/Collectible_Card_Sets
+
+### col-111, col-112 (Push Square + Bloxodes)
+Push Square's per-set WIP guides are a new, independently worded source (1 card each so far).
+- col-111 Ichiro Yamada: Push Square (Port VC Terminal warehouse table, Doggie Bag) and Bloxodes #30 agree. Tier "Silver" is from Bloxodes only (Push Square gives none); gta.wiki loosely backs a Vice City "luggage building" table. https://www.pushsquare.com/guides/gta-6-liberty-city-swingers-card-locations
+- col-112 Lionel Taber: Push Square (toilet, party house on Dolphin Dr, Key Lento), Bloxodes #66 (Key Lento party house) and gta.wiki (Key Lento, on the toilet). No tier given. https://www.pushsquare.com/guides/gta-6-los-santos-pounders-card-locations
+
+### Notice
+Date → 25 November; "the first 32 card locations" → "the first 53 card locations".
+
+### Not added this run
+- Cards where gta.wiki gives a clearly different spot for the same card: Kalvyn (Crosstown / Decor District vs Key Lento R&D tower / Harmony Plaza roof), Badge Silver (Mount Kalaga hut vs Vice City gaming room), Amber (Draper Island / Ocean Beach vs Key Lento mailbox), Femi-Nemesis Silver (VCIA trailer vs observation tower / Vice City roof), Ratface Bronze (La Perle warehouse couch vs Vice City shed). PowerPyx and Bloxodes agree on all five – worth an in-game look.
+- Bryson Powers (Narcos, Starlet Motel laundry, missable after Chapter 2): Push Square only.
+- About 80 other Bloxodes-only cards (Bloxodes still 125, last updated 19 Nov). Garth Buxton / Seo-Jun Kim still conflict with gta.wiki.
+- Cocaine Flamingos: PowerPyx and Bloxodes unchanged (same 8 of 125); games.gg failed to load. Same reason as before.
+- WAiNK: Bloxodes unchanged (16 named, 23 Nov); gmtreks gives totals only. PowerPyx-only entries still single-source.
+- Bret's Target Decks: GTABase still "coming soon"; no list anywhere.
+- tro-49 "Bad Luck, I Guess": GamerGuides, Mobalytics, Bloxodes, KeenGamer, OfZen give no method (KeenGamer: unconfirmed). Still PowerPyx only.
+- Free/bonus garages: Beebom and Bloxodes garage pages couldn't be fetched (permission prompt unanswered). PowerPyx card hub and Push Square card index also blocked the same way.

@@ -184,7 +184,7 @@
       <p class="tag">A checklist for everything in GTA 6, from the first mission to the last cocaine flamingo. Tick things off as you play – it saves on this device, no account needed.</p>
       <button class="btn hot share-btn" id="shareBtn" type="button">Share my progress</button>
     </div>
-    <div class="notice" id="notice">Updated 24 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 32 card locations, and every garage price are in. The tracker is being updated as players discover more.</div>
+    <div class="notice" id="notice">Updated 25 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 53 card locations, and every garage price are in. The tracker is being updated as players discover more.</div>
   </div>
 </header>
 
@@ -478,7 +478,28 @@ const CATEGORIES = [
     { id:"col-88", name:"Liberty City Wrath card: Anthony Poke II (Red)", region:"Leonida", note:"Washington Beach, Vice Beach \u2013 board in the upstairs corridor of Ajax Gym; go up the stairs behind the treadmills or come in from the roof" },
     { id:"col-89", name:"Liberty City Wrath card: Robbie Stine (Silver)", region:"Mount Kalaga", note:"Mount Kalaga National Park, Lummox County \u2013 office up a ladder on the smokestack building south of 247 Gas (West Kalaga)" },
     { id:"col-90", name:"Nine1Nine Dancers card: Serena (Gold)", region:"Vice City", note:"Peacock Estates, Vice City \u2013 inside the garage of the southernmost estate in the area" },
-    { id:"col-91", name:"Liberty City Swingers card: Lalo Velasco (Gold)", region:"Leonida", note:"Capri, Mariana County \u2013 on a shelf in the garage of the first house east of the beach" }
+    { id:"col-91", name:"Liberty City Swingers card: Lalo Velasco (Gold)", region:"Leonida", note:"Capri, Mariana County \u2013 on a shelf in the garage of the first house east of the beach" },
+    { id:"col-92", name:"Los Santos Panic card: Marquise Bernard", region:"Leonida", note:"Key Lento, Mariana County \u2013 on a barrel just outside Kenton's shop on Dolphin Dr" },
+    { id:"col-93", name:"Los Santos Panic card: Nikkander Orlov (Silver)", region:"Leonida", note:"Watson Bay, Mariana County \u2013 shelf under a covered area beside a house on the east side of town" },
+    { id:"col-94", name:"Los Santos Panic card: Terrance Ericks (Bronze)", region:"Vice City", note:"La Perle, Vice City \u2013 inside a locked building north-west of Aunt Zola's Soul Food" },
+    { id:"col-95", name:"Los Santos Panic card: Terrance Ericks (Silver)", region:"Vice City", note:"Decor District, Vice City \u2013 office in the south-east corner of the empty building just west of Roval Jewelry" },
+    { id:"col-96", name:"America's Next Top Hooker card: Chastity", region:"Vice City", note:"Decor District, Vice City \u2013 table at the back of the neon-lit garage full of robots, north-east of Stockyard Speedshop" },
+    { id:"col-97", name:"America's Next Top Hooker card: Kalisha (Silver)", region:"Leonida", note:"Bonanza, Lummox County \u2013 end of the dock south-west of town" },
+    { id:"col-98", name:"Vice City Club de Futbol card: Ayokunumi Kasimu", region:"Vice City", note:"Decor District, Vice City \u2013 inside a yellow SCOOP container by the building just west of Roval Jewelry; needs the Cut-off Tool" },
+    { id:"col-99", name:"Vice City Club de Futbol card: Ian Harris (Silver)", region:"Leonida", note:"Ocean Beach, Vice Beach \u2013 in the orange lifeguard tower east along the sand from Ocean View Rooftop Bar" },
+    { id:"col-100", name:"Vice City Club de Futbol card: Ian Harris (Pink)", region:"Leonida", note:"Ocean Beach, Vice Beach \u2013 south-east corner flat on the top floor of the square apartment block south-west of the WHS shoe shop" },
+    { id:"col-101", name:"Delights Dancers card: Vicki", region:"Port Gellhorn", note:"Gellhorn, Kelly County \u2013 floor by the toilet in the Starlet Motel office bathroom; missable, can't be reached after Chapter 2" },
+    { id:"col-102", name:"Delights Dancers card: Harley", region:"Port Gellhorn", note:"Port Gellhorn, Kelly County \u2013 booth seat on the east wall inside Delights; still reachable after Chapter 2" },
+    { id:"col-103", name:"Delights Dancers card: Tracy", region:"Vice City", note:"Salton, Vice City \u2013 rooftop room on the building east of the Hit 'n' Run Salton race start; ladder at the back" },
+    { id:"col-104", name:"Delights Dancers card: Nevaeh", region:"Leonida", note:"Bonanza, Lummox County \u2013 inside the building hanging off the cliff edge south of town" },
+    { id:"col-105", name:"The Legends of Ratface card: Illuminaughty (Purple)", region:"Leonida", note:"Belville, Leonard County \u2013 board on the right-hand side of a break-in garage on the northern row of houses, west of Andy's" },
+    { id:"col-106", name:"The Legends of Ratface card: Captain Kreuks (Blue)", region:"Vice City", note:"La Perle, Vice City \u2013 top floor of the half-built block with squatters below, just north of TWA Ponya Tattoo" },
+    { id:"col-107", name:"The Legends of Ratface card: The Ratster (Purple)", region:"Leonida", note:"Buckskin Swamp, Kelly County \u2013 top of the watchtower in the middle of the swamp, on the rail by the binoculars" },
+    { id:"col-108", name:"The Legends of Ratface card: Wokester (Blue)", region:"Leonida", note:"Key Lento, Mariana County \u2013 bench on the north-east side of The Wonder Whale clothes shop" },
+    { id:"col-109", name:"Ed Comics Universe card: Side Effect (Blue)", region:"Port Gellhorn", note:"Port Gellhorn, Kelly County \u2013 bedroom of the open trailer in the middle of the trailer park north-west of Dunk's Trailer" },
+    { id:"col-110", name:"Ed Comics Universe card: Dr. Placebo (Blue)", region:"Vice City", note:"La Perle, Vice City \u2013 shelf in the big ground-floor room of the building south-west of the Pay 'n' Spray" },
+    { id:"col-111", name:"Liberty City Swingers card: Ichiro Yamada (Silver)", region:"Vice City", note:"Port VC Terminal, Port Vice City \u2013 big wooden table behind the Storage doors in the warehouse; you pass it in the Chapter 5 mission Doggie Bag" },
+    { id:"col-112", name:"Los Santos Pounders card: Lionel Taber", region:"Leonida", note:"Key Lento, Mariana County \u2013 on the toilet in the bathroom left of the entrance of the party house on Dolphin Dr" }
   ] },
   { key:"vehicles",     title:"Vehicles",              items: [
     { id:"veh-01", name:"Granforma Zorrusso", region:"Leonida", note:"Randy's Wish List \u2013 given to you during the Chapter 3 mission Clonin' Keys, Makin' GS" },
