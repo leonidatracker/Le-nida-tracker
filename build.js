@@ -203,8 +203,12 @@ const STYLE = `
   .logo{font-family:Bungee,sans-serif;font-size:20px;text-decoration:none;color:var(--shell);line-height:1}
   .logo span{color:var(--sun)}
   .cta{display:inline-block;background:var(--flamingo);color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;padding:9px 15px;border-radius:10px;border:2px solid var(--shell);white-space:nowrap}
-  nav.cats{display:flex;gap:8px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
-  nav.cats::-webkit-scrollbar{display:none}
+  nav.cats{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0}
+  @media (max-width:700px){
+    nav.cats{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--ink) transparent;padding-bottom:10px}
+    nav.cats::-webkit-scrollbar{height:4px}
+    nav.cats::-webkit-scrollbar-thumb{background:var(--ink);border-radius:4px}
+  }
   nav.cats a{flex-shrink:0;text-decoration:none;color:var(--ink);border:2px solid var(--ink);background:var(--shell);border-radius:999px;padding:6px 13px;font-size:14px;font-weight:700}
   nav.cats a[aria-current]{background:var(--ink);color:var(--shell)}
   .crumbs{font-size:14px;color:var(--ink-soft);margin-top:14px}

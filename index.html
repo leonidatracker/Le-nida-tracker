@@ -57,8 +57,14 @@
 
   /* Tabs */
   .tabs{position:sticky;top:0;z-index:5;background:var(--pool);border-bottom:2px solid var(--ink);margin-top:18px}
-  .tabs .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
-  .tabs .wrap::-webkit-scrollbar{display:none}
+  .tabs .wrap{display:flex;flex-wrap:wrap;gap:8px;padding-top:10px;padding-bottom:10px}
+  @media (max-width:700px){
+    .tabs .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--ink) transparent;padding-bottom:8px;
+      -webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+    .tabs .wrap.end{-webkit-mask-image:none;mask-image:none}
+    .tabs .wrap::-webkit-scrollbar{height:4px}
+    .tabs .wrap::-webkit-scrollbar-thumb{background:var(--ink);border-radius:4px}
+  }
   .tab{flex-shrink:0;border:2px solid var(--ink);background:var(--shell);color:var(--ink);border-radius:999px;padding:7px 13px;font:700 14px Figtree,sans-serif;cursor:pointer;display:flex;gap:7px;align-items:center}
   .tab svg{width:16px;height:16px;flex-shrink:0}
   .tab em{font-style:normal;font-weight:400;font-size:13px;color:var(--ink-soft)}
@@ -1270,6 +1276,14 @@ $("copyLink").addEventListener("click", async () => {
   catch(e){ sflash(SITE_URL); }
 });
 
+/* Tab strip: mouse wheel scrolls sideways when it overflows; hide the fade at the end */
+const tabStrip = $("tabs");
+tabStrip.addEventListener("wheel", e => {
+  if (tabStrip.scrollWidth > tabStrip.clientWidth && Math.abs(e.deltaY) > Math.abs(e.deltaX)) { tabStrip.scrollLeft += e.deltaY; e.preventDefault(); }
+}, { passive: false });
+const tabFade = () => tabStrip.classList.toggle("end", tabStrip.scrollLeft + tabStrip.clientWidth >= tabStrip.scrollWidth - 4);
+tabStrip.addEventListener("scroll", tabFade); window.addEventListener("resize", tabFade);
+setTimeout(tabFade, 0);
 $("notice").title = "Tap to read the full update";
 $("notice").addEventListener("click", () => $("notice").classList.toggle("open"));
 renderAll();
