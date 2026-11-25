@@ -579,3 +579,18 @@ Push Square's Nine1Nine and Jack of Hearts WIP pages (updated 20–21 Nov) are i
 - WAiNK: no new named entries beyond the 15 in the tracker (Bloxodes 16 names, timesaver 5, op.gg is a general POI map).
 - tro-49 "Bad Luck, I Guess": PowerPyx says rob the Little Cuba Payday Loans again as Lucia (after Credit Check) and escape on foot; GamerGuides, xboxplay.games and playday.one give no method. Still single-source.
 - MetaForge card page: set totals only, no per-card spots.
+
+## 2026-11-25 run (third)
+
+### col-117 to col-124 (first 8 Cocaine Flamingos)
+PowerPyx (WIP 8/125, modified 23 Nov) and ShowGamer (modified 21 Nov, embeds a mapgenie map) list the same 8 spots: 6 on Belpoint, 1 Watson Bay motel, 1 La Perle. Caveat: ShowGamer's spot-by-spot descriptions closely follow PowerPyx's order and details, so it may be partly derived from it (same concern as Bloxodes for cards). Earlier runs held these back waiting for a second source; ShowGamer was accepted as independent for golf courses, so it's used the same way here – worth an in-game look. col-21 (the 125-flamingo summary item) left unchanged. Belpoint and Watson Bay → Leonida (Mariana County), La Perle → Vice City.
+- https://www.powerpyx.com/gta-6-all-cocaine-flamingo-locations/
+- https://showgamer.com/en/guides/7776-vse-flamingo-s-kokainom-v-gta-6-gde-nayti-125-figurok-na-karte
+
+### Notice
+Added "the first 8 Cocaine Flamingos".
+
+### Not added this run
+- Push Square Cocaine Flamingo WIP page (24 Nov): 5 Key Lento spots (east of the Rusty Anchor; white house on Surfside Dr south of Key Lento Kahuna; fence by the nautical building on Sunset Dr; rocks north of The Wonder Whale; decorated house on Surfside Dr, right-hand flamingo). None appear on PowerPyx or ShowGamer – single source.
+- MetaForge, Magic Game World and games.gg flamingo pages failed to load.
+- No new leads checked for cards, WAiNK or Bret's Target Decks beyond the earlier runs today.
