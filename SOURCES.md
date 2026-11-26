@@ -674,3 +674,23 @@ Headline "Tyrone mission and 6 sculptures added"; missions now 91; "12 of the 23
 - PlayDay's extra Chapter 3 entries Kitty Litter Labs and Spin On This: not on KeenGamer (likely Tyrone's Strangers & Freaks missions). Not added.
 - Remaining 11 sculptures (Leonida Snow, Colossus, Flam Gummies, etc.), all 35 curiosities and the other landmarks: still PowerPyx only. GameSpot's curiosities page and Sportskeeda's sculptures page failed to load.
 - Cocaine Flamingos: Bloxodes unchanged (8, 19 Nov); games.gg failed again. GameTrek WAiNK page gives counts by county only.
+
+## 2026-11-26 run (third)
+
+### col-131 to col-135 (5 more Cocaine Flamingos, all Key Lento; placed after col-124 in the array)
+Push Square's flamingo WIP page (5 found, modified 24 Nov, its own numbering and wording) lists exactly these five Key Lento spots. GTA6Bugs (updated 25 Nov) and Game-Checklists (updated 25 Nov) list the same five.
+- col-131 east of the Rusty Anchor; col-132 white house corner on Surfside Dr south of Key Lento Kahuna; col-133 Sunset Dr lawn flamingos by the nautical-themed building; col-134 rocks north of The Wonder Whale; col-135 decorated house on Surfside Dr (right-hand flamingo)
+- https://www.pushsquare.com/guides/gta-6-cocaine-flamingo-locations
+- https://gta6bugs.com/collectibles/cocaine-flamingos
+- https://game-checklists.com/gta6/cocaine-flamingos-checklist/
+
+### Notice
+Headline "5 Key Lento flamingos added"; "the first 13 Cocaine Flamingos".
+
+### Not added this run
+- 15 more flamingo spots (Key Lento hydrant, Watson Bay north end, 3 in Capri, Abismo Key, 6 at Featherstone Islands / Wreck of the Meerwunder, Riquezas Keys, Cottonmouth Lake, Port Gellhorn rubbish-heap fridge): only on GTA6Bugs and Game-Checklists. Both were updated on 25 Nov with the same 28-spot list in the same order and wording, so they don't look independent. PowerPyx (23 Nov) is still at 8. Held back.
+- 7th Kenton wreck: PowerPyx's Kenton sets page (26 Nov) lists 7 sets: Bobcat Dive Site and Belpoint Strait, and it excludes Nuestra Señora del Ocio (col-59) as not one of the 7. GTABoom's part 1 lists our six including Ocio. Sources disagree, and GTABoom part 2 didn't load. Nothing changed. Simon may want to check whether col-59 should count.
+  - https://www.powerpyx.com/gta-6-all-kenton-sets-locations-search-the-dive-sites/
+  - https://www.gtaboom.com/gta-6-treasure-hunting-2b73
+- Remaining 11 sculptures, 24 landmarks and 33 curiosities: still PowerPyx only. Bloxodes (23 Nov) has only the 16 already in. Push Square's sculpture page didn't load this run.
+- Imperial Spanish Ruins (col-46): timesaver.gg puts it on the south-west peak of Mount Kalaga National Park, while PowerPyx and Bloxodes say Moreau. Left as is.
