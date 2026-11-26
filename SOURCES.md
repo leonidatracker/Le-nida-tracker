@@ -646,3 +646,31 @@ Date → 26 November; headline "5 more story missions added"; missions now 90.
 - tro-49 "Bad Luck, I Guess": GamerGuides, KeenGamer (unconfirmed), Bloxodes, Insider Gaming, OfZen give no method. Still PowerPyx only.
 - Cocaine Flamingos: PowerPyx (23 Nov) and Bloxodes (19 Nov) still 8/125 – nothing new. games.gg failed again; Push Square flamingo page blocked (permission prompt unanswered).
 - fandomwire and GTABase mission pages failed to load.
+
+## 2026-11-26 run (second)
+
+### mis-91 Tyrone (Ch 3; placed just before Here, Kitty Kitty in the array)
+KeenGamer (read verbatim this time) and PlayDay both list "Tyrone" as a Chapter 3 story mission, right after South Leonida Real Estate and right before Here, Kitty Kitty. GTABase's mission page calls it a mandatory Chapter 3 story mission given by Tyrone that leads straight into Here, Kitty Kitty. Not the same as act-28 (Tyrone's Strangers & Freaks strand). Note: KeenGamer/PlayDay put South Leonida Real Estate (mis-55) much earlier in Chapter 3 than the tracker's PowerPyx-based order – ordering not changed.
+- https://www.keengamer.com/articles/guides/gta-6-walkthrough-all-chapters-and-story-missions-in-order/
+- https://playday.one/2026/11/18/every-mission-in-gta6/
+- https://www.gtabase.com/gta-6/missions/tyrone
+
+### col-125 to col-130 (6 more WAiNK Sculptures; placed after col-53 in the array)
+Push Square's sculpture WIP page (12 of 23, modified 21 Nov, independently worded) and PowerPyx's full sculpture list (23) agree on these names and areas. Push Square also has the six already in the tracker.
+- col-125 Gimme All Your Oil – Decor District, Vice City
+- col-126 Grassrivers Visitor Center Statue – Mariana County (Push Square "Shoreless Keys", PowerPyx "Shoeless Keys"; area name left out of the note)
+- col-127 Junkyard T-Rex – Lummox County on both; Push Square says Mount Kalaga National Park, PowerPyx says Tallaloko. Note says guides differ; region kept "Leonida".
+- col-128 Fatal Incursion Plaque – Key Lento, Mariana County
+- col-129 Large Lure – Ocean Beach, Vice Beach
+- col-130 The Wonder Whale – Key Lento, Mariana County
+- https://www.pushsquare.com/guides/gta-6-waink-sculpture-locations
+- https://www.powerpyx.com/gta-6-all-sculptures-scan-locations/
+
+### Notice
+Headline "Tyrone mission and 6 sculptures added"; missions now 91; "12 of the 23 WAiNK sculptures".
+
+### Not added this run
+- Push Square spells col-52 "Princess Robot Bubblegum Statue"; PowerPyx and Bloxodes say "Princes" – left as is.
+- PlayDay's extra Chapter 3 entries Kitty Litter Labs and Spin On This: not on KeenGamer (likely Tyrone's Strangers & Freaks missions). Not added.
+- Remaining 11 sculptures (Leonida Snow, Colossus, Flam Gummies, etc.), all 35 curiosities and the other landmarks: still PowerPyx only. GameSpot's curiosities page and Sportskeeda's sculptures page failed to load.
+- Cocaine Flamingos: Bloxodes unchanged (8, 19 Nov); games.gg failed again. GameTrek WAiNK page gives counts by county only.
