@@ -621,3 +621,28 @@ PowerPyx, Bloxodes and Beebom (independently worded, updated 25 Nov) agree on al
 - gta-6-collectible-cards: 15 of 18 sets needed for 100% – https://gmtreks.com/gta6/page/01M7Q14Z47TMRMR101MF07KYYA · https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/
 - what-to-do-before-finishing-chapter-1-gta-6: "nothing missable is needed for 100%" – https://www.powerpyx.com/?p=374397 · https://www.gamerfuzion.com/gta-6-100-percent-completion-checklist-platinum-roadmap/ ; missable items themselves come from the tracker data.
 - Map county layout (schematic only): https://allthings.how/gta-6-map-locations-every-confirmed-region-in-leonida/ (community mapping; Rockstar hasn't published a county map).
+
+## 2026-11-26 run
+
+### mis-86 to mis-90 (5 more story missions; placed in story order in the array, new ids at the end)
+KeenGamer's walkthrough (91 missions, 22/11/26/25/7) and Dexerto's mission wiki (same 91, but Dexerto hides three names as spoilers and was read partly via summary) now give a fuller list than the 18 Nov sources.
+- mis-86 Don Gone (Ch 1, between Swamped and Recalibration): KeenGamer, Beebom, Technerdiness – same position on all three.
+- mis-87 Clonin' Keys, Makin' GS (Ch 3, after Credit Check): Beebom and Technerdiness use this name (Technerdiness adds "Steal the Zorrusso for Randy" in brackets); KeenGamer and Dexerto call it "Steal the Zorrusso for Randy". Same slot after Credit Check on KeenGamer and Technerdiness. Name matches veh-01's note.
+- mis-88 Heavy Lifting (Ch 4, between Party Hard and Photo/Shoot): KeenGamer and PC Gamer (18 Nov run); Dexerto also lists it (summary). Not on Beebom or Technerdiness – worth a glance.
+- mis-89 Starting From Zero (last mission of Ch 4, after Sunset): KeenGamer, Beebom, Technerdiness.
+- mis-90 The End of the Road (last mission of Ch 5, after Protective Custody): KeenGamer, Beebom, Technerdiness.
+- https://www.keengamer.com/articles/guides/gta-6-walkthrough-all-chapters-and-story-missions-in-order/
+- https://beebom.com/gta-6-missions-list-walkthrough/
+- https://www.technerdiness.com/gta/gta-6-chapters-missions-list/
+- https://www.dexerto.com/wikis/gta-6/mission-list/
+- https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/ (mis-88)
+
+### Notice
+Date → 26 November; headline "5 more story missions added"; missions now 90.
+
+### Not added this run
+- Tyrone (Ch 3, after South Leonida Real Estate on KeenGamer/Dexerto): KeenGamer verbatim, Dexerto only via summary; not on Beebom or Technerdiness. Held back.
+- Beebom's and Technerdiness' extra entries (Deposit Cash Into BuckMe, Pool Day, Honest Abe, etc.): these look like phone tasks/side steps; KeenGamer leaves them out of its 91. Not added.
+- tro-49 "Bad Luck, I Guess": GamerGuides, KeenGamer (unconfirmed), Bloxodes, Insider Gaming, OfZen give no method. Still PowerPyx only.
+- Cocaine Flamingos: PowerPyx (23 Nov) and Bloxodes (19 Nov) still 8/125 – nothing new. games.gg failed again; Push Square flamingo page blocked (permission prompt unanswered).
+- fandomwire and GTABase mission pages failed to load.

@@ -231,8 +231,8 @@
     <div class="upd" id="updBanner">
       <svg viewBox="0 0 54 34" aria-hidden="true"><rect width="54" height="34" rx="6" fill="#123c47"/><path d="M11 28a16 16 0 0 1 32 0z" fill="#ff4f87"/><rect x="9" y="20" width="36" height="2" fill="#123c47"/><rect x="9" y="24" width="36" height="2.5" fill="#123c47"/><rect x="4" y="28" width="46" height="3" rx="1.5" fill="#1f8f8a"/></svg>
       <div>
-        <b id="updateHeadline">First Cocaine Flamingos and 3 free garages added</b>
-        <div class="notice" id="notice">Updated 25 November 2026: story missions, trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 57 card locations, the first 8 Cocaine Flamingos, every garage price and all four free story garages are in. The tracker is being updated as players discover more.</div>
+        <b id="updateHeadline">5 more story missions added</b>
+        <div class="notice" id="notice">Updated 26 November 2026: story missions (now 90, with the final missions of Chapters 4 and 5), trophies (now with most hidden-trophy conditions), collectibles, side activities, Strangers &amp; Freaks, garages, Randy's Wish List cars (with spawn spots), meditation spots, unique races, golf and mini golf courses, pool opponents, shooting ranges, race challenges, unique race venues, video games, book swaps, payday loan stores, all 22 bank jobs, all 35 Smash 'n' Grab stores, all 39 gang operations, all 42 drone race time trials, all 130 stunt jumps, the first WAiNK landmarks, curiosities and sculptures, six of Kenton's shipwrecks, the first 57 card locations, the first 8 Cocaine Flamingos, every garage price and all four free story garages are in. The tracker is being updated as players discover more.</div>
       </div>
     </div>
   </div>
@@ -407,6 +407,7 @@ const CATEGORIES = [
     { id:"mis-15", name:"Day Release", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
     { id:"mis-16", name:"Clear Skies", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
     { id:"mis-17", name:"Swamped", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
+    { id:"mis-86", name:"Don Gone", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
     { id:"mis-18", name:"Recalibration", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
     { id:"mis-19", name:"Tourist Trap", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
     { id:"mis-20", name:"Home Sweet Home", region:"Leonida", note:"Chapter 1 (Just Like Paradise) \u2013 map region to be confirmed" },
@@ -434,6 +435,7 @@ const CATEGORIES = [
     { id:"mis-42", name:"First Impressions", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
     { id:"mis-43", name:"Crosstown Traffic", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
     { id:"mis-44", name:"Credit Check", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
+    { id:"mis-87", name:"Clonin' Keys, Makin' GS", region:"Leonida", note:"Chapter 3 \u2013 some guides call it Steal the Zorrusso for Randy; you get the Granforma Zorrusso here \u2013 map region to be confirmed" },
     { id:"mis-45", name:"Ride or Die", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
     { id:"mis-46", name:"Sinfrontera National Bank", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
     { id:"mis-47", name:"Security Expert", region:"Leonida", note:"Chapter 3 \u2013 map region to be confirmed" },
@@ -451,6 +453,7 @@ const CATEGORIES = [
     { id:"mis-59", name:"Company Cars", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-60", name:"Lawyer Up", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-61", name:"Party Hard", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-88", name:"Heavy Lifting", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-62", name:"Photo/Shoot", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-63", name:"Making Gainz", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-64", name:"Too Much Baggage", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
@@ -469,12 +472,14 @@ const CATEGORIES = [
     { id:"mis-77", name:"Headliners", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-78", name:"VCIA Takedown", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-79", name:"Sunset", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
+    { id:"mis-89", name:"Starting From Zero", region:"Leonida", note:"Chapter 4 (Vice City, Baby) \u2013 map region to be confirmed" },
     { id:"mis-80", name:"Bird in the Hand", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
     { id:"mis-81", name:"Taking Liberties", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
     { id:"mis-82", name:"Doggie Bag", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
     { id:"mis-83", name:"VC Baby", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
     { id:"mis-84", name:"Operation Savage Glory", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
-    { id:"mis-85", name:"Protective Custody", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" }
+    { id:"mis-85", name:"Protective Custody", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" },
+    { id:"mis-90", name:"The End of the Road", region:"Leonida", note:"Chapter 5 (Top of the World, Ma) \u2013 map region to be confirmed" }
   ] },
   { key:"collectibles", title:"Collectibles",          items: [
     { id:"col-01", name:"Vice City Flamingos card set", region:"Leonida", note:"24 cards \u2013 card locations to follow" },
