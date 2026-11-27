@@ -694,3 +694,41 @@ Headline "5 Key Lento flamingos added"; "the first 13 Cocaine Flamingos".
   - https://www.gtaboom.com/gta-6-treasure-hunting-2b73
 - Remaining 11 sculptures, 24 landmarks and 33 curiosities: still PowerPyx only. Bloxodes (23 Nov) has only the 16 already in. Push Square's sculpture page didn't load this run.
 - Imperial Spanish Ruins (col-46): timesaver.gg puts it on the south-west peak of Mount Kalaga National Park, while PowerPyx and Bloxodes say Moreau. Left as is.
+
+## 2026-11-27 run
+
+### col-136 to col-149 (14 more Cocaine Flamingos; placed after col-135 in the array)
+GTADB (50 mapped spots, published 22 Nov, own wording), Vice City DB (30 spots, updated 21 Nov, multi-source) and GTA6Bugs (updated 25 Nov) all list these. Each one is on at least two of them with matching descriptions.
+- col-136 Capri Halloween house; col-137 La Costa, SW Capri; col-138 house west of Volcano Coffee; col-139 north Key Lento fire hydrant (GTADB, GTA6Bugs; VCDB lists it too); col-140 Watson Bay north end behind west-side house (VCDB, GTA6Bugs); col-141 Abismo Key south-east shore near the bridge (all three); col-142 to col-144 northern Featherstone island north point / south-east / south shore; col-145 to col-147 three on the Meerwunder beach; col-148 Riquezas Keys radome island building; col-149 Port Gellhorn rubbish heap under a fridge
+- Featherstone county left out: Hundo Maps says Lummox County, GameTrek says Mariana County, VCDB files it under Mount Kalaga.
+- Riquezas Keys county (Mariana) from Game-Checklists + Tech4Gamers card pages.
+- https://gtadb.net/articles/gta-6-cocaine-flamingos-locations/
+- https://vicecitydb.org/collectibles/cocaine-flamingos
+- https://gta6bugs.com/collectibles/cocaine-flamingos
+
+### col-150 to col-158 (9 more WAiNK Landmarks; placed after col-45)
+Push Square's landmark WIP page (16, modified 26 Nov) and GTA6.house's full list (31, modified 27 Nov) agree on names and areas: Bobcat Key Experimental Home, Thicc Herbie (Abismo Key), Downtown Periscope, Sky Ride, Hoffman Observatory, Howe Dairy Farm's Big Udder, Badger R&D Tower, Aqua Stadium (Gloriana Key), Tucker's Citrus Farms Water Tower.
+- https://www.pushsquare.com/guides/gta-6-waink-landmark-locations
+- https://gta6.house/guides/gta-6-waink-locations-landmarks
+
+### col-159 to col-169 (11 more WAiNK Curiosities; placed after col-47)
+Push Square's curiosities WIP page (12, modified 21 Nov) and Hundo Maps (all 35, updated 24 Nov, credits PowerPyx) agree: Derelict Spy Vessel, Dead Sharks, Beach Party Site, Christmas House, NoFlusher Homestead, Desert Island Piano, Abismo Key Carcass, Wetman Bay Carcass, Fingerpost, Vibrant Pond, Plunge Masters Deep Sea Chalet.
+- Dead Sharks / NoFlusher / Vibrant Pond: Push Square says Grassrivers, Hundo Maps says Wetman Bay / Cottonmouth Lake (both Mariana County) – notes say "Grassrivers, Mariana County" only.
+- https://www.pushsquare.com/guides/gta-6-waink-curiosities-locations
+- https://hundomaps.com/locations/waink-curiosities/
+
+### col-170 to col-216 (47 more card locations; placed after col-116)
+Game-Checklists (all 480, updated 25 Nov) and Tech4Gamers (137 spots, updated 25 Nov) agree on each spot. Tiers kept only where both pages give the same one.
+- https://game-checklists.com/gta6/card-sets-checklist/
+- https://gta.tech4gamers.com/gta-6/collectibles/collectible-card-locations/
+
+### Notice
+Headline "47 new cards and 14 flamingos located"; cards 104/480, flamingos 27/125, landmarks 16/31, curiosities 13/35.
+
+### Not added this run
+- Flamingos: Cottonmouth sandbar (GTADB/VCDB say west beach of the sandbar island; GTA6Bugs says the island just west of it); GTADB-only spots (Belpoint lighthouse and north dock, Hamlet, Southside, Rockridge, many Port Gellhorn gardens, Buckskin Swamp, Waning Sands garage, Mile Zero bridge building); VCDB single-source Watson Bay candle room, Capri dock and sunken-ship spots. PowerPyx still 8/125.
+- Cards: Crystal, Angel (Bronze), Beverly (set given by one page only / spot differs); Jesenia (Silver), Right Wing (White), Great Uncle Sam and President Blunt (tier only on one page); Chibuike Bello (county conflict); Leon Correo, Granian Beach, Dominant, Femi-Nemesis, Right Wing vs Left Wing, Drake (Bronze), Immigrantasma, Bryson Powers (spots differ or incomplete).
+- Remaining 15 landmarks (Old Goliath, Vice City Sign, Bonanza Giant, etc.): GTA6.house only (an AI-written aggregator).
+- Remaining 22 curiosities: Hundo Maps / PowerPyx only.
+- Kenton's 7th wreck: games.gg failed; Grindnstrat lists 2, GTABoom 6 (incl. Ocio). Still unresolved.
+- Cheat codes: not searched in depth this run; still 44 without a code.
