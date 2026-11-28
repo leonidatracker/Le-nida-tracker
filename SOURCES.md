@@ -732,3 +732,40 @@ Headline "47 new cards and 14 flamingos located"; cards 104/480, flamingos 27/12
 - Remaining 22 curiosities: Hundo Maps / PowerPyx only.
 - Kenton's 7th wreck: games.gg failed; Grindnstrat lists 2, GTABoom 6 (incl. Ocio). Still unresolved.
 - Cheat codes: not searched in depth this run; still 44 without a code.
+
+## 2026-11-28 run
+
+### col-217 to col-224 (8 more Cocaine Flamingos; placed after col-149 in the array)
+Game-Checklists (118 rows, updated 27 Nov), gta6zoom (32 spots, updated 27 Nov), Push Square (WIP, modified 27 Nov) and GTADB (50 spots) checked against each other. Each spot below is on at least two of them with matching descriptions.
+- col-217 Goose Key rock pool, south shore by Mile Zero (Game-Checklists, gta6zoom; Vice City DB also lists Goose Key shore rocks)
+- col-218 Goose Key stone shack uphill from the rock pool (Game-Checklists, gta6zoom)
+- col-219 Belpoint Lighthouse top platform (Game-Checklists, GTADB)
+- col-220 Key Lento west-shore blue house (Game-Checklists, gta6zoom; GTADB has a west waterfront garden)
+- col-221 Key Lento Surfside Dr purple-lit porch (Game-Checklists, gta6zoom)
+- col-222 Port Gellhorn yellow bungalow roof (Push Square, Game-Checklists; GTADB has a northern Gellhorn roof)
+- col-223 Port Gellhorn Washburn Ave back garden with gnome (Push Square, Game-Checklists)
+- col-224 Port Gellhorn trailer park opposite La Cascara (Push Square, Game-Checklists)
+- https://game-checklists.com/gta6/cocaine-flamingos-checklist/
+- https://www.gta6zoom.com/en/collectibles/gta-6-flamingo-locations-and-how-to-find-them/
+- https://www.pushsquare.com/guides/gta-6-cocaine-flamingo-locations
+- https://gtadb.net/articles/gta-6-cocaine-flamingos-locations/
+- https://vicecitydb.org/collectibles/cocaine-flamingos
+
+### Cheat codes filled in (ids unchanged)
+- che-02 Drunk, che-04 Raise Wanted Level: TrueAchievements, PC Gamer, Game-Checklists, GamesRadar and The Games Wiki all give the same sequence (Dexerto's Raise Wanted Level differs by one arrow; outvoted).
+- che-14 All Explosive Weapons, che-16 Exploding Bottles, che-17 Explosive Shotgun, che-18 Hauners H-AT, che-48 Pinhole, che-52 Videotape, che-53 Dark Mirror: The Games Wiki (updated 27 Nov), GamesRadar (updated 27 Nov) and Game-Checklists (24 Nov) identical.
+- https://thegameswiki.com/gta6/wiki/cheats
+- https://www.gamesradar.com/games/grand-theft-auto/gta-6-cheats/
+- https://game-checklists.com/gta6/guides/cheats/
+- https://www.trueachievements.com/news/gta-6-cheat-codes
+- https://www.pcgamer.com/games/grand-theft-auto/gta-6-cheats-list/
+- https://metaforge.app/gta-6/all-gta-6-cheats-codes-how-to-unlock
+
+### Notice
+Headline "9 cheat codes and 8 flamingos added"; cheats 26/61 coded, flamingos 35/125.
+
+### Not added this run
+- 35 remaining cheat codes (all vehicle spawns, time cheats, most filters, No Fall Damage, Parachute, Repair Vehicle, Unlimited Nitrous, Incendiary Ammo): only GamesRadar and Game-Checklists give them, and Game-Checklists lists GamesRadar among its sources, so not independent. Vice, MeowDB, Metaforge, TrueAchievements, Red Bull still show them as unconfirmed.
+- Flamingos: Permit Keys / Goose Key beach-party shack (descriptions differ), Capri NW peninsula (three different spots), Cottonmouth sandbar (still conflicting), Rockridge, Southside, Hamlet, Buckskin Swamp floating, Waning Sands, Ambrosia, Bonanza etc. (Game-Checklists rows without detail or one source only). GTABase map shows 113 but is JS-only.
+- Cards: tech4gamers and Game-Checklists card pages didn't load this run; Bloxodes (125, 19 Nov) is the only readable list, so no new cards.
+- Kenton's 7th wreck: still unresolved (games.gg failed; gmtreks claims 7 but the list wasn't readable).

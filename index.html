@@ -231,8 +231,8 @@
     <div class="upd" id="updBanner">
       <svg viewBox="0 0 54 34" aria-hidden="true"><rect width="54" height="34" rx="6" fill="#123c47"/><path d="M11 28a16 16 0 0 1 32 0z" fill="#ff4f87"/><rect x="9" y="20" width="36" height="2" fill="#123c47"/><rect x="9" y="24" width="36" height="2.5" fill="#123c47"/><rect x="4" y="28" width="46" height="3" rx="1.5" fill="#1f8f8a"/></svg>
       <div>
-        <b id="updateHeadline">47 new cards and 14 flamingos located</b>
-        <div class="notice" id="notice">Updated 27 November 2026: 47 more trading card locations (now 104 of 480), 14 more Cocaine Flamingos across Capri, the Featherstone Islands, Riquezas Keys, Abismo Key and Port Gellhorn (now 27 of 125), 9 more WAiNK landmarks (now 16 of 31) and 11 more WAiNK curiosities (now 13 of 35). Story missions, trophies, side activities, vehicles, garages, all bank jobs, Smash 'n' Grab stores, gang operations, drone races and stunt jumps were already in. The tracker is being updated as players discover more.</div>
+        <b id="updateHeadline">9 cheat codes and 8 flamingos added</b>
+        <div class="notice" id="notice">Updated 28 November 2026: 9 more cheat codes (Drunk, Raise Wanted Level, All Explosive Weapons, Exploding Bottles, Explosive Shotgun, Hauners H-AT, Pinhole, Videotape and Dark Mirror – 26 of 61 now have a code) and 8 more Cocaine Flamingos on Goose Key, Key Lento, Belpoint Lighthouse and in Port Gellhorn (now 35 of 125). The tracker is being updated as players discover more.</div>
       </div>
     </div>
   </div>
@@ -699,6 +699,14 @@ const CATEGORIES = [
     { id:"col-147", name:"Cocaine Flamingo: Meerwunder beach (3 of 3)", region:"Leonida", note:"Featherstone Islands \u2013 one of three on the beach beside the stranded Meerwunder wreck" },
     { id:"col-148", name:"Cocaine Flamingo: Riquezas Keys radome island", region:"Leonida", note:"Riquezas Keys, Mariana County \u2013 inside a building on the big south-west island with the radar dome" },
     { id:"col-149", name:"Cocaine Flamingo: Port Gellhorn rubbish heap", region:"Port Gellhorn", note:"Small island just west of Port Gellhorn, Kelly County \u2013 top of the big rubbish heap, under a dumped fridge" },
+    { id:"col-217", name:"Cocaine Flamingo: Goose Key rock pool", region:"Leonida", note:"Goose Key, Mariana County \u2013 rock pool on the south shore near Mile Zero Air Station, before the bridge heading east; entering the base can bring a wanted level" },
+    { id:"col-218", name:"Cocaine Flamingo: Goose Key stone shack", region:"Leonida", note:"Goose Key, Mariana County \u2013 inside the low stone shack uphill from the rock pool, by the window; Mile Zero Air Station grounds, so expect a wanted level" },
+    { id:"col-219", name:"Cocaine Flamingo: Belpoint Lighthouse top", region:"Leonida", note:"Belpoint, Mariana County \u2013 up the ladder on the top platform of Belpoint Lighthouse" },
+    { id:"col-220", name:"Cocaine Flamingo: Key Lento blue house", region:"Leonida", note:"West shore of Key Lento, Mariana County \u2013 garden of the blue waterfront house with a white outside staircase" },
+    { id:"col-221", name:"Cocaine Flamingo: Key Lento purple porch", region:"Leonida", note:"Key Lento, Mariana County \u2013 on the porch with purple lights on Surfside Dr" },
+    { id:"col-222", name:"Cocaine Flamingo: Port Gellhorn yellow bungalow", region:"Port Gellhorn", note:"Northern Port Gellhorn, Kelly County \u2013 on the roof of a yellow bungalow" },
+    { id:"col-223", name:"Cocaine Flamingo: Port Gellhorn Washburn Ave garden", region:"Port Gellhorn", note:"Port Gellhorn, Kelly County \u2013 back garden of a blue house on Washburn Ave, among the lawn ornaments by a gnome; break them until the collectible pops" },
+    { id:"col-224", name:"Cocaine Flamingo: Port Gellhorn trailer park", region:"Port Gellhorn", note:"Port Gellhorn, Kelly County \u2013 trailer park across the road from La Cascara Motel, in front of a small white shed" },
   ] },
   { key:"vehicles",     title:"Vehicles",              items: [
     { id:"veh-01", name:"Granforma Zorrusso", region:"Leonida", note:"Randy's Wish List \u2013 given to you during the Chapter 3 mission Clonin' Keys, Makin' GS" },
@@ -1168,9 +1176,9 @@ const CATEGORIES = [
   ] },
   { key:"cheats",       title:"Cheats",                items: [
     {id: "che-01", name: "$250,000", region: "Leonida", note: "Player cheat – unlock: finish the story", code: "↑ → ↓ ← ↑ ← ↓ →"},
-    {id: "che-02", name: "Drunk", region: "Leonida", note: "Player cheat – unlock: spend $2,500 on alcohol", code: ""},
+    {id: "che-02", name: "Drunk", region: "Leonida", note: "Player cheat – unlock: spend $2,500 on alcohol", code: "↑ ← → ↑ ↑ ← → ↑ ← →"},
     {id: "che-03", name: "Raise Heat Level", region: "Leonida", note: "Player cheat – unlock: lose a 3-star wanted level 25 times", code: "← ↓ → ↓ ↑ ↓ ↑"},
-    {id: "che-04", name: "Raise Wanted Level", region: "Leonida", note: "Player cheat – unlock: lose a 3-star wanted level 50 times", code: ""},
+    {id: "che-04", name: "Raise Wanted Level", region: "Leonida", note: "Player cheat – unlock: lose a 3-star wanted level 50 times", code: "← ↓ → ↓ ↑ → ↑"},
     {id: "che-05", name: "Unlimited Focus", region: "Leonida", note: "Player cheat – unlock: finish the story", code: "↓ ↑ ↑ ↓ ↑ ↓ ↑ ↓ ↑ →"},
     {id: "che-06", name: "No Fall Damage", region: "Leonida", note: "Player cheat – unlock: survive a 40ft freefall 20 times", code: ""},
     {id: "che-07", name: "Parachute", region: "Leonida", note: "Player cheat – unlock: 50 skydives or BASE jumps from 300ft or higher", code: ""},
@@ -1180,11 +1188,11 @@ const CATEGORIES = [
     {id: "che-11", name: "Max Ammo", region: "Leonida", note: "Combat cheat – unlock: 25 bronze medals or better at shooting ranges", code: "↓ ↑ → ↓ ← ← ↑ ↑ ↓ ←"},
     {id: "che-12", name: "Infinite Ammo", region: "Leonida", note: "Combat cheat – unlock: 25 silver medals or better at shooting ranges", code: "↓ ↑ → ↓ ← ← ↑ ↓ ↓ ↓"},
     {id: "che-13", name: "No Reload", region: "Leonida", note: "Combat cheat – unlock: 25 gold medals at shooting ranges", code: "↓ ↑ → ↓ ← ← ↑ ↓ ↓ ↑"},
-    {id: "che-14", name: "All Explosive Weapons", region: "Leonida", note: "Combat cheat – unlock: throw 100 grenades", code: ""},
+    {id: "che-14", name: "All Explosive Weapons", region: "Leonida", note: "Combat cheat – unlock: throw 100 grenades", code: "→ ↑ ← ↑ → ↑ ← ↑ ←"},
     {id: "che-15", name: "Incendiary Ammo", region: "Leonida", note: "Combat cheat – unlock: burn 100 enemies with fire", code: ""},
-    {id: "che-16", name: "Exploding Bottles", region: "Leonida", note: "Combat cheat – unlock: throw 100 molotovs", code: ""},
-    {id: "che-17", name: "Explosive Shotgun", region: "Leonida", note: "Combat cheat – unlock: hit 100 enemies with explosive damage", code: ""},
-    {id: "che-18", name: "Hauners H-AT", region: "Leonida", note: "Combat cheat – unlock: blow up 100 vehicles", code: ""},
+    {id: "che-16", name: "Exploding Bottles", region: "Leonida", note: "Combat cheat – unlock: throw 100 molotovs", code: "↓ ↑ ← ← → ↓ ↓ ↑ ←"},
+    {id: "che-17", name: "Explosive Shotgun", region: "Leonida", note: "Combat cheat – unlock: hit 100 enemies with explosive damage", code: "↓ ↑ → ↓ ← ↓ ↑ → ↓ ←"},
+    {id: "che-18", name: "Hauners H-AT", region: "Leonida", note: "Combat cheat – unlock: blow up 100 vehicles", code: "→ ↑ ← ↑ → ↑ ← ↑ ↑"},
     {id: "che-19", name: "Attack Force", region: "Leonida", note: "Combat cheat – unlock: finish the story", code: "↓ ↑ ← ← → ↓ ↓ ↑ ↓"},
     {id: "che-20", name: "Exploding Balls", region: "Leonida", note: "Combat cheat – unlock: hit 20 enemies with explosive damage", code: "↓ ↑ ← ← → ↓ ↓ ↑ →"},
     {id: "che-21", name: "Vehicle Force", region: "Leonida", note: "Combat cheat – unlock: kill 25 enemies with a vehicle (civilians count)", code: "↓ ↑ ← ← → ↓ ← ↑ ↓"},
@@ -1214,12 +1222,12 @@ const CATEGORIES = [
     {id: "che-45", name: "Cycle Weather", region: "Leonida", note: "World cheat – unlock: finish the story", code: "↓ → ↑ ↓ → ↑ →"},
     {id: "che-46", name: "Golden Hour", region: "Leonida", note: "Screen filter – unlock: spend 4 hours holding hands", code: ""},
     {id: "che-47", name: "Powdered Sugar", region: "Leonida", note: "Screen filter – unlock: scan all the space debris with WAiNK", code: ""},
-    {id: "che-48", name: "Pinhole", region: "Leonida", note: "Screen filter – unlock: clear 25 gang operations with your partner", code: ""},
+    {id: "che-48", name: "Pinhole", region: "Leonida", note: "Screen filter – unlock: clear 25 gang operations with your partner", code: "↓ ↓ ↑ → → ↑ ← ← ↑ ↓"},
     {id: "che-49", name: "Neon Jungle", region: "Leonida", note: "Screen filter – unlock: discover all 16 Girlypop vehicles", code: ""},
     {id: "che-50", name: "Yesteryear", region: "Leonida", note: "Screen filter – unlock: discover the Ridgeway", code: ""},
     {id: "che-51", name: "Cataclysm", region: "Leonida", note: "Screen filter – unlock: discover Martha's Vamos in the Progress menu", code: "↓ ↓ ↑ → → ↑ ← ← → →"},
-    {id: "che-52", name: "Videotape", region: "Leonida", note: "Screen filter – unlock: complete 50 activities with your partner", code: ""},
-    {id: "che-53", name: "Dark Mirror", region: "Leonida", note: "Screen filter – unlock: make $500,000 selling vehicles", code: ""},
+    {id: "che-52", name: "Videotape", region: "Leonida", note: "Screen filter – unlock: complete 50 activities with your partner", code: "↓ ↓ ↑ → → ↑ ← ← → ↓"},
+    {id: "che-53", name: "Dark Mirror", region: "Leonida", note: "Screen filter – unlock: make $500,000 selling vehicles", code: "↓ ↓ ↑ → → ↑ ← ← → ←"},
     {id: "che-54", name: "Migraine", region: "Leonida", note: "Screen filter – unlock: survive 6 minutes at a 6-star wanted level", code: ""},
     {id: "che-55", name: "Dollhouse", region: "Leonida", note: "Screen filter – unlock: spend 8 hours with your partner", code: "↓ ↓ ↑ → → ↑ ← ← ↓ →"},
     {id: "che-56", name: "Bubblegum", region: "Leonida", note: "Screen filter – unlock: find all 24 Vice City Flamingos cards", code: ""},
